@@ -3,11 +3,15 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="MeuPrimeiroViewController">
             <connections>
+                <outlet property="imageView" destination="AWc-Dt-oEJ" id="757-gv-RiE"/>
                 <outlet property="meuPrimeiroLabel" destination="bNh-Fe-Cgr" id="enr-dr-E2z"/>
+                <outlet property="meuPrimeiroTextField" destination="2EV-dZ-MGy" id="0SM-5a-hru"/>
+                <outlet property="meuSegundoTextField" destination="PRv-n6-Oe2" id="nMK-xh-I9D"/>
                 <outlet property="view" destination="iN0-l3-epB" id="lgF-hZ-K9Q"/>
             </connections>
         </placeholder>
@@ -29,14 +33,67 @@
                         <action selector="olaMundo:" destination="-1" eventType="touchUpInside" id="jiD-6A-bW9"/>
                     </connections>
                 </button>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Nome" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jD0-vG-fUv">
+                    <rect key="frame" x="8" y="8" width="46" height="21"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                    <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Sobrenome" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Qri-j8-aYF">
+                    <rect key="frame" x="8" y="75" width="89" height="21"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                    <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="2EV-dZ-MGy">
+                    <rect key="frame" x="8" y="37" width="584" height="30"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                    <textInputTraits key="textInputTraits"/>
+                </textField>
+                <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="PRv-n6-Oe2">
+                    <rect key="frame" x="8" y="104" width="584" height="30"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                    <textInputTraits key="textInputTraits"/>
+                </textField>
+                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="mclaren.png" translatesAutoresizingMaskIntoConstraints="NO" id="AWc-Dt-oEJ">
+                    <rect key="frame" x="180" y="318" width="240" height="128"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="128" id="Rel-e0-cvI"/>
+                        <constraint firstAttribute="width" constant="240" id="d9c-cX-FXY"/>
+                    </constraints>
+                </imageView>
+                <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="0.5" minValue="0.0" maxValue="1" translatesAutoresizingMaskIntoConstraints="NO" id="IKf-kM-ZrK">
+                    <rect key="frame" x="6" y="454" width="588" height="31"/>
+                    <connections>
+                        <action selector="sliderValueChanged:" destination="-1" eventType="valueChanged" id="fmo-19-Tc7"/>
+                    </connections>
+                </slider>
             </subviews>
             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
             <constraints>
+                <constraint firstItem="IKf-kM-ZrK" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leadingMargin" id="3Kd-pi-4Cm"/>
+                <constraint firstItem="PRv-n6-Oe2" firstAttribute="trailing" secondItem="iN0-l3-epB" secondAttribute="trailingMargin" id="4MK-MM-jJ2"/>
+                <constraint firstItem="Qri-j8-aYF" firstAttribute="top" secondItem="2EV-dZ-MGy" secondAttribute="bottom" constant="8" id="7IN-T1-hCD"/>
                 <constraint firstItem="xR8-OW-NbD" firstAttribute="centerY" secondItem="iN0-l3-epB" secondAttribute="centerY" constant="-100" id="Aex-aL-HzA"/>
+                <constraint firstItem="2EV-dZ-MGy" firstAttribute="trailing" secondItem="iN0-l3-epB" secondAttribute="trailingMargin" id="BVZ-Go-hHg"/>
+                <constraint firstItem="Qri-j8-aYF" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leadingMargin" id="BbN-4d-V8c"/>
+                <constraint firstItem="PRv-n6-Oe2" firstAttribute="top" secondItem="Qri-j8-aYF" secondAttribute="bottom" constant="8" id="HnB-JS-16p"/>
                 <constraint firstItem="xR8-OW-NbD" firstAttribute="centerX" secondItem="iN0-l3-epB" secondAttribute="centerX" id="Ihv-HE-QL4"/>
+                <constraint firstItem="2EV-dZ-MGy" firstAttribute="top" secondItem="jD0-vG-fUv" secondAttribute="bottom" constant="8" id="KyR-B5-uFh"/>
+                <constraint firstItem="2EV-dZ-MGy" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leadingMargin" id="VQP-CY-fke"/>
+                <constraint firstItem="IKf-kM-ZrK" firstAttribute="top" secondItem="AWc-Dt-oEJ" secondAttribute="bottom" constant="8" id="YRu-U0-WGZ"/>
+                <constraint firstItem="AWc-Dt-oEJ" firstAttribute="centerX" secondItem="bNh-Fe-Cgr" secondAttribute="centerX" id="bg1-2c-Ah5"/>
                 <constraint firstItem="bNh-Fe-Cgr" firstAttribute="centerX" secondItem="iN0-l3-epB" secondAttribute="centerX" id="del-YJ-InY"/>
+                <constraint firstItem="jD0-vG-fUv" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leadingMargin" id="eo8-1z-DdO"/>
+                <constraint firstItem="IKf-kM-ZrK" firstAttribute="trailing" secondItem="iN0-l3-epB" secondAttribute="trailingMargin" id="ime-XP-rzI"/>
+                <constraint firstItem="jD0-vG-fUv" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="topMargin" id="kQc-2w-4Pi"/>
+                <constraint firstItem="PRv-n6-Oe2" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leadingMargin" id="uaX-Yo-1vl"/>
+                <constraint firstItem="AWc-Dt-oEJ" firstAttribute="top" secondItem="bNh-Fe-Cgr" secondAttribute="bottom" constant="8" id="uoj-Z2-54e"/>
                 <constraint firstItem="bNh-Fe-Cgr" firstAttribute="centerY" secondItem="iN0-l3-epB" secondAttribute="centerY" id="z7q-98-eJR"/>
             </constraints>
         </view>
     </objects>
+    <resources>
+        <image name="mclaren.png" width="350" height="150"/>
+    </resources>
 </document>

@@ -14,6 +14,8 @@
 		4EAC9D7F1D4683B100E3CAE4 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4EAC9D7D1D4683B100E3CAE4 /* LaunchScreen.storyboard */; };
 		4EAC9D891D46921000E3CAE4 /* MeuPrimeiroViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4EAC9D871D46921000E3CAE4 /* MeuPrimeiroViewController.m */; };
 		4EAC9D8A1D46921000E3CAE4 /* MeuPrimeiroViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4EAC9D881D46921000E3CAE4 /* MeuPrimeiroViewController.xib */; };
+		4EC1932F1D493847008A239D /* ferrari_ff.png in Resources */ = {isa = PBXBuildFile; fileRef = 4EC1932D1D493847008A239D /* ferrari_ff.png */; };
+		4EC193301D493847008A239D /* mclaren.png in Resources */ = {isa = PBXBuildFile; fileRef = 4EC1932E1D493847008A239D /* mclaren.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -28,6 +30,8 @@
 		4EAC9D861D46921000E3CAE4 /* MeuPrimeiroViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MeuPrimeiroViewController.h; sourceTree = "<group>"; };
 		4EAC9D871D46921000E3CAE4 /* MeuPrimeiroViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MeuPrimeiroViewController.m; sourceTree = "<group>"; };
 		4EAC9D881D46921000E3CAE4 /* MeuPrimeiroViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MeuPrimeiroViewController.xib; sourceTree = "<group>"; };
+		4EC1932D1D493847008A239D /* ferrari_ff.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = ferrari_ff.png; sourceTree = "<group>"; };
+		4EC1932E1D493847008A239D /* mclaren.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = mclaren.png; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -60,6 +64,7 @@
 		4EAC9D6E1D4683B100E3CAE4 /* Bem Vindo */ = {
 			isa = PBXGroup;
 			children = (
+				4EC1932C1D493720008A239D /* Imagens */,
 				4EAC9D721D4683B100E3CAE4 /* AppDelegate.h */,
 				4EAC9D731D4683B100E3CAE4 /* AppDelegate.m */,
 				4EAC9D7B1D4683B100E3CAE4 /* Assets.xcassets */,
@@ -80,6 +85,15 @@
 				4EAC9D701D4683B100E3CAE4 /* main.m */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		4EC1932C1D493720008A239D /* Imagens */ = {
+			isa = PBXGroup;
+			children = (
+				4EC1932D1D493847008A239D /* ferrari_ff.png */,
+				4EC1932E1D493847008A239D /* mclaren.png */,
+			);
+			name = Imagens;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -139,6 +153,8 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4EC193301D493847008A239D /* mclaren.png in Resources */,
+				4EC1932F1D493847008A239D /* ferrari_ff.png in Resources */,
 				4EAC9D7F1D4683B100E3CAE4 /* LaunchScreen.storyboard in Resources */,
 				4E7FF2BB1D479EBB0029EB85 /* MeuPrimeiroViewController_iPad.xib in Resources */,
 				4EAC9D8A1D46921000E3CAE4 /* MeuPrimeiroViewController.xib in Resources */,

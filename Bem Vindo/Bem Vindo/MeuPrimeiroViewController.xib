@@ -3,11 +3,15 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="MeuPrimeiroViewController">
             <connections>
+                <outlet property="imageView" destination="pVY-h6-Cs3" id="80C-gG-DW5"/>
                 <outlet property="meuPrimeiroLabel" destination="Q6T-EW-9Om" id="wwS-ll-hhw"/>
+                <outlet property="meuPrimeiroTextField" destination="4aj-pR-fUZ" id="a2d-Er-PaA"/>
+                <outlet property="meuSegundoTextField" destination="bmK-i8-nKx" id="uNg-CW-n6J"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
         </placeholder>
@@ -29,15 +33,85 @@
                         <action selector="olaMundo:" destination="-1" eventType="touchUpInside" id="fld-Pk-rG8"/>
                     </connections>
                 </button>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Nome" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="UPG-fT-IAN">
+                    <rect key="frame" x="8" y="28" width="46" height="21"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                    <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="4aj-pR-fUZ">
+                    <rect key="frame" x="8" y="57" width="584" height="30"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                    <textInputTraits key="textInputTraits" returnKeyType="next"/>
+                    <connections>
+                        <outlet property="delegate" destination="-1" id="ILs-qx-EgA"/>
+                    </connections>
+                </textField>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Sobrenome" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dJK-4A-eoM">
+                    <rect key="frame" x="8" y="95" width="89" height="21"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                    <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="bmK-i8-nKx">
+                    <rect key="frame" x="8" y="124" width="584" height="30"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                    <textInputTraits key="textInputTraits" returnKeyType="done"/>
+                    <connections>
+                        <outlet property="delegate" destination="-1" id="daz-0n-WsU"/>
+                    </connections>
+                </textField>
+                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="mclaren.png" translatesAutoresizingMaskIntoConstraints="NO" id="pVY-h6-Cs3">
+                    <rect key="frame" x="125" y="318" width="350" height="150"/>
+                </imageView>
+                <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="0.5" minValue="0.0" maxValue="1" translatesAutoresizingMaskIntoConstraints="NO" id="uJL-NI-QBi">
+                    <rect key="frame" x="6" y="476" width="588" height="31"/>
+                    <connections>
+                        <action selector="sliderValueChanged:" destination="-1" eventType="valueChanged" id="nNS-cV-lrW"/>
+                    </connections>
+                </slider>
             </subviews>
             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
             <constraints>
+                <constraint firstItem="dJK-4A-eoM" firstAttribute="top" secondItem="4aj-pR-fUZ" secondAttribute="bottom" constant="8" id="2Yr-Re-vuo"/>
+                <constraint firstItem="uJL-NI-QBi" firstAttribute="top" secondItem="pVY-h6-Cs3" secondAttribute="bottom" constant="8" id="6WL-Er-5gJ"/>
+                <constraint firstItem="pVY-h6-Cs3" firstAttribute="top" secondItem="Q6T-EW-9Om" secondAttribute="bottom" constant="8" id="7IB-uF-0vu"/>
+                <constraint firstItem="4aj-pR-fUZ" firstAttribute="trailing" secondItem="i5M-Pr-FkT" secondAttribute="trailingMargin" id="BRw-hr-VSc"/>
                 <constraint firstItem="r16-w1-5el" firstAttribute="centerY" secondItem="i5M-Pr-FkT" secondAttribute="centerY" constant="-100" id="Cti-Q6-kda"/>
+                <constraint firstItem="pVY-h6-Cs3" firstAttribute="centerX" secondItem="Q6T-EW-9Om" secondAttribute="centerX" id="DlP-aD-w5C"/>
+                <constraint firstItem="uJL-NI-QBi" firstAttribute="top" secondItem="pVY-h6-Cs3" secondAttribute="bottom" constant="8" id="Fh6-ux-fdR"/>
+                <constraint firstItem="4aj-pR-fUZ" firstAttribute="top" secondItem="UPG-fT-IAN" secondAttribute="bottom" constant="8" id="FyX-4p-z6v"/>
+                <constraint firstItem="uJL-NI-QBi" firstAttribute="centerX" secondItem="pVY-h6-Cs3" secondAttribute="centerX" id="HiX-js-a8S"/>
+                <constraint firstItem="bmK-i8-nKx" firstAttribute="top" secondItem="dJK-4A-eoM" secondAttribute="bottom" constant="8" id="MkF-bW-Ett"/>
+                <constraint firstItem="bmK-i8-nKx" firstAttribute="trailing" secondItem="i5M-Pr-FkT" secondAttribute="trailingMargin" id="Nts-9W-Oe6"/>
+                <constraint firstItem="uJL-NI-QBi" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leadingMargin" id="Pmd-M0-2FQ"/>
+                <constraint firstItem="UPG-fT-IAN" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="topMargin" constant="20" id="Q3w-ha-8PZ"/>
+                <constraint firstItem="uJL-NI-QBi" firstAttribute="top" secondItem="pVY-h6-Cs3" secondAttribute="bottom" constant="8" id="R2Z-Qs-3mu"/>
                 <constraint firstItem="Q6T-EW-9Om" firstAttribute="centerY" secondItem="i5M-Pr-FkT" secondAttribute="centerY" id="SD0-bb-crH"/>
+                <constraint firstItem="bmK-i8-nKx" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leadingMargin" id="XHE-HY-0bN"/>
+                <constraint firstItem="uJL-NI-QBi" firstAttribute="trailing" secondItem="i5M-Pr-FkT" secondAttribute="trailingMargin" id="awm-6l-gy5"/>
+                <constraint firstItem="dJK-4A-eoM" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leadingMargin" id="h1n-36-KTI"/>
+                <constraint firstItem="UPG-fT-IAN" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leadingMargin" id="lsL-hh-hAz"/>
+                <constraint firstItem="4aj-pR-fUZ" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leadingMargin" id="nIP-dh-vtz"/>
+                <constraint firstItem="uJL-NI-QBi" firstAttribute="trailing" secondItem="i5M-Pr-FkT" secondAttribute="trailingMargin" id="pb9-bi-QY7"/>
+                <constraint firstItem="uJL-NI-QBi" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leadingMargin" id="pc9-i2-WkJ"/>
+                <constraint firstItem="pVY-h6-Cs3" firstAttribute="top" secondItem="Q6T-EW-9Om" secondAttribute="bottom" constant="8" id="qc0-Vq-80h"/>
                 <constraint firstItem="Q6T-EW-9Om" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="vvw-md-FXd"/>
                 <constraint firstItem="r16-w1-5el" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="vyj-5R-8Dc"/>
             </constraints>
-            <point key="canvasLocation" x="576" y="345"/>
+            <variation key="default">
+                <mask key="constraints">
+                    <exclude reference="Fh6-ux-fdR"/>
+                    <exclude reference="HiX-js-a8S"/>
+                    <exclude reference="Pmd-M0-2FQ"/>
+                    <exclude reference="R2Z-Qs-3mu"/>
+                    <exclude reference="awm-6l-gy5"/>
+                </mask>
+            </variation>
+            <point key="canvasLocation" x="525" y="347"/>
         </view>
     </objects>
+    <resources>
+        <image name="mclaren.png" width="350" height="150"/>
+    </resources>
 </document>
