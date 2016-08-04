@@ -7,6 +7,7 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="ListaCarrosViewController" customModule="Carros_Swift" customModuleProvider="target">
             <connections>
+                <outlet property="tabView" destination="oIX-QZ-wVs" id="pWe-uH-gh3"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
         </placeholder>
@@ -14,7 +15,23 @@
         <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i5M-Pr-FkT">
             <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="oIX-QZ-wVs">
+                    <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    <connections>
+                        <outlet property="dataSource" destination="-1" id="9nr-pN-cwa"/>
+                        <outlet property="delegate" destination="-1" id="oKB-5Q-nSG"/>
+                    </connections>
+                </tableView>
+            </subviews>
             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+            <constraints>
+                <constraint firstAttribute="bottom" secondItem="oIX-QZ-wVs" secondAttribute="bottom" id="ALm-NU-9MC"/>
+                <constraint firstItem="oIX-QZ-wVs" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="DxI-y9-9oi"/>
+                <constraint firstItem="oIX-QZ-wVs" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" id="Nxq-eR-ei1"/>
+                <constraint firstAttribute="trailing" secondItem="oIX-QZ-wVs" secondAttribute="trailing" id="oKs-bd-Zwv"/>
+            </constraints>
             <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" prompted="NO"/>
             <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
         </view>

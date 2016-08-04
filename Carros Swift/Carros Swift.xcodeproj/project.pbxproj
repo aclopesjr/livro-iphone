@@ -26,6 +26,9 @@
 		4EA512D41D539DFD00B220EB /* SobreViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4EA512D21D539DFD00B220EB /* SobreViewController.xib */; };
 		4EA512D71D539E4700B220EB /* ListaCarrosViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4EA512D51D539E4700B220EB /* ListaCarrosViewController.swift */; };
 		4EA512D81D539E4700B220EB /* SobreViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4EA512D61D539E4700B220EB /* SobreViewController.swift */; };
+		4EA5134F1D53CAAC00B220EB /* Alerta.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4EA5134E1D53CAAC00B220EB /* Alerta.swift */; };
+		4EA513531D53CC3200B220EB /* Carro.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4EA513521D53CC3200B220EB /* Carro.swift */; };
+		4EA513551D53CCF400B220EB /* CarroService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4EA513541D53CCF400B220EB /* CarroService.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -50,6 +53,9 @@
 		4EA512D21D539DFD00B220EB /* SobreViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = SobreViewController.xib; path = View/SobreViewController.xib; sourceTree = "<group>"; };
 		4EA512D51D539E4700B220EB /* ListaCarrosViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ListaCarrosViewController.swift; path = Controller/ListaCarrosViewController.swift; sourceTree = "<group>"; };
 		4EA512D61D539E4700B220EB /* SobreViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SobreViewController.swift; path = Controller/SobreViewController.swift; sourceTree = "<group>"; };
+		4EA5134E1D53CAAC00B220EB /* Alerta.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Alerta.swift; path = Model/Utils/Alerta.swift; sourceTree = "<group>"; };
+		4EA513521D53CC3200B220EB /* Carro.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Carro.swift; path = Model/Domain/Carro.swift; sourceTree = "<group>"; };
+		4EA513541D53CCF400B220EB /* CarroService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CarroService.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -96,6 +102,8 @@
 		4EA512AB1D539BD900B220EB /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				4EA513501D53CC0000B220EB /* Domain */,
+				4EA5134D1D53CA8300B220EB /* Utils */,
 			);
 			name = Model;
 			sourceTree = "<group>";
@@ -161,6 +169,23 @@
 				4EA512BF1D539C2300B220EB /* carros_luxo.xml */,
 			);
 			path = xml;
+			sourceTree = "<group>";
+		};
+		4EA5134D1D53CA8300B220EB /* Utils */ = {
+			isa = PBXGroup;
+			children = (
+				4EA5134E1D53CAAC00B220EB /* Alerta.swift */,
+			);
+			name = Utils;
+			sourceTree = "<group>";
+		};
+		4EA513501D53CC0000B220EB /* Domain */ = {
+			isa = PBXGroup;
+			children = (
+				4EA513521D53CC3200B220EB /* Carro.swift */,
+				4EA513541D53CCF400B220EB /* CarroService.swift */,
+			);
+			name = Domain;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -247,9 +272,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4EA5134F1D53CAAC00B220EB /* Alerta.swift in Sources */,
+				4EA513551D53CCF400B220EB /* CarroService.swift in Sources */,
 				4EA512D81D539E4700B220EB /* SobreViewController.swift in Sources */,
 				4EA512D71D539E4700B220EB /* ListaCarrosViewController.swift in Sources */,
 				4EA5129A1D539BA700B220EB /* AppDelegate.swift in Sources */,
+				4EA513531D53CC3200B220EB /* Carro.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

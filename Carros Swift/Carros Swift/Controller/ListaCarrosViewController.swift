@@ -8,12 +8,21 @@
 
 import UIKit
 
-class ListaCarrosViewController: UIViewController {
+class ListaCarrosViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
 
+    // MARK: Outlet
+    @IBOutlet var tabView : UITableView!
+    
+    var carros : Array<Carro> = []
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
         self.title = "Carros"
+        
+        self.carros = CarroService.getCarros()
+        
+        self.tabView.registerClass(UITableViewCell.self, forCellReuseIdentifier: "cell")
     }
 
     override func didReceiveMemoryWarning() {
@@ -32,4 +41,24 @@ class ListaCarrosViewController: UIViewController {
     }
     */
 
+    // MARK: DataSource
+    func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return self.carros.count
+    }
+    
+    func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
+
+        let carro = self.carros[indexPath.row]
+        
+        let cell = self.tabView.dequeueReusableCellWithIdentifier("cell")! as UITableViewCell
+        cell.textLabel!.text = carro.nome
+        cell.imageView!.image = UIImage(named: carro.url_foto)
+        
+        return cell
+    }
+    
+    func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
+        let carro = self.carros[indexPath.row]
+        Alerta.alerta("Selecionou o carro: " + carro.nome, viewController: self)
+    }
 }
