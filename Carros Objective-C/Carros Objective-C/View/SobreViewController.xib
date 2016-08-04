@@ -7,14 +7,38 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="SobreViewController">
             <connections>
+                <outlet property="progress" destination="iMH-D8-nAI" id="b8W-tC-IPi"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
+                <outlet property="webView" destination="lbH-it-hBy" id="Cnl-gJ-mMn"/>
             </connections>
         </placeholder>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
         <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i5M-Pr-FkT">
             <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <webView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="lbH-it-hBy">
+                    <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                    <color key="backgroundColor" red="0.36078431370000003" green="0.38823529410000002" blue="0.4039215686" alpha="1" colorSpace="deviceRGB"/>
+                    <connections>
+                        <outlet property="delegate" destination="-1" id="0O7-Pw-jfy"/>
+                    </connections>
+                </webView>
+                <activityIndicatorView hidden="YES" opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" hidesWhenStopped="YES" style="gray" translatesAutoresizingMaskIntoConstraints="NO" id="iMH-D8-nAI">
+                    <rect key="frame" x="290" y="290" width="20" height="20"/>
+                </activityIndicatorView>
+            </subviews>
             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+            <constraints>
+                <constraint firstAttribute="bottom" secondItem="lbH-it-hBy" secondAttribute="bottom" id="AmX-v4-EUW"/>
+                <constraint firstItem="lbH-it-hBy" firstAttribute="centerY" secondItem="iMH-D8-nAI" secondAttribute="centerY" id="MVZ-PL-1aO"/>
+                <constraint firstItem="lbH-it-hBy" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="d6i-Jr-ubq"/>
+                <constraint firstItem="lbH-it-hBy" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" id="klW-sx-NFK"/>
+                <constraint firstAttribute="trailing" secondItem="lbH-it-hBy" secondAttribute="trailing" id="sEA-S5-0xk"/>
+                <constraint firstItem="lbH-it-hBy" firstAttribute="centerX" secondItem="iMH-D8-nAI" secondAttribute="centerX" id="x9J-B1-lEq"/>
+            </constraints>
+            <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" prompted="NO"/>
+            <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
         </view>
     </objects>
 </document>

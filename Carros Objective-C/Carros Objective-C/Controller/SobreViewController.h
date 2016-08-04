@@ -8,6 +8,11 @@
 
 #import <UIKit/UIKit.h>
 
-@interface SobreViewController : UIViewController
+@interface SobreViewController : UIViewController<UIWebViewDelegate> {
+    
+}
+
+@property (nonatomic, strong) IBOutlet UIWebView *webView;
+@property (nonatomic, strong) IBOutlet UIActivityIndicatorView *progress;
 
 @end

@@ -7,6 +7,7 @@
 //
 
 #import "SobreViewController.h"
+#define URL_SOBRE @"http://www.livroiphone.com.br/carros/sobre.htm"
 
 @interface SobreViewController ()
 
@@ -14,10 +15,18 @@
 
 @implementation SobreViewController
 
+@synthesize webView, progress;
+
 - (void)viewDidLoad {
     [super viewDidLoad];
     
     self.title = @"Sobre";
+    
+    [[self progress] startAnimating];
+    
+    NSURL *url = [NSURL URLWithString:URL_SOBRE];
+    NSURLRequest *request = [NSURLRequest requestWithURL:url];
+    [[self webView] loadRequest:request];
 }
 
 - (void)didReceiveMemoryWarning {
@@ -34,5 +43,9 @@
     // Pass the selected object to the new view controller.
 }
 */
+
+- (void) webViewDidFinishLoad:(UIWebView *)webView {
+    [[self progress] stopAnimating];
+}
 
 @end
