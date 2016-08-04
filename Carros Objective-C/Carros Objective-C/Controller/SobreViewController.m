@@ -1,22 +1,23 @@
 //
-//  ListaCarrosViewController.m
+//  SobreViewController.m
 //  Carros Objective-C
 //
 //  Created by Antonio Lopes on 8/4/16.
 //  Copyright © 2016 Antonio Lopes. All rights reserved.
 //
 
-#import "ListaCarrosViewController.h"
+#import "SobreViewController.h"
 
-@interface ListaCarrosViewController ()
+@interface SobreViewController ()
 
 @end
 
-@implementation ListaCarrosViewController
+@implementation SobreViewController
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    // Do any additional setup after loading the view from its nib.
+    
+    self.title = @"Sobre";
 }
 
 - (void)didReceiveMemoryWarning {

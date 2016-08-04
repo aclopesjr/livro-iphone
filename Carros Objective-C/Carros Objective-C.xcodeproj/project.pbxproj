@@ -9,10 +9,23 @@
 /* Begin PBXBuildFile section */
 		4EA512E71D53A16100B220EB /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 4EA512E61D53A16100B220EB /* main.m */; };
 		4EA512EA1D53A16100B220EB /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 4EA512E91D53A16100B220EB /* AppDelegate.m */; };
-		4EA512ED1D53A16100B220EB /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4EA512EC1D53A16100B220EB /* ViewController.m */; };
-		4EA512F01D53A16100B220EB /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4EA512EE1D53A16100B220EB /* Main.storyboard */; };
-		4EA512F21D53A16200B220EB /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4EA512F11D53A16200B220EB /* Assets.xcassets */; };
-		4EA512F51D53A16200B220EB /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4EA512F31D53A16200B220EB /* LaunchScreen.storyboard */; };
+		4EA513221D53A21400B220EB /* ListaCarrosViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4EA513201D53A21400B220EB /* ListaCarrosViewController.xib */; };
+		4EA513251D53A24700B220EB /* ListaCarrosViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4EA513241D53A24700B220EB /* ListaCarrosViewController.m */; };
+		4EA513371D53A2AE00B220EB /* ferrari_ff.png in Resources */ = {isa = PBXBuildFile; fileRef = 4EA513281D53A2AE00B220EB /* ferrari_ff.png */; };
+		4EA513381D53A2AE00B220EB /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4EA513291D53A2AE00B220EB /* Images.xcassets */; };
+		4EA513391D53A2AE00B220EB /* mclaren.png in Resources */ = {isa = PBXBuildFile; fileRef = 4EA5132A1D53A2AE00B220EB /* mclaren.png */; };
+		4EA5133A1D53A2AE00B220EB /* tab_carros.png in Resources */ = {isa = PBXBuildFile; fileRef = 4EA5132B1D53A2AE00B220EB /* tab_carros.png */; };
+		4EA5133B1D53A2AE00B220EB /* tab_carros@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 4EA5132C1D53A2AE00B220EB /* tab_carros@2x.png */; };
+		4EA5133C1D53A2AE00B220EB /* tab_sobre.png in Resources */ = {isa = PBXBuildFile; fileRef = 4EA5132D1D53A2AE00B220EB /* tab_sobre.png */; };
+		4EA5133D1D53A2AE00B220EB /* tab_sobre@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 4EA5132E1D53A2AE00B220EB /* tab_sobre@2x.png */; };
+		4EA5133E1D53A2AE00B220EB /* carros_classicos.json in Resources */ = {isa = PBXBuildFile; fileRef = 4EA513301D53A2AE00B220EB /* carros_classicos.json */; };
+		4EA5133F1D53A2AE00B220EB /* carros_esportivos.json in Resources */ = {isa = PBXBuildFile; fileRef = 4EA513311D53A2AE00B220EB /* carros_esportivos.json */; };
+		4EA513401D53A2AE00B220EB /* carros_luxo.json in Resources */ = {isa = PBXBuildFile; fileRef = 4EA513321D53A2AE00B220EB /* carros_luxo.json */; };
+		4EA513411D53A2AE00B220EB /* carros_classicos.xml in Resources */ = {isa = PBXBuildFile; fileRef = 4EA513341D53A2AE00B220EB /* carros_classicos.xml */; };
+		4EA513421D53A2AE00B220EB /* carros_esportivos.xml in Resources */ = {isa = PBXBuildFile; fileRef = 4EA513351D53A2AE00B220EB /* carros_esportivos.xml */; };
+		4EA513431D53A2AE00B220EB /* carros_luxo.xml in Resources */ = {isa = PBXBuildFile; fileRef = 4EA513361D53A2AE00B220EB /* carros_luxo.xml */; };
+		4EA513481D53A2D300B220EB /* SobreViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4EA513461D53A2D300B220EB /* SobreViewController.xib */; };
+		4EA5134B1D53A2EF00B220EB /* SobreViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4EA5134A1D53A2EF00B220EB /* SobreViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -20,12 +33,26 @@
 		4EA512E61D53A16100B220EB /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		4EA512E81D53A16100B220EB /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		4EA512E91D53A16100B220EB /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
-		4EA512EB1D53A16100B220EB /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
-		4EA512EC1D53A16100B220EB /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
-		4EA512EF1D53A16100B220EB /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
-		4EA512F11D53A16200B220EB /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
-		4EA512F41D53A16200B220EB /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		4EA512F61D53A16200B220EB /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		4EA513201D53A21400B220EB /* ListaCarrosViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = ListaCarrosViewController.xib; path = View/ListaCarrosViewController.xib; sourceTree = "<group>"; };
+		4EA513231D53A24700B220EB /* ListaCarrosViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ListaCarrosViewController.h; path = Controller/ListaCarrosViewController.h; sourceTree = "<group>"; };
+		4EA513241D53A24700B220EB /* ListaCarrosViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ListaCarrosViewController.m; path = Controller/ListaCarrosViewController.m; sourceTree = "<group>"; };
+		4EA513281D53A2AE00B220EB /* ferrari_ff.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = ferrari_ff.png; sourceTree = "<group>"; };
+		4EA513291D53A2AE00B220EB /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
+		4EA5132A1D53A2AE00B220EB /* mclaren.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = mclaren.png; sourceTree = "<group>"; };
+		4EA5132B1D53A2AE00B220EB /* tab_carros.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = tab_carros.png; sourceTree = "<group>"; };
+		4EA5132C1D53A2AE00B220EB /* tab_carros@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "tab_carros@2x.png"; sourceTree = "<group>"; };
+		4EA5132D1D53A2AE00B220EB /* tab_sobre.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = tab_sobre.png; sourceTree = "<group>"; };
+		4EA5132E1D53A2AE00B220EB /* tab_sobre@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "tab_sobre@2x.png"; sourceTree = "<group>"; };
+		4EA513301D53A2AE00B220EB /* carros_classicos.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = carros_classicos.json; sourceTree = "<group>"; };
+		4EA513311D53A2AE00B220EB /* carros_esportivos.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = carros_esportivos.json; sourceTree = "<group>"; };
+		4EA513321D53A2AE00B220EB /* carros_luxo.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = carros_luxo.json; sourceTree = "<group>"; };
+		4EA513341D53A2AE00B220EB /* carros_classicos.xml */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = carros_classicos.xml; sourceTree = "<group>"; };
+		4EA513351D53A2AE00B220EB /* carros_esportivos.xml */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = carros_esportivos.xml; sourceTree = "<group>"; };
+		4EA513361D53A2AE00B220EB /* carros_luxo.xml */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = carros_luxo.xml; sourceTree = "<group>"; };
+		4EA513461D53A2D300B220EB /* SobreViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = SobreViewController.xib; path = View/SobreViewController.xib; sourceTree = "<group>"; };
+		4EA513491D53A2EF00B220EB /* SobreViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SobreViewController.h; path = Controller/SobreViewController.h; sourceTree = "<group>"; };
+		4EA5134A1D53A2EF00B220EB /* SobreViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SobreViewController.m; path = Controller/SobreViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -58,14 +85,13 @@
 		4EA512E41D53A16100B220EB /* Carros Objective-C */ = {
 			isa = PBXGroup;
 			children = (
+				4EA512FE1D53A18000B220EB /* Model */,
+				4EA512FD1D53A17900B220EB /* View */,
+				4EA512FC1D53A16D00B220EB /* Controller */,
 				4EA512E81D53A16100B220EB /* AppDelegate.h */,
 				4EA512E91D53A16100B220EB /* AppDelegate.m */,
-				4EA512EB1D53A16100B220EB /* ViewController.h */,
-				4EA512EC1D53A16100B220EB /* ViewController.m */,
-				4EA512EE1D53A16100B220EB /* Main.storyboard */,
-				4EA512F11D53A16200B220EB /* Assets.xcassets */,
-				4EA512F31D53A16200B220EB /* LaunchScreen.storyboard */,
 				4EA512F61D53A16200B220EB /* Info.plist */,
+				4EA513261D53A2AE00B220EB /* Resources */,
 				4EA512E51D53A16100B220EB /* Supporting Files */,
 			);
 			path = "Carros Objective-C";
@@ -77,6 +103,77 @@
 				4EA512E61D53A16100B220EB /* main.m */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		4EA512FC1D53A16D00B220EB /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				4EA513491D53A2EF00B220EB /* SobreViewController.h */,
+				4EA5134A1D53A2EF00B220EB /* SobreViewController.m */,
+				4EA513231D53A24700B220EB /* ListaCarrosViewController.h */,
+				4EA513241D53A24700B220EB /* ListaCarrosViewController.m */,
+			);
+			name = Controller;
+			sourceTree = "<group>";
+		};
+		4EA512FD1D53A17900B220EB /* View */ = {
+			isa = PBXGroup;
+			children = (
+				4EA513201D53A21400B220EB /* ListaCarrosViewController.xib */,
+				4EA513461D53A2D300B220EB /* SobreViewController.xib */,
+			);
+			name = View;
+			sourceTree = "<group>";
+		};
+		4EA512FE1D53A18000B220EB /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Model;
+			sourceTree = "<group>";
+		};
+		4EA513261D53A2AE00B220EB /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				4EA513271D53A2AE00B220EB /* Imagens */,
+				4EA5132F1D53A2AE00B220EB /* json */,
+				4EA513331D53A2AE00B220EB /* xml */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		4EA513271D53A2AE00B220EB /* Imagens */ = {
+			isa = PBXGroup;
+			children = (
+				4EA513281D53A2AE00B220EB /* ferrari_ff.png */,
+				4EA513291D53A2AE00B220EB /* Images.xcassets */,
+				4EA5132A1D53A2AE00B220EB /* mclaren.png */,
+				4EA5132B1D53A2AE00B220EB /* tab_carros.png */,
+				4EA5132C1D53A2AE00B220EB /* tab_carros@2x.png */,
+				4EA5132D1D53A2AE00B220EB /* tab_sobre.png */,
+				4EA5132E1D53A2AE00B220EB /* tab_sobre@2x.png */,
+			);
+			path = Imagens;
+			sourceTree = "<group>";
+		};
+		4EA5132F1D53A2AE00B220EB /* json */ = {
+			isa = PBXGroup;
+			children = (
+				4EA513301D53A2AE00B220EB /* carros_classicos.json */,
+				4EA513311D53A2AE00B220EB /* carros_esportivos.json */,
+				4EA513321D53A2AE00B220EB /* carros_luxo.json */,
+			);
+			path = json;
+			sourceTree = "<group>";
+		};
+		4EA513331D53A2AE00B220EB /* xml */ = {
+			isa = PBXGroup;
+			children = (
+				4EA513341D53A2AE00B220EB /* carros_classicos.xml */,
+				4EA513351D53A2AE00B220EB /* carros_esportivos.xml */,
+				4EA513361D53A2AE00B220EB /* carros_luxo.xml */,
+			);
+			path = xml;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -136,9 +233,21 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				4EA512F51D53A16200B220EB /* LaunchScreen.storyboard in Resources */,
-				4EA512F21D53A16200B220EB /* Assets.xcassets in Resources */,
-				4EA512F01D53A16100B220EB /* Main.storyboard in Resources */,
+				4EA513401D53A2AE00B220EB /* carros_luxo.json in Resources */,
+				4EA513391D53A2AE00B220EB /* mclaren.png in Resources */,
+				4EA5133C1D53A2AE00B220EB /* tab_sobre.png in Resources */,
+				4EA5133E1D53A2AE00B220EB /* carros_classicos.json in Resources */,
+				4EA5133F1D53A2AE00B220EB /* carros_esportivos.json in Resources */,
+				4EA513481D53A2D300B220EB /* SobreViewController.xib in Resources */,
+				4EA513381D53A2AE00B220EB /* Images.xcassets in Resources */,
+				4EA5133B1D53A2AE00B220EB /* tab_carros@2x.png in Resources */,
+				4EA513431D53A2AE00B220EB /* carros_luxo.xml in Resources */,
+				4EA513221D53A21400B220EB /* ListaCarrosViewController.xib in Resources */,
+				4EA513411D53A2AE00B220EB /* carros_classicos.xml in Resources */,
+				4EA5133A1D53A2AE00B220EB /* tab_carros.png in Resources */,
+				4EA513421D53A2AE00B220EB /* carros_esportivos.xml in Resources */,
+				4EA5133D1D53A2AE00B220EB /* tab_sobre@2x.png in Resources */,
+				4EA513371D53A2AE00B220EB /* ferrari_ff.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -149,32 +258,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				4EA512ED1D53A16100B220EB /* ViewController.m in Sources */,
 				4EA512EA1D53A16100B220EB /* AppDelegate.m in Sources */,
+				4EA513251D53A24700B220EB /* ListaCarrosViewController.m in Sources */,
+				4EA5134B1D53A2EF00B220EB /* SobreViewController.m in Sources */,
 				4EA512E71D53A16100B220EB /* main.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
-
-/* Begin PBXVariantGroup section */
-		4EA512EE1D53A16100B220EB /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				4EA512EF1D53A16100B220EB /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
-		4EA512F31D53A16200B220EB /* LaunchScreen.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				4EA512F41D53A16200B220EB /* Base */,
-			);
-			name = LaunchScreen.storyboard;
-			sourceTree = "<group>";
-		};
-/* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
 		4EA512F71D53A16200B220EB /* Debug */ = {

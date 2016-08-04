@@ -15,7 +15,32 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
 
     func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
-        // Override point for customization after application launch.
+        
+        self.window = UIWindow(frame: UIScreen.mainScreen().bounds)
+        self.window!.backgroundColor = UIColor.whiteColor()
+        
+        //cria os controllers
+        let listaViewController = ListaCarrosViewController(nibName: "ListaCarrosViewController", bundle: nil)
+        let nav1 = UINavigationController()
+        nav1.pushViewController(listaViewController, animated: false)
+        nav1.tabBarItem.title = "Carros"
+        nav1.tabBarItem.image = UIImage(named: "tab_carros")
+        
+        let sobreViewController = SobreViewController(nibName: "SobreViewController", bundle: nil)
+        let nav2 = UINavigationController()
+        nav2.pushViewController(sobreViewController, animated: false)
+        nav2.tabBarItem.title = "Sobre"
+        nav2.tabBarItem.image = UIImage(named: "tab_sobre")
+        
+        //cria tabBar
+        let tabBarController = UITabBarController()
+        tabBarController.viewControllers = [nav1, nav2]
+        
+        self.window!.rootViewController = tabBarController;
+        
+        self.window!.makeKeyAndVisible()
+        
+        
         return true
     }
 

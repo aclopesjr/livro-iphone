@@ -7,6 +7,8 @@
 //
 
 #import "AppDelegate.h"
+#import "ListaCarrosViewController.h"
+#import "SobreViewController.h"
 
 @interface AppDelegate ()
 
@@ -16,7 +18,31 @@
 
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
-    // Override point for customization after application launch.
+    
+    self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
+    self.window.backgroundColor = [UIColor whiteColor];
+    
+    //cria controllers
+    ListaCarrosViewController *listaCarrosViewController = [[ListaCarrosViewController alloc] initWithNibName:@"ListaCarrosViewController" bundle:nil];
+    UINavigationController *nav1 = [[UINavigationController alloc] init];
+    [nav1 pushViewController:listaCarrosViewController animated:false];
+    nav1.tabBarItem.title = @"Carros";
+    nav1.tabBarItem.image = [UIImage imageNamed:@"tab_carros"];
+    
+    SobreViewController *sobreViewController = [[SobreViewController alloc] initWithNibName:@"SobreViewController" bundle:nil];
+    UINavigationController *nav2 = [[UINavigationController alloc] init];
+    [nav2 pushViewController:sobreViewController animated:false];
+    nav2.tabBarItem.title = @"Sobre";
+    nav2.tabBarItem.image = [UIImage imageNamed:@"tab_sobre"];
+    
+    //cria tabBar
+    UITabBarController *tabBarController = [[UITabBarController alloc] init];
+    tabBarController.viewControllers =  [NSArray arrayWithObjects:nav1, nav2, nil];
+    
+    self.window.rootViewController = tabBarController;
+    
+    [self.window makeKeyAndVisible];
+    
     return YES;
 }
 
