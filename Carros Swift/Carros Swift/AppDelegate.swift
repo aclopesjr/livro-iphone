@@ -20,9 +20,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         self.window!.backgroundColor = UIColor.whiteColor()
         
         //cria os controllers
-        let listaViewController = ListaCarrosViewController(nibName: "ListaCarrosViewController", bundle: nil)
+        let listaCarrosViewController = ListaCarrosViewController(nibName: "ListaCarrosViewController", bundle: nil)
         let nav1 = UINavigationController()
-        nav1.pushViewController(listaViewController, animated: false)
+        nav1.pushViewController(listaCarrosViewController, animated: false)
         nav1.tabBarItem.title = "Carros"
         nav1.tabBarItem.image = UIImage(named: "tab_carros")
         

@@ -8,12 +8,25 @@
 
 import UIKit
 
-class SobreViewController: UIViewController {
+let URL_SOBRE = "http://www.livroiphone.com.br/carros/sobre.htm"
 
+class SobreViewController: UIViewController, UIWebViewDelegate {
+
+    // MARK: Outlets
+    @IBOutlet var webView : UIWebView!
+    @IBOutlet var progress : UIActivityIndicatorView!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
         self.title = "Sobre"
+        
+        progress.startAnimating()
+        
+        let url = NSURL(string: URL_SOBRE)!
+        webView.loadRequest(NSURLRequest(URL:url))
+        
+        //webView.delegate = self;
     }
 
     override func didReceiveMemoryWarning() {
@@ -32,4 +45,8 @@ class SobreViewController: UIViewController {
     }
     */
 
+    // MARK: WebView
+    func webViewDidFinishLoad(webView: UIWebView) {
+        progress.stopAnimating()
+    }
 }
