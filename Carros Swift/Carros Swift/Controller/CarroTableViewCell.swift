@@ -10,6 +10,11 @@ import UIKit
 
 class CarroTableViewCell: UITableViewCell {
 
+    // MARK: Outlets
+    @IBOutlet var lNome : UILabel!
+    @IBOutlet var lDescricao : UILabel!
+    @IBOutlet var ivImage : UIImageView!
+    
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code

@@ -10,10 +10,21 @@ import UIKit
 
 class DetalhesCarroViewController: UIViewController {
 
+    // MARK: Outlets
+    @IBOutlet var image : UIImageView!
+    @IBOutlet var descricao : UITextView!
+    
+    // MARK: Variables
+    var carro : Carro?
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        // Do any additional setup after loading the view.
+        if let selectedCarro = carro {
+            self.title = selectedCarro.nome
+            self.image.image = UIImage(named: selectedCarro.url_foto)
+            self.descricao.text = selectedCarro.desc
+        }
     }
 
     override func didReceiveMemoryWarning() {

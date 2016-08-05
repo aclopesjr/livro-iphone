@@ -7,6 +7,13 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		4E75A8621D54B4370032B6B4 /* Alerta.m in Sources */ = {isa = PBXBuildFile; fileRef = 4E75A8611D54B4370032B6B4 /* Alerta.m */; };
+		4E75A8661D54BB710032B6B4 /* Carro.m in Sources */ = {isa = PBXBuildFile; fileRef = 4E75A8651D54BB710032B6B4 /* Carro.m */; };
+		4E75A8691D54BFCB0032B6B4 /* CarroService.m in Sources */ = {isa = PBXBuildFile; fileRef = 4E75A8681D54BFCB0032B6B4 /* CarroService.m */; };
+		4E75A87D1D54D9A20032B6B4 /* DetalhesCarroViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4E75A87B1D54D9A20032B6B4 /* DetalhesCarroViewController.m */; };
+		4E75A8801D54D9BD0032B6B4 /* DetalhesCarroViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4E75A87F1D54D9BD0032B6B4 /* DetalhesCarroViewController.xib */; };
+		4E75A88B1D5507440032B6B4 /* CarroTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4E75A8891D5507440032B6B4 /* CarroTableViewCell.xib */; };
+		4E75A88E1D55075E0032B6B4 /* CarroTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 4E75A88D1D55075E0032B6B4 /* CarroTableViewCell.m */; };
 		4EA512E71D53A16100B220EB /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 4EA512E61D53A16100B220EB /* main.m */; };
 		4EA512EA1D53A16100B220EB /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 4EA512E91D53A16100B220EB /* AppDelegate.m */; };
 		4EA513221D53A21400B220EB /* ListaCarrosViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4EA513201D53A21400B220EB /* ListaCarrosViewController.xib */; };
@@ -29,6 +36,18 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		4E75A8601D54B4370032B6B4 /* Alerta.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Alerta.h; path = Model/Utils/Alerta.h; sourceTree = "<group>"; };
+		4E75A8611D54B4370032B6B4 /* Alerta.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Alerta.m; path = Model/Utils/Alerta.m; sourceTree = "<group>"; };
+		4E75A8641D54BB710032B6B4 /* Carro.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Carro.h; path = Model/Domain/Carro.h; sourceTree = "<group>"; };
+		4E75A8651D54BB710032B6B4 /* Carro.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Carro.m; path = Model/Domain/Carro.m; sourceTree = "<group>"; };
+		4E75A8671D54BFCB0032B6B4 /* CarroService.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CarroService.h; sourceTree = "<group>"; };
+		4E75A8681D54BFCB0032B6B4 /* CarroService.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CarroService.m; sourceTree = "<group>"; };
+		4E75A87A1D54D9A20032B6B4 /* DetalhesCarroViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = DetalhesCarroViewController.h; path = Controller/DetalhesCarroViewController.h; sourceTree = "<group>"; };
+		4E75A87B1D54D9A20032B6B4 /* DetalhesCarroViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = DetalhesCarroViewController.m; path = Controller/DetalhesCarroViewController.m; sourceTree = "<group>"; };
+		4E75A87F1D54D9BD0032B6B4 /* DetalhesCarroViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = DetalhesCarroViewController.xib; path = View/DetalhesCarroViewController.xib; sourceTree = "<group>"; };
+		4E75A8891D5507440032B6B4 /* CarroTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = CarroTableViewCell.xib; path = View/CarroTableViewCell.xib; sourceTree = "<group>"; };
+		4E75A88C1D55075E0032B6B4 /* CarroTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CarroTableViewCell.h; path = Controller/CarroTableViewCell.h; sourceTree = "<group>"; };
+		4E75A88D1D55075E0032B6B4 /* CarroTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = CarroTableViewCell.m; path = Controller/CarroTableViewCell.m; sourceTree = "<group>"; };
 		4EA512E21D53A16100B220EB /* Carros Objective-C.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Carros Objective-C.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		4EA512E61D53A16100B220EB /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		4EA512E81D53A16100B220EB /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -66,6 +85,26 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		4E75A85F1D54B3FA0032B6B4 /* Utils */ = {
+			isa = PBXGroup;
+			children = (
+				4E75A8601D54B4370032B6B4 /* Alerta.h */,
+				4E75A8611D54B4370032B6B4 /* Alerta.m */,
+			);
+			name = Utils;
+			sourceTree = "<group>";
+		};
+		4E75A8631D54BB4B0032B6B4 /* Domain */ = {
+			isa = PBXGroup;
+			children = (
+				4E75A8641D54BB710032B6B4 /* Carro.h */,
+				4E75A8651D54BB710032B6B4 /* Carro.m */,
+				4E75A8671D54BFCB0032B6B4 /* CarroService.h */,
+				4E75A8681D54BFCB0032B6B4 /* CarroService.m */,
+			);
+			name = Domain;
+			sourceTree = "<group>";
+		};
 		4EA512D91D53A16100B220EB = {
 			isa = PBXGroup;
 			children = (
@@ -108,10 +147,14 @@
 		4EA512FC1D53A16D00B220EB /* Controller */ = {
 			isa = PBXGroup;
 			children = (
+				4E75A88C1D55075E0032B6B4 /* CarroTableViewCell.h */,
+				4E75A88D1D55075E0032B6B4 /* CarroTableViewCell.m */,
 				4EA513491D53A2EF00B220EB /* SobreViewController.h */,
 				4EA5134A1D53A2EF00B220EB /* SobreViewController.m */,
 				4EA513231D53A24700B220EB /* ListaCarrosViewController.h */,
 				4EA513241D53A24700B220EB /* ListaCarrosViewController.m */,
+				4E75A87A1D54D9A20032B6B4 /* DetalhesCarroViewController.h */,
+				4E75A87B1D54D9A20032B6B4 /* DetalhesCarroViewController.m */,
 			);
 			name = Controller;
 			sourceTree = "<group>";
@@ -119,8 +162,10 @@
 		4EA512FD1D53A17900B220EB /* View */ = {
 			isa = PBXGroup;
 			children = (
+				4E75A87F1D54D9BD0032B6B4 /* DetalhesCarroViewController.xib */,
 				4EA513201D53A21400B220EB /* ListaCarrosViewController.xib */,
 				4EA513461D53A2D300B220EB /* SobreViewController.xib */,
+				4E75A8891D5507440032B6B4 /* CarroTableViewCell.xib */,
 			);
 			name = View;
 			sourceTree = "<group>";
@@ -128,6 +173,8 @@
 		4EA512FE1D53A18000B220EB /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				4E75A8631D54BB4B0032B6B4 /* Domain */,
+				4E75A85F1D54B3FA0032B6B4 /* Utils */,
 			);
 			name = Model;
 			sourceTree = "<group>";
@@ -233,10 +280,12 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4E75A8801D54D9BD0032B6B4 /* DetalhesCarroViewController.xib in Resources */,
 				4EA513401D53A2AE00B220EB /* carros_luxo.json in Resources */,
 				4EA513391D53A2AE00B220EB /* mclaren.png in Resources */,
 				4EA5133C1D53A2AE00B220EB /* tab_sobre.png in Resources */,
 				4EA5133E1D53A2AE00B220EB /* carros_classicos.json in Resources */,
+				4E75A88B1D5507440032B6B4 /* CarroTableViewCell.xib in Resources */,
 				4EA5133F1D53A2AE00B220EB /* carros_esportivos.json in Resources */,
 				4EA513481D53A2D300B220EB /* SobreViewController.xib in Resources */,
 				4EA513381D53A2AE00B220EB /* Images.xcassets in Resources */,
@@ -258,9 +307,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4E75A88E1D55075E0032B6B4 /* CarroTableViewCell.m in Sources */,
+				4E75A87D1D54D9A20032B6B4 /* DetalhesCarroViewController.m in Sources */,
 				4EA512EA1D53A16100B220EB /* AppDelegate.m in Sources */,
 				4EA513251D53A24700B220EB /* ListaCarrosViewController.m in Sources */,
 				4EA5134B1D53A2EF00B220EB /* SobreViewController.m in Sources */,
+				4E75A8661D54BB710032B6B4 /* Carro.m in Sources */,
+				4E75A8691D54BFCB0032B6B4 /* CarroService.m in Sources */,
+				4E75A8621D54B4370032B6B4 /* Alerta.m in Sources */,
 				4EA512E71D53A16100B220EB /* main.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -393,6 +447,7 @@
 				4EA512FB1D53A16200B220EB /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

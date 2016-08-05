@@ -10,6 +10,8 @@
 
 @implementation CarroTableViewCell
 
+@synthesize lNome, lDescricao, ivImage;
+
 - (void)awakeFromNib {
     [super awakeFromNib];
     // Initialization code

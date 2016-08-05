@@ -8,6 +8,12 @@
 
 #import <UIKit/UIKit.h>
 
-@interface ListaCarrosViewController : UIViewController
+@interface ListaCarrosViewController : UIViewController<UITableViewDataSource,UITableViewDelegate> {
+    // MARK: Outlets
+    IBOutlet UITableView * tabView;
+    
+    // MARK: Variables
+    NSArray * carros;
+}
 
 @end

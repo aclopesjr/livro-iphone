@@ -5,6 +5,9 @@
       location = "container:"
       name = "Objective-C">
       <FileRef
+         location = "group:HelloAcelerometro/HelloAcelerometro.xcodeproj">
+      </FileRef>
+      <FileRef
          location = "group:Carros Objective-C/Carros Objective-C.xcodeproj">
       </FileRef>
       <FileRef

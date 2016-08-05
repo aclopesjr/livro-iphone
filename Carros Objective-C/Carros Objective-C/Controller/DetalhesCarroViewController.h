@@ -7,7 +7,13 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "Carro.h"
 
-@interface DetalhesCarroViewController : UIViewController
+@interface DetalhesCarroViewController : UIViewController {
+    IBOutlet UIImageView * image;
+    IBOutlet UITextView * descricao;
+}
+
+@property (nonatomic, strong) Carro * carro;
 
 @end

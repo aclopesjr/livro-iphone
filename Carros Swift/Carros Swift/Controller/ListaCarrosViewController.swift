@@ -22,7 +22,8 @@ class ListaCarrosViewController: UIViewController, UITableViewDataSource, UITabl
         
         self.carros = CarroService.getCarros()
         
-        self.tabView.registerClass(UITableViewCell.self, forCellReuseIdentifier: "cell")
+        //self.tabView.registerClass(UITableViewCell.self, forCellReuseIdentifier: "cell")
+        self.tabView.registerNib(UINib(nibName: "CarroTableViewCell", bundle: nil), forCellReuseIdentifier: "cell")
     }
 
     override func didReceiveMemoryWarning() {
@@ -50,15 +51,20 @@ class ListaCarrosViewController: UIViewController, UITableViewDataSource, UITabl
 
         let carro = self.carros[indexPath.row]
         
-        let cell = self.tabView.dequeueReusableCellWithIdentifier("cell")! as UITableViewCell
-        cell.textLabel!.text = carro.nome
-        cell.imageView!.image = UIImage(named: carro.url_foto)
+        let cell = self.tabView.dequeueReusableCellWithIdentifier("cell")! as! CarroTableViewCell
+        cell.lNome.text = carro.nome
+        cell.lDescricao.text = carro.desc
+        cell.ivImage!.image = UIImage(named: carro.url_foto)
         
         return cell
     }
     
     func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
         let carro = self.carros[indexPath.row]
-        Alerta.alerta("Selecionou o carro: " + carro.nome, viewController: self)
+        //Alerta.alerta("Selecionou o carro: " + carro.nome, viewController: self)
+                                                                                
+        let detalhesCarroViewController = DetalhesCarroViewController(nibName: "DetalhesCarroViewController", bundle: nil)
+        detalhesCarroViewController.carro = carro
+        self.navigationController!.pushViewController(detalhesCarroViewController, animated: true)
     }
 }

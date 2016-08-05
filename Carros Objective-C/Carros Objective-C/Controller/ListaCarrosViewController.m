@@ -7,6 +7,11 @@
 //
 
 #import "ListaCarrosViewController.h"
+#import "CarroService.h"
+#import "Carro.h"
+#import "Alerta.h"
+#import "DetalhesCarroViewController.h"
+#import "CarroTableViewCell.h"
 
 @interface ListaCarrosViewController ()
 
@@ -18,6 +23,13 @@
     [super viewDidLoad];
     
     [self setTitle:@"Carros"];
+    
+    carros = [CarroService getCarros];
+    
+    //[tabView setDelegate:self];
+    
+    //[tabView registerClass:UITableViewCell.class forCellReuseIdentifier:@"cell"];
+    [tabView registerNib:[UINib nibWithNibName:@"CarroTableViewCell" bundle:nil] forCellReuseIdentifier:@"cell"];
 }
 
 - (void)didReceiveMemoryWarning {
@@ -34,5 +46,32 @@
     // Pass the selected object to the new view controller.
 }
 */
+
+// MARK: DataSource
+- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
+    return carros.count;
+}
+
+- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
+    
+    Carro * carro = carros[indexPath.row];
+    
+    CarroTableViewCell * cell = [tabView dequeueReusableCellWithIdentifier:@"cell"];
+    cell.lNome.text = carro.nome;
+    cell.lDescricao.text = carro.desc;
+    cell.ivImage.image = [UIImage imageNamed:carro.url_foto];
+    
+    return cell;
+}
+
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
+    Carro * carro = carros[indexPath.row];
+    //[Alerta alerta:[NSString stringWithFormat:@"Selecionou o carro %@", carro.nome] withViewController:self];
+    
+    DetalhesCarroViewController * detalhesCarroViewController = [[DetalhesCarroViewController alloc] initWithNibName:@"DetalhesCarroViewController" bundle:nil];
+    detalhesCarroViewController.carro = carro;
+    
+    [[self navigationController] pushViewController:detalhesCarroViewController animated:true];
+}
 
 @end

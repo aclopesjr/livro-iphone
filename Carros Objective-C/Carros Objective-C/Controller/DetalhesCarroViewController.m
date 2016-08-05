@@ -14,14 +14,20 @@
 
 @implementation DetalhesCarroViewController
 
+@synthesize carro;
+
 - (void)viewDidLoad {
     [super viewDidLoad];
-    // Do any additional setup after loading the view from its nib.
+    
+    if (carro != nil) {
+        [self setTitle:carro.nome];
+        image.image = [UIImage imageNamed:carro.url_foto];
+        descricao.text = carro.desc;
+    }
 }
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
 }
 
 /*

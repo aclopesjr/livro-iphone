@@ -9,5 +9,5 @@
 #import <Foundation/Foundation.h>
 
 @interface CarroService : NSObject
-
++ (NSArray *) getCarros;
 @end

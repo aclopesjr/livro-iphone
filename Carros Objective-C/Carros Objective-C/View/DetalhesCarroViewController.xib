@@ -3,12 +3,13 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <objects>
-        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="DetalhesCarroViewController" customModule="Carros_Swift" customModuleProvider="target">
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="DetalhesCarroViewController">
             <connections>
-                <outlet property="descricao" destination="ZVR-9n-gnZ" id="oZ9-Ql-Ez0"/>
-                <outlet property="image" destination="tC9-We-HG9" id="yaa-5z-U0f"/>
+                <outlet property="descricao" destination="Ws1-la-oY4" id="TIo-xd-5n5"/>
+                <outlet property="image" destination="x66-I0-RTo" id="jIK-tc-xVV"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
         </placeholder>
@@ -17,33 +18,33 @@
             <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="ZVR-9n-gnZ">
-                    <rect key="frame" x="8" y="347" width="584" height="306"/>
+                <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="Ws1-la-oY4">
+                    <rect key="frame" x="8" y="282" width="584" height="310"/>
                     <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                    <constraints>
-                        <constraint firstAttribute="height" constant="306" id="TN5-oC-Fa4"/>
-                    </constraints>
                     <string key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.</string>
                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
                     <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                 </textView>
-                <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="tC9-We-HG9">
-                    <rect key="frame" x="32" y="32" width="536" height="307"/>
+                <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="x66-I0-RTo">
+                    <rect key="frame" x="8" y="8" width="584" height="266"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="266" id="6Fs-P8-du0"/>
+                    </constraints>
                 </imageView>
             </subviews>
             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
             <constraints>
-                <constraint firstItem="ZVR-9n-gnZ" firstAttribute="top" secondItem="tC9-We-HG9" secondAttribute="bottom" constant="8" symbolic="YES" id="180-YR-3x8"/>
-                <constraint firstItem="tC9-We-HG9" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" constant="32" id="O6l-ak-Pde"/>
-                <constraint firstItem="ZVR-9n-gnZ" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="UiW-M8-yZc"/>
-                <constraint firstAttribute="trailing" secondItem="ZVR-9n-gnZ" secondAttribute="trailing" constant="8" id="YDD-7N-ufF"/>
-                <constraint firstItem="tC9-We-HG9" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" constant="32" id="edc-wj-S0a"/>
-                <constraint firstAttribute="trailing" secondItem="tC9-We-HG9" secondAttribute="trailing" constant="32" id="heM-1N-hcH"/>
-                <constraint firstItem="ZVR-9n-gnZ" firstAttribute="centerY" secondItem="i5M-Pr-FkT" secondAttribute="centerY" constant="200" id="w1C-h7-u5H"/>
-                <constraint firstItem="ZVR-9n-gnZ" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" constant="8" id="yD5-nn-iId"/>
+                <constraint firstItem="x66-I0-RTo" firstAttribute="leading" secondItem="Ws1-la-oY4" secondAttribute="leading" id="Daz-mc-QYi"/>
+                <constraint firstItem="Ws1-la-oY4" firstAttribute="top" secondItem="x66-I0-RTo" secondAttribute="bottom" constant="8" symbolic="YES" id="JNm-Eb-2TU"/>
+                <constraint firstItem="x66-I0-RTo" firstAttribute="trailing" secondItem="Ws1-la-oY4" secondAttribute="trailing" id="XgT-fX-JeC"/>
+                <constraint firstItem="Ws1-la-oY4" firstAttribute="bottom" secondItem="i5M-Pr-FkT" secondAttribute="bottomMargin" id="oaf-gI-asO"/>
+                <constraint firstItem="x66-I0-RTo" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="topMargin" id="rh4-3y-1eJ"/>
+                <constraint firstItem="x66-I0-RTo" firstAttribute="trailing" secondItem="i5M-Pr-FkT" secondAttribute="trailingMargin" id="tvx-bs-bUT"/>
+                <constraint firstItem="x66-I0-RTo" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leadingMargin" id="uPr-sZ-WxS"/>
             </constraints>
             <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" prompted="NO"/>
             <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
+            <point key="canvasLocation" x="413" y="443"/>
         </view>
     </objects>
 </document>
