@@ -24,11 +24,12 @@ class CarroService {
     }
     
     class func getCarroByTypeFromFile(tipo: String) -> Array<Carro> {
-        let path = NSBundle.mainBundle().pathForResource("carros_" + tipo, ofType: "xml")!
+        //let path = NSBundle.mainBundle().pathForResource("carros_" + tipo, ofType: "xml")!
+        let path = NSBundle.mainBundle().pathForResource("carros_" + tipo, ofType: "json")!
         let data = NSData(contentsOfFile: path)!
-        //let carros = parserXML_SAX(data)
-        let carros = parserXML_DOM(data)
-        return carros
+        //return parserXML_SAX(data)
+        //return parserXML_DOM(data)
+        return parserJSON(data)
     }
     
     class func parserXML_SAX(data: NSData) -> Array<Carro> {
@@ -79,6 +80,33 @@ class CarroService {
             carros.append(carro)
         }
         
+        return carros
+    }
+    
+    class func parserJSON(data: NSData) -> Array<Carro> {
+        if data.length == 0 {
+            return []
+        }
+        
+        var carros : Array<Carro> = []
+        let dicOp = try? NSJSONSerialization.JSONObjectWithData(data, options: NSJSONReadingOptions.MutableContainers) as! NSDictionary
+        if let dict = dicOp {
+            let jsoCarros : NSDictionary = dict["carros"] as! NSDictionary
+            let arrayCarros: NSArray = jsoCarros["carro"] as! NSArray
+            
+            for obj:AnyObject in arrayCarros {
+                let dict = obj as! NSDictionary
+                let carro = Carro()
+                carro.nome = dict["nome"] as! String
+                carro.desc = dict["desc"] as! String
+                carro.url_info = dict["url_info"] as! String
+                carro.url_foto = dict["url_foto"] as! String
+                carro.url_video = dict["url_video"] as! String
+                carro.longitude = dict["longitude"] as! String
+                carro.latitude = dict["latitude"] as! String
+                carros.append(carro)
+            }
+        }
         return carros
     }
  }
