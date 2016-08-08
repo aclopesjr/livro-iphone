@@ -34,6 +34,7 @@
 		4EA5134F1D53CAAC00B220EB /* Alerta.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4EA5134E1D53CAAC00B220EB /* Alerta.swift */; };
 		4EA513531D53CC3200B220EB /* Carro.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4EA513521D53CC3200B220EB /* Carro.swift */; };
 		4EA513551D53CCF400B220EB /* CarroService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4EA513541D53CCF400B220EB /* CarroService.swift */; };
+		4EA8C42E1D59027700B3C485 /* SMXMLDocument.m in Sources */ = {isa = PBXBuildFile; fileRef = 4EA8C42D1D59027700B3C485 /* SMXMLDocument.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -66,6 +67,9 @@
 		4EA5134E1D53CAAC00B220EB /* Alerta.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Alerta.swift; path = Model/Utils/Alerta.swift; sourceTree = "<group>"; };
 		4EA513521D53CC3200B220EB /* Carro.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Carro.swift; path = Model/Domain/Carro.swift; sourceTree = "<group>"; };
 		4EA513541D53CCF400B220EB /* CarroService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CarroService.swift; sourceTree = "<group>"; };
+		4EA8C42B1D59027600B3C485 /* Carros Swift-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Carros Swift-Bridging-Header.h"; sourceTree = "<group>"; };
+		4EA8C42C1D59027700B3C485 /* SMXMLDocument.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SMXMLDocument.h; path = Model/Domain/SMXMLDocument.h; sourceTree = "<group>"; };
+		4EA8C42D1D59027700B3C485 /* SMXMLDocument.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SMXMLDocument.m; path = Model/Domain/SMXMLDocument.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -102,6 +106,7 @@
 				4EA512AC1D539BE300B220EB /* View */,
 				4EA512AD1D539BE900B220EB /* Controller */,
 				4EA512991D539BA700B220EB /* AppDelegate.swift */,
+				4EA8C42B1D59027600B3C485 /* Carros Swift-Bridging-Header.h */,
 				4EA512A21D539BA700B220EB /* LaunchScreen.storyboard */,
 				4EA512A51D539BA700B220EB /* Info.plist */,
 				4EA512AF1D539C2300B220EB /* Resources */,
@@ -196,6 +201,8 @@
 		4EA513501D53CC0000B220EB /* Domain */ = {
 			isa = PBXGroup;
 			children = (
+				4EA8C42C1D59027700B3C485 /* SMXMLDocument.h */,
+				4EA8C42D1D59027700B3C485 /* SMXMLDocument.m */,
 				4EA513521D53CC3200B220EB /* Carro.swift */,
 				4EA513541D53CCF400B220EB /* CarroService.swift */,
 				4E75A88F1D551E6B0032B6B4 /* XMLCarroParser.swift */,
@@ -293,6 +300,7 @@
 				4E75A8791D54D5910032B6B4 /* DetalhesCarroViewController.swift in Sources */,
 				4EA513551D53CCF400B220EB /* CarroService.swift in Sources */,
 				4EA512D81D539E4700B220EB /* SobreViewController.swift in Sources */,
+				4EA8C42E1D59027700B3C485 /* SMXMLDocument.m in Sources */,
 				4EA512D71D539E4700B220EB /* ListaCarrosViewController.swift in Sources */,
 				4E75A8861D5502A70032B6B4 /* CarroTableViewCell.swift in Sources */,
 				4EA5129A1D539BA700B220EB /* AppDelegate.swift in Sources */,
@@ -404,11 +412,14 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				INFOPLIST_FILE = "Carros Swift/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "br.livro.Carros-Swift";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "Carros Swift/Carros Swift-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 			};
 			name = Debug;
 		};
@@ -416,11 +427,13 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				INFOPLIST_FILE = "Carros Swift/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "br.livro.Carros-Swift";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "Carros Swift/Carros Swift-Bridging-Header.h";
 			};
 			name = Release;
 		};

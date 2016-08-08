@@ -26,7 +26,8 @@ class CarroService {
     class func getCarroByTypeFromFile(tipo: String) -> Array<Carro> {
         let path = NSBundle.mainBundle().pathForResource("carros_" + tipo, ofType: "xml")!
         let data = NSData(contentsOfFile: path)!
-        let carros = parserXML_SAX(data)
+        //let carros = parserXML_SAX(data)
+        let carros = parserXML_DOM(data)
         return carros
     }
     
@@ -44,5 +45,40 @@ class CarroService {
         }
         
         return []
+    }
+    
+    class func parserXML_DOM(data: NSData) -> Array<Carro> {
+        if data.length == 0 {
+            return [];
+        }
+        
+        var carros : Array<Carro> = []
+        
+        let document = try? SMXMLDocument(data: data)
+        if document == nil {
+            return carros
+        }
+        
+        let root = document!.root as SMXMLElement
+        let tagCarros = root.childrenNamed("carro") as NSArray
+        
+        for x:AnyObject in tagCarros {
+            let xml = x as! SMXMLElement
+            let carro = Carro()
+            carro.nome = xml.valueWithPath("nome")
+            carro.desc = xml.valueWithPath("desc")
+            carro.url_info = xml.valueWithPath("url_info")
+            carro.url_foto = xml.valueWithPath("url_foto")
+            carro.url_video = xml.valueWithPath("url_video")
+            if (xml.valueWithPath("longitude") != nil) {
+                carro.longitude = xml.valueWithPath("longitude")
+            }
+            if (xml.valueWithPath("latitude") != nil) {
+                carro.latitude = xml.valueWithPath("latitude")
+            }
+            carros.append(carro)
+        }
+        
+        return carros
     }
  }
