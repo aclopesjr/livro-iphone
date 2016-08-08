@@ -14,6 +14,7 @@
     
     // MARK: Variables
     NSArray * carros;
+    NSString * tipo;
 }
 
 @end

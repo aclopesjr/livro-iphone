@@ -23,8 +23,10 @@
     [super viewDidLoad];
     
     [self setTitle:@"Carros"];
+    [self setAutomaticallyAdjustsScrollViewInsets:false];
     
-    carros = [CarroService getCarroByTypeFromFile:@"esportivos"];
+    tipo = @"classicos";
+    [self buscaCarros];
     
     //[tabView setDelegate:self];
     
@@ -35,6 +37,26 @@
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
+}
+
+- (IBAction)alterarTipo:(UISegmentedControl*)sender {
+    switch (sender.selectedSegmentIndex) {
+        case 1:
+            tipo = @"esportivos";
+            break;
+        case 2:
+            tipo = @"luxo";
+            break;
+        default:
+            tipo = @"classicos";
+            break;
+    }
+    [self buscaCarros];
+}
+
+- (void)buscaCarros {
+    carros = [CarroService getCarroByTypeFromFile:tipo];
+    [tabView reloadData];
 }
 
 /*
