@@ -12,4 +12,5 @@
 + (NSArray *) getCarros;
 + (NSArray *) getCarroByTypeFromFile:(NSString *)tipo;
 + (NSArray *) parserXML_SAX:(NSData *)data;
++ (NSArray *) parserXML_DOM:(NSData *)data;
 @end
