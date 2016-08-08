@@ -10,17 +10,21 @@ import UIKit
 
 class ListaCarrosViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
 
+    // MARK: Variables
+    var carros : Array<Carro> = []
+    var tipo = "classicos"
+    
     // MARK: Outlet
     @IBOutlet var tabView : UITableView!
-    
-    var carros : Array<Carro> = []
     
     override func viewDidLoad() {
         super.viewDidLoad()
 
+        self.automaticallyAdjustsScrollViewInsets = false
+        
         self.title = "Carros"
         
-        self.carros = CarroService.getCarroByTypeFromFile("esportivos")
+        self.buscaCarros()
         
         //self.tabView.registerClass(UITableViewCell.self, forCellReuseIdentifier: "cell")
         self.tabView.registerNib(UINib(nibName: "CarroTableViewCell", bundle: nil), forCellReuseIdentifier: "cell")
@@ -31,7 +35,24 @@ class ListaCarrosViewController: UIViewController, UITableViewDataSource, UITabl
         // Dispose of any resources that can be recreated.
     }
     
+    @IBAction func alterarTipo(sender: UISegmentedControl) {
+        switch sender.selectedSegmentIndex {
+        case 1:
+            tipo = "esportivos"
+        case 2:
+            tipo = "luxo"
+        default:
+            tipo = "classicos"
+        }
+        
+        self.buscaCarros()
+    }
 
+    func buscaCarros() {
+        self.carros = CarroService.getCarroByTypeFromFile(tipo)
+        self.tabView.reloadData()
+    }
+    
     /*
     // MARK: - Navigation
 
