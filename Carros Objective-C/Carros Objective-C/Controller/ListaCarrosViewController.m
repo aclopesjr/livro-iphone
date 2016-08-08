@@ -24,7 +24,7 @@
     
     [self setTitle:@"Carros"];
     
-    carros = [CarroService getCarros];
+    carros = [CarroService getCarroByTypeFromFile:@"esportivos"];
     
     //[tabView setDelegate:self];
     
@@ -59,7 +59,9 @@
     CarroTableViewCell * cell = [tabView dequeueReusableCellWithIdentifier:@"cell"];
     cell.lNome.text = carro.nome;
     cell.lDescricao.text = carro.desc;
-    cell.ivImage.image = [UIImage imageNamed:carro.url_foto];
+    
+    NSData *data = [NSData dataWithContentsOfURL:[NSURL URLWithString:carro.url_foto]];
+    cell.ivImage.image = [UIImage imageWithData:data];
     
     return cell;
 }

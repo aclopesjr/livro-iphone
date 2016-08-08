@@ -10,4 +10,6 @@
 
 @interface CarroService : NSObject
 + (NSArray *) getCarros;
++ (NSArray *) getCarroByTypeFromFile:(NSString *)tipo;
++ (NSArray *) parserXML_SAX:(NSData *)data;
 @end

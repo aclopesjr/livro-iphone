@@ -22,4 +22,27 @@ class CarroService {
         
         return carros
     }
-}
+    
+    class func getCarroByTypeFromFile(tipo: String) -> Array<Carro> {
+        let path = NSBundle.mainBundle().pathForResource("carros_" + tipo, ofType: "xml")!
+        let data = NSData(contentsOfFile: path)!
+        let carros = parserXML_SAX(data)
+        return carros
+    }
+    
+    class func parserXML_SAX(data: NSData) -> Array<Carro> {
+        if data.length == 0 {
+            return []
+        }
+        
+        let xmlParser = NSXMLParser(data: data)
+        let carrosParser = XMLCarroParser()
+        xmlParser.delegate = carrosParser
+        
+        if xmlParser.parse() {
+            return carrosParser.carros
+        }
+        
+        return []
+    }
+ }

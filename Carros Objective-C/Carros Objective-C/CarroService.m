@@ -8,6 +8,7 @@
 
 #import "CarroService.h"
 #import "Carro.h"
+#import "XMLCarroParser.h"
 
 @implementation CarroService
 + (NSArray *) getCarros {
@@ -24,5 +25,27 @@
     }
     
     return carros;
+}
+
++ (NSArray *) getCarroByTypeFromFile:(NSString *)tipo {
+    NSString * path = [[NSBundle mainBundle] pathForResource:[NSString stringWithFormat:@"carros_%@", tipo] ofType:@"xml"];
+    NSData * data = [NSData dataWithContentsOfFile:path];
+    return [CarroService parserXML_SAX:data];
+}
+
++ (NSArray *) parserXML_SAX:(NSData *)data {
+    if (data.length == 0) {
+        return [NSArray alloc];
+    }
+    
+    NSXMLParser * xmlParser = [[NSXMLParser alloc] initWithData:data];
+    XMLCarroParser * carroParser = [XMLCarroParser alloc];
+    [xmlParser setDelegate:carroParser];
+    
+    if (xmlParser.parse) {
+        return carroParser.carros;
+    }
+    
+    return [NSArray alloc];
 }
 @end

@@ -33,6 +33,7 @@
 		4EA513431D53A2AE00B220EB /* carros_luxo.xml in Resources */ = {isa = PBXBuildFile; fileRef = 4EA513361D53A2AE00B220EB /* carros_luxo.xml */; };
 		4EA513481D53A2D300B220EB /* SobreViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4EA513461D53A2D300B220EB /* SobreViewController.xib */; };
 		4EA5134B1D53A2EF00B220EB /* SobreViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4EA5134A1D53A2EF00B220EB /* SobreViewController.m */; };
+		4EA8C42A1D58C71C00B3C485 /* XMLCarroParser.m in Sources */ = {isa = PBXBuildFile; fileRef = 4EA8C4291D58C71C00B3C485 /* XMLCarroParser.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -72,6 +73,8 @@
 		4EA513461D53A2D300B220EB /* SobreViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = SobreViewController.xib; path = View/SobreViewController.xib; sourceTree = "<group>"; };
 		4EA513491D53A2EF00B220EB /* SobreViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SobreViewController.h; path = Controller/SobreViewController.h; sourceTree = "<group>"; };
 		4EA5134A1D53A2EF00B220EB /* SobreViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SobreViewController.m; path = Controller/SobreViewController.m; sourceTree = "<group>"; };
+		4EA8C4281D58C71C00B3C485 /* XMLCarroParser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = XMLCarroParser.h; path = Model/Domain/XMLCarroParser.h; sourceTree = "<group>"; };
+		4EA8C4291D58C71C00B3C485 /* XMLCarroParser.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = XMLCarroParser.m; path = Model/Domain/XMLCarroParser.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -101,6 +104,8 @@
 				4E75A8651D54BB710032B6B4 /* Carro.m */,
 				4E75A8671D54BFCB0032B6B4 /* CarroService.h */,
 				4E75A8681D54BFCB0032B6B4 /* CarroService.m */,
+				4EA8C4281D58C71C00B3C485 /* XMLCarroParser.h */,
+				4EA8C4291D58C71C00B3C485 /* XMLCarroParser.m */,
 			);
 			name = Domain;
 			sourceTree = "<group>";
@@ -307,6 +312,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4EA8C42A1D58C71C00B3C485 /* XMLCarroParser.m in Sources */,
 				4E75A88E1D55075E0032B6B4 /* CarroTableViewCell.m in Sources */,
 				4E75A87D1D54D9A20032B6B4 /* DetalhesCarroViewController.m in Sources */,
 				4EA512EA1D53A16100B220EB /* AppDelegate.m in Sources */,

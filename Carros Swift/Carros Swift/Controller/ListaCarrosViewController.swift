@@ -20,7 +20,7 @@ class ListaCarrosViewController: UIViewController, UITableViewDataSource, UITabl
 
         self.title = "Carros"
         
-        self.carros = CarroService.getCarros()
+        self.carros = CarroService.getCarroByTypeFromFile("esportivos")
         
         //self.tabView.registerClass(UITableViewCell.self, forCellReuseIdentifier: "cell")
         self.tabView.registerNib(UINib(nibName: "CarroTableViewCell", bundle: nil), forCellReuseIdentifier: "cell")
@@ -54,7 +54,9 @@ class ListaCarrosViewController: UIViewController, UITableViewDataSource, UITabl
         let cell = self.tabView.dequeueReusableCellWithIdentifier("cell")! as! CarroTableViewCell
         cell.lNome.text = carro.nome
         cell.lDescricao.text = carro.desc
-        cell.ivImage!.image = UIImage(named: carro.url_foto)
+        
+        let data = NSData(contentsOfURL: NSURL(string: carro.url_foto)!)!
+        cell.ivImage!.image = UIImage(data: data)
         
         return cell
     }

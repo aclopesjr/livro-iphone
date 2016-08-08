@@ -11,6 +11,7 @@
 		4E75A8791D54D5910032B6B4 /* DetalhesCarroViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E75A8781D54D5910032B6B4 /* DetalhesCarroViewController.swift */; };
 		4E75A8841D55028A0032B6B4 /* CarroTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4E75A8821D55028A0032B6B4 /* CarroTableViewCell.xib */; };
 		4E75A8861D5502A70032B6B4 /* CarroTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E75A8851D5502A70032B6B4 /* CarroTableViewCell.swift */; };
+		4E75A8901D551E6B0032B6B4 /* XMLCarroParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E75A88F1D551E6B0032B6B4 /* XMLCarroParser.swift */; };
 		4EA5129A1D539BA700B220EB /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4EA512991D539BA700B220EB /* AppDelegate.swift */; };
 		4EA512A41D539BA700B220EB /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4EA512A21D539BA700B220EB /* LaunchScreen.storyboard */; };
 		4EA512C01D539C2300B220EB /* ferrari_ff.png in Resources */ = {isa = PBXBuildFile; fileRef = 4EA512B11D539C2300B220EB /* ferrari_ff.png */; };
@@ -40,6 +41,7 @@
 		4E75A8781D54D5910032B6B4 /* DetalhesCarroViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = DetalhesCarroViewController.swift; path = Controller/DetalhesCarroViewController.swift; sourceTree = "<group>"; };
 		4E75A8821D55028A0032B6B4 /* CarroTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = CarroTableViewCell.xib; path = View/CarroTableViewCell.xib; sourceTree = "<group>"; };
 		4E75A8851D5502A70032B6B4 /* CarroTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = CarroTableViewCell.swift; path = Controller/CarroTableViewCell.swift; sourceTree = "<group>"; };
+		4E75A88F1D551E6B0032B6B4 /* XMLCarroParser.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = XMLCarroParser.swift; path = Model/Domain/XMLCarroParser.swift; sourceTree = "<group>"; };
 		4EA512961D539BA600B220EB /* Carros Swift.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Carros Swift.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		4EA512991D539BA700B220EB /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		4EA512A31D539BA700B220EB /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -196,6 +198,7 @@
 			children = (
 				4EA513521D53CC3200B220EB /* Carro.swift */,
 				4EA513541D53CCF400B220EB /* CarroService.swift */,
+				4E75A88F1D551E6B0032B6B4 /* XMLCarroParser.swift */,
 			);
 			name = Domain;
 			sourceTree = "<group>";
@@ -294,6 +297,7 @@
 				4E75A8861D5502A70032B6B4 /* CarroTableViewCell.swift in Sources */,
 				4EA5129A1D539BA700B220EB /* AppDelegate.swift in Sources */,
 				4EA513531D53CC3200B220EB /* Carro.swift in Sources */,
+				4E75A8901D551E6B0032B6B4 /* XMLCarroParser.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
