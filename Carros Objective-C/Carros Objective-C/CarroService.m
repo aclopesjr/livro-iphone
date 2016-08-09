@@ -29,10 +29,12 @@
 }
 
 + (NSArray *) getCarroByTypeFromFile:(NSString *)tipo {
-    NSString * path = [[NSBundle mainBundle] pathForResource:[NSString stringWithFormat:@"carros_%@", tipo] ofType:@"xml"];
+    //NSString * path = [[NSBundle mainBundle] pathForResource:[NSString stringWithFormat:@"carros_%@", tipo] ofType:@"xml"];
+    NSString * path = [[NSBundle mainBundle] pathForResource:[NSString stringWithFormat:@"carros_%@", tipo] ofType:@"json"];
     NSData * data = [NSData dataWithContentsOfFile:path];
     //return [CarroService parserXML_SAX:data];
-    return [CarroService parserXML_DOM:data];
+    //return [CarroService parserXML_DOM:data];
+    return [CarroService parserJSON:data];
 }
 
 + (NSArray *) parserXML_SAX:(NSData *)data {
@@ -81,5 +83,33 @@
         [carros addObject:carro];
     }
     return carros;
+}
+
++ (NSArray *) parserJSON:(NSData *)data {
+    if (data.length == 0) {
+        return [NSArray alloc];
+    }
+    
+    NSMutableArray * carros = [[NSMutableArray alloc] init];
+    NSJSONSerialization * dicOp = [NSJSONSerialization JSONObjectWithData:data options:NSJSONReadingMutableContainers error:nil];
+    if (dicOp != nil) {
+        NSDictionary * jsonCarros = [dicOp valueForKey:@"carros"];
+        NSArray * arrayCarros = jsonCarros[@"carro"];
+        
+        for (NSDictionary * carro in arrayCarros) {
+            Carro * newCarro = [Carro alloc];
+            
+            [newCarro setNome:carro[@"nome"]];
+            [newCarro setDesc:carro[@"desc"]];
+            [newCarro setUrl_info:carro[@"url_info"]];
+            [newCarro setUrl_foto:carro[@"url_foto"]];
+            [newCarro setUrl_video:carro[@"url_video"]];
+            [newCarro setLongitude:carro[@"longitude"]];
+            [newCarro setLatitude:carro[@"latitude"]];
+            
+            [carros addObject:newCarro];
+        }
+    }
+    return  carros;
 }
 @end
