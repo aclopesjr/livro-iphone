@@ -48,6 +48,23 @@ class CarroService {
         return []
     }
     
+    class func getCarrosByTipo(tipo: String, callback: (carros:Array<Carro>, error:NSError!) -> Void) {
+        let http = NSURLSession.sharedSession()
+        let url = NSURL(string: "http://www.livroiphone.com.br/carros/carros_" + tipo + ".json")!
+        let task = http.dataTaskWithURL(url, completionHandler: {
+            (data: NSData?, response: NSURLResponse?, error: NSError?) -> Void in
+            if error != nil {
+                callback(carros:[], error: error!)
+            } else {
+                let carros = CarroService.parserJSON(data!)
+                dispatch_sync(dispatch_get_main_queue(), {
+                    callback(carros: carros, error: nil)
+                })
+            }
+        })
+        task.resume()
+    }
+    
     class func parserXML_DOM(data: NSData) -> Array<Carro> {
         if data.length == 0 {
             return [];

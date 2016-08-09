@@ -7,6 +7,7 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="ListaCarrosViewController" customModule="Carros_Swift" customModuleProvider="target">
             <connections>
+                <outlet property="progress" destination="d6L-J2-oYi" id="XwC-x2-GoP"/>
                 <outlet property="tabView" destination="oIX-QZ-wVs" id="pWe-uH-gh3"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
@@ -35,16 +36,21 @@
                         <outlet property="delegate" destination="-1" id="oKB-5Q-nSG"/>
                     </connections>
                 </tableView>
+                <activityIndicatorView hidden="YES" opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" hidesWhenStopped="YES" style="gray" translatesAutoresizingMaskIntoConstraints="NO" id="d6L-J2-oYi">
+                    <rect key="frame" x="290" y="290" width="20" height="20"/>
+                </activityIndicatorView>
             </subviews>
             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
             <constraints>
                 <constraint firstAttribute="trailing" secondItem="oIX-QZ-wVs" secondAttribute="trailing" id="9NI-F5-sNG"/>
+                <constraint firstItem="d6L-J2-oYi" firstAttribute="centerY" secondItem="i5M-Pr-FkT" secondAttribute="centerY" id="IKx-s4-yAK"/>
                 <constraint firstAttribute="bottom" secondItem="oIX-QZ-wVs" secondAttribute="bottom" id="P7G-YE-6Ky"/>
                 <constraint firstItem="oIX-QZ-wVs" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="RrK-vv-Fjr"/>
                 <constraint firstItem="oIX-QZ-wVs" firstAttribute="top" secondItem="aLq-h9-In1" secondAttribute="bottom" constant="8" id="UL9-1H-ChI"/>
                 <constraint firstItem="aLq-h9-In1" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" constant="73" id="WbI-GU-MC7"/>
                 <constraint firstItem="aLq-h9-In1" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="Y2S-q9-Lfu"/>
                 <constraint firstItem="oIX-QZ-wVs" firstAttribute="top" secondItem="aLq-h9-In1" secondAttribute="bottom" constant="8" id="hID-Dt-lVg"/>
+                <constraint firstItem="d6L-J2-oYi" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="vrk-2r-rcG"/>
             </constraints>
             <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" prompted="NO"/>
             <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>

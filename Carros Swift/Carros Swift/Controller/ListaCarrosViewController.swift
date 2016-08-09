@@ -16,6 +16,7 @@ class ListaCarrosViewController: UIViewController, UITableViewDataSource, UITabl
     
     // MARK: Outlet
     @IBOutlet var tabView : UITableView!
+    @IBOutlet var progress : UIActivityIndicatorView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -49,8 +50,17 @@ class ListaCarrosViewController: UIViewController, UITableViewDataSource, UITabl
     }
 
     func buscaCarros() {
-        self.carros = CarroService.getCarroByTypeFromFile(tipo)
-        self.tabView.reloadData()
+        self.progress.startAnimating()
+        
+        CarroService.getCarrosByTipo(tipo, callback: { (carros: Array<Carro>, error: NSError!) -> Void in
+            if error != nil {
+                Alerta.alerta("Erro: " + error.localizedDescription, viewController: self)
+            } else {
+                self.carros = carros
+                self.tabView.reloadData()
+                self.progress.stopAnimating()
+            }
+        })
     }
     
     /*
