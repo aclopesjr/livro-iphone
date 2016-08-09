@@ -13,7 +13,7 @@ class CarroTableViewCell: UITableViewCell {
     // MARK: Outlets
     @IBOutlet var lNome : UILabel!
     @IBOutlet var lDescricao : UILabel!
-    @IBOutlet var ivImage : UIImageView!
+    @IBOutlet var ivImage : DownloadImageView!
     
     override func awakeFromNib() {
         super.awakeFromNib()

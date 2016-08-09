@@ -75,9 +75,7 @@ class ListaCarrosViewController: UIViewController, UITableViewDataSource, UITabl
         let cell = self.tabView.dequeueReusableCellWithIdentifier("cell")! as! CarroTableViewCell
         cell.lNome.text = carro.nome
         cell.lDescricao.text = carro.desc
-        
-        let data = NSData(contentsOfURL: NSURL(string: carro.url_foto)!)!
-        cell.ivImage!.image = UIImage(data: data)
+        cell.ivImage!.setUrl(carro.url_foto)
         
         return cell
     }

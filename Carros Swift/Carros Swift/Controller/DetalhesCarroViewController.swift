@@ -11,7 +11,7 @@ import UIKit
 class DetalhesCarroViewController: UIViewController {
 
     // MARK: Outlets
-    @IBOutlet var image : UIImageView!
+    @IBOutlet var image : DownloadImageView!
     @IBOutlet var descricao : UITextView!
     
     // MARK: Variables
@@ -22,9 +22,7 @@ class DetalhesCarroViewController: UIViewController {
 
         if let selectedCarro = carro {
             self.title = selectedCarro.nome
-            
-            let data = NSData(contentsOfURL: NSURL(string: selectedCarro.url_foto)!)!
-            self.image.image = UIImage(data: data)
+            self.image.setUrl(selectedCarro.url_foto)
             self.descricao.text = selectedCarro.desc
         }
     }
