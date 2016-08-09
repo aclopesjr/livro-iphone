@@ -12,6 +12,7 @@
 #import "Alerta.h"
 #import "DetalhesCarroViewController.h"
 #import "CarroTableViewCell.h"
+#import "DownloadImageView.h"
 
 @interface ListaCarrosViewController ()
 
@@ -79,11 +80,9 @@
     Carro * carro = carros[indexPath.row];
     
     CarroTableViewCell * cell = [tabView dequeueReusableCellWithIdentifier:@"cell"];
-    cell.lNome.text = carro.nome;
-    cell.lDescricao.text = carro.desc;
-    
-    NSData *data = [NSData dataWithContentsOfURL:[NSURL URLWithString:carro.url_foto]];
-    cell.ivImage.image = [UIImage imageWithData:data];
+    [cell.lNome setText:carro.nome];
+    [cell.lDescricao setText:carro.desc];
+    [cell.ivImage setUrl:carro.url_foto];
     
     return cell;
 }

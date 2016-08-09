@@ -54,7 +54,7 @@ class DownloadImageView: UIImageView {
             path = path.stringByReplacingOccurrencesOfString("/", withString: "_")
             path = path.stringByReplacingOccurrencesOfString("\\", withString: "_")
             path = path.stringByReplacingOccurrencesOfString(":", withString: "_")
-            path = NSHomeDirectory() + "Documents" + path
+            path = NSHomeDirectory() + "/Documents/" + path
             
             if NSFileManager.defaultManager().fileExistsAtPath(path) {
                 data = NSData(contentsOfFile: path)

@@ -8,9 +8,10 @@
 
 #import <UIKit/UIKit.h>
 #import "Carro.h"
+#import "DownloadImageView.h"
 
 @interface DetalhesCarroViewController : UIViewController {
-    IBOutlet UIImageView * image;
+    IBOutlet DownloadImageView * image;
     IBOutlet UITextView * descricao;
 }
 

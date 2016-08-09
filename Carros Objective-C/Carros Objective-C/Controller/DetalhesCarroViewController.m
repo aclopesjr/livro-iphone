@@ -22,8 +22,7 @@
     if (carro != nil) {
         [self setTitle:carro.nome];
         
-        NSData *data = [NSData dataWithContentsOfURL:[NSURL URLWithString:carro.url_foto]];
-        image.image = [UIImage imageWithData:data];
+        [image setUrl:carro.url_foto];
         descricao.text = carro.desc;
     }
 }
