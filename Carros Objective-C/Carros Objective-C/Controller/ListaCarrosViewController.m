@@ -56,8 +56,19 @@
 }
 
 - (void)buscaCarros {
-    carros = [CarroService getCarroByTypeFromFile:tipo];
-    [tabView reloadData];
+    [progress startAnimating];
+    [CarroService getCarrosByType:tipo withCallback:^(NSArray * novoscarros, NSError * error) {
+        if (error != nil) {
+            [Alerta alerta:[NSString stringWithFormat:@"Erro:"] withViewController:self];
+        } else {
+            carros = novoscarros;
+            [tabView reloadData];
+            [progress stopAnimating];
+        }
+    }];
+    
+//    carros = [CarroService getCarroByTypeFromFile:tipo];
+//    [tabView reloadData];
 }
 
 /*

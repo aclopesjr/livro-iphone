@@ -11,6 +11,7 @@
 @interface CarroService : NSObject
 + (NSArray *) getCarros;
 + (NSArray *) getCarroByTypeFromFile:(NSString *)tipo;
++ (void) getCarrosByType:(NSString *)tipo withCallback:(void(^)(NSArray*, NSError*))callback;
 + (NSArray *) parserXML_SAX:(NSData *)data;
 + (NSArray *) parserXML_DOM:(NSData *)data;
 + (NSArray *) parserJSON:(NSData *)data;

@@ -11,6 +11,7 @@
 @interface ListaCarrosViewController : UIViewController<UITableViewDataSource,UITableViewDelegate> {
     // MARK: Outlets
     IBOutlet UITableView * tabView;
+    IBOutlet UIActivityIndicatorView * progress;
     
     // MARK: Variables
     NSArray * carros;

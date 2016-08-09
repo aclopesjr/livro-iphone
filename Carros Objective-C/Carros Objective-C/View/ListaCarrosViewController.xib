@@ -7,6 +7,7 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="ListaCarrosViewController">
             <connections>
+                <outlet property="progress" destination="Oac-LK-chE" id="d8e-E1-TqW"/>
                 <outlet property="tabView" destination="UsE-Ln-qsn" id="vau-09-Wxz"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
@@ -35,6 +36,9 @@
                         <outlet property="delegate" destination="-1" id="rLW-V4-4Rx"/>
                     </connections>
                 </tableView>
+                <activityIndicatorView hidden="YES" opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" hidesWhenStopped="YES" style="gray" translatesAutoresizingMaskIntoConstraints="NO" id="Oac-LK-chE">
+                    <rect key="frame" x="290" y="290" width="20" height="20"/>
+                </activityIndicatorView>
             </subviews>
             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
             <constraints>
@@ -42,7 +46,9 @@
                 <constraint firstItem="UsE-Ln-qsn" firstAttribute="top" secondItem="Wdp-49-Ayr" secondAttribute="bottom" constant="8" id="9Sc-Ob-uLP"/>
                 <constraint firstItem="Wdp-49-Ayr" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" constant="72" id="Cgf-EL-3hA"/>
                 <constraint firstItem="UsE-Ln-qsn" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="JpN-Tw-aZb"/>
+                <constraint firstItem="Oac-LK-chE" firstAttribute="centerY" secondItem="i5M-Pr-FkT" secondAttribute="centerY" id="TSZ-MA-ds1"/>
                 <constraint firstItem="UsE-Ln-qsn" firstAttribute="top" secondItem="Wdp-49-Ayr" secondAttribute="bottom" constant="8" id="XJA-Ed-M3o"/>
+                <constraint firstItem="Oac-LK-chE" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="e22-k7-agk"/>
                 <constraint firstAttribute="bottom" secondItem="UsE-Ln-qsn" secondAttribute="bottom" id="fMj-GI-4ev"/>
                 <constraint firstItem="Wdp-49-Ayr" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="m8p-ST-o3d"/>
             </constraints>

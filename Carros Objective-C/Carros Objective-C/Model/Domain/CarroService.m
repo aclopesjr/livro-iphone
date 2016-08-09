@@ -37,6 +37,23 @@
     return [CarroService parserJSON:data];
 }
 
++ (void) getCarrosByType:(NSString *)tipo withCallback:(void(^)(NSArray*, NSError*))callback {
+    NSURLSession * http = [NSURLSession sharedSession];
+    NSURL * url = [NSURL URLWithString:[NSString stringWithFormat:@"http://www.livroiphone.com.br/carros/carros_%@.json", tipo]];
+    
+    NSURLSessionDataTask * task = [http dataTaskWithURL:url completionHandler:^(NSData * _Nullable data, NSURLResponse * _Nullable response, NSError * _Nullable error) {
+        if (error != nil) {
+            callback([[NSArray alloc] init], error);
+        } else {
+            NSArray * carros = [CarroService parserJSON:data];
+            dispatch_sync(dispatch_get_main_queue(), ^{
+                callback(carros, nil);
+            });
+        }
+    }];
+    [task resume];
+}
+
 + (NSArray *) parserXML_SAX:(NSData *)data {
     if (data.length == 0) {
         return [NSArray alloc];
