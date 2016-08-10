@@ -22,8 +22,8 @@ class ListaCarrosViewController: UIViewController, UITableViewDataSource, UITabl
         super.viewDidLoad()
 
         self.automaticallyAdjustsScrollViewInsets = false
-        
         self.title = "Carros"
+        self.navigationItem.rightBarButtonItem = UIBarButtonItem(title: "Atualizar", style: UIBarButtonItemStyle.Plain, target: self, action: #selector(self.buscaCarros))
         
         self.buscaCarros()
         

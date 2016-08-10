@@ -25,6 +25,8 @@
     
     [self setTitle:@"Carros"];
     [self setAutomaticallyAdjustsScrollViewInsets:false];
+    UIBarButtonItem * buttonItem = [[UIBarButtonItem alloc] initWithTitle:@"Atualizar" style:(UIBarButtonItemStylePlain) target:self action:@selector(buscaCarros)];
+    [[self navigationItem] setRightBarButtonItem:buttonItem];
     
     tipo = @"classicos";
     [self buscaCarros];
