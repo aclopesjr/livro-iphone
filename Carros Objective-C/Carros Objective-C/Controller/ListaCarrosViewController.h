@@ -12,10 +12,10 @@
     // MARK: Outlets
     IBOutlet UITableView * tabView;
     IBOutlet UIActivityIndicatorView * progress;
+    IBOutlet UISegmentedControl * segmentControl;
     
     // MARK: Variables
     NSArray * carros;
-    NSString * tipo;
 }
 
 @end

@@ -13,6 +13,7 @@
 #import "DetalhesCarroViewController.h"
 #import "CarroTableViewCell.h"
 #import "DownloadImageView.h"
+#import "Prefs.h"
 
 @interface ListaCarrosViewController ()
 
@@ -28,7 +29,9 @@
     UIBarButtonItem * buttonItem = [[UIBarButtonItem alloc] initWithTitle:@"Atualizar" style:(UIBarButtonItemStylePlain) target:self action:@selector(buscaCarros)];
     [[self navigationItem] setRightBarButtonItem:buttonItem];
     
-    tipo = @"classicos";
+    NSNumber * selectedSegmentIndex = (NSNumber *)[Prefs getObjectForKey:@"selectedSegmentIndex"];
+    [segmentControl setSelectedSegmentIndex:[selectedSegmentIndex integerValue]];
+    
     [self buscaCarros];
     
     //[tabView setDelegate:self];
@@ -45,20 +48,29 @@
 - (IBAction)alterarTipo:(UISegmentedControl*)sender {
     switch (sender.selectedSegmentIndex) {
         case 1:
-            tipo = @"esportivos";
+            [Prefs setObjectForKey:@"esportivos" withChave:@"tipo"];
             break;
         case 2:
-            tipo = @"luxo";
+            [Prefs setObjectForKey:@"luxo" withChave:@"tipo"];
             break;
         default:
-            tipo = @"classicos";
+            [Prefs setObjectForKey:@"classicos" withChave:@"tipo"];
             break;
     }
+    
+    [Prefs setObjectForKey:[NSNumber numberWithInteger:[sender selectedSegmentIndex]] withChave:@"selectedSegmentIndex"];
+    
     [self buscaCarros];
 }
 
 - (void)buscaCarros {
     [progress startAnimating];
+    
+    NSString * tipo = (NSString *)[Prefs getObjectForKey:@"tipo"];
+    if (tipo == nil) {
+        tipo = @"classicos";
+    }
+    
     [CarroService getCarrosByType:tipo withCallback:^(NSArray * novoscarros, NSError * error) {
         if (error != nil) {
             [Alerta alerta:[NSString stringWithFormat:@"Erro:"] withViewController:self];

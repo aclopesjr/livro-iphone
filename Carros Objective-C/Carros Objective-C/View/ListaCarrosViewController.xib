@@ -8,6 +8,7 @@
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="ListaCarrosViewController">
             <connections>
                 <outlet property="progress" destination="Oac-LK-chE" id="d8e-E1-TqW"/>
+                <outlet property="segmentControl" destination="Wdp-49-Ayr" id="TkK-6e-Vdx"/>
                 <outlet property="tabView" destination="UsE-Ln-qsn" id="vau-09-Wxz"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>

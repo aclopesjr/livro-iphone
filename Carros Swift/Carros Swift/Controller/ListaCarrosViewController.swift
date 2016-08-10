@@ -12,11 +12,11 @@ class ListaCarrosViewController: UIViewController, UITableViewDataSource, UITabl
 
     // MARK: Variables
     var carros : Array<Carro> = []
-    var tipo = "classicos"
     
     // MARK: Outlet
     @IBOutlet var tabView : UITableView!
     @IBOutlet var progress : UIActivityIndicatorView!
+    @IBOutlet var segmentControl : UISegmentedControl!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -24,6 +24,10 @@ class ListaCarrosViewController: UIViewController, UITableViewDataSource, UITabl
         self.automaticallyAdjustsScrollViewInsets = false
         self.title = "Carros"
         self.navigationItem.rightBarButtonItem = UIBarButtonItem(title: "Atualizar", style: UIBarButtonItemStyle.Plain, target: self, action: #selector(self.buscaCarros))
+        
+        if let tipo = Prefs.getObjectForKey("selectedSegmentIndex") as! NSInteger! {
+            self.segmentControl.selectedSegmentIndex = tipo
+        }
         
         self.buscaCarros()
         
@@ -39,18 +43,25 @@ class ListaCarrosViewController: UIViewController, UITableViewDataSource, UITabl
     @IBAction func alterarTipo(sender: UISegmentedControl) {
         switch sender.selectedSegmentIndex {
         case 1:
-            tipo = "esportivos"
+            Prefs.setObjectForKey("esportivos", chave: "tipo")
         case 2:
-            tipo = "luxo"
+            Prefs.setObjectForKey("luxo", chave: "tipo")
         default:
-            tipo = "classicos"
+            Prefs.setObjectForKey("classicos", chave: "tipo")
         }
+        
+        Prefs.setObjectForKey(sender.selectedSegmentIndex, chave: "selectedSegmentIndex")
         
         self.buscaCarros()
     }
 
     func buscaCarros() {
         self.progress.startAnimating()
+        
+        var tipo = "classicos"
+        if let tipoStoreged = Prefs.getObjectForKey("tipo") as! String! {
+            tipo = tipoStoreged
+        }
         
         CarroService.getCarrosByTipo(tipo, callback: { (carros: Array<Carro>, error: NSError!) -> Void in
             if error != nil {

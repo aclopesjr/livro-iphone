@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		4E33050E1D5B7E7D00297F5A /* Prefs.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E33050D1D5B7E7D00297F5A /* Prefs.swift */; };
 		4E6912D21D5A284100972575 /* SMXMLDocument.m in Sources */ = {isa = PBXBuildFile; fileRef = 4E6912D01D5A284100972575 /* SMXMLDocument.m */; };
 		4E6912D31D5A284100972575 /* XMLCarroParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E6912D11D5A284100972575 /* XMLCarroParser.swift */; };
 		4E6912D51D5A285500972575 /* CarroService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E6912D41D5A285500972575 /* CarroService.swift */; };
@@ -39,6 +40,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		4E33050D1D5B7E7D00297F5A /* Prefs.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Prefs.swift; path = Model/Utils/Prefs.swift; sourceTree = "<group>"; };
 		4E6912CF1D5A284100972575 /* SMXMLDocument.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SMXMLDocument.h; path = Model/Utils/SMXMLDocument.h; sourceTree = "<group>"; };
 		4E6912D01D5A284100972575 /* SMXMLDocument.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SMXMLDocument.m; path = Model/Utils/SMXMLDocument.m; sourceTree = "<group>"; };
 		4E6912D11D5A284100972575 /* XMLCarroParser.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = XMLCarroParser.swift; path = Model/Utils/XMLCarroParser.swift; sourceTree = "<group>"; };
@@ -200,6 +202,7 @@
 				4E6912D11D5A284100972575 /* XMLCarroParser.swift */,
 				4EA5134E1D53CAAC00B220EB /* Alerta.swift */,
 				4E6912D61D5A287E00972575 /* DownloadImageView.swift */,
+				4E33050D1D5B7E7D00297F5A /* Prefs.swift */,
 			);
 			name = Utils;
 			sourceTree = "<group>";
@@ -305,6 +308,7 @@
 				4EA512D81D539E4700B220EB /* SobreViewController.swift in Sources */,
 				4E6912D51D5A285500972575 /* CarroService.swift in Sources */,
 				4EA512D71D539E4700B220EB /* ListaCarrosViewController.swift in Sources */,
+				4E33050E1D5B7E7D00297F5A /* Prefs.swift in Sources */,
 				4E6912D21D5A284100972575 /* SMXMLDocument.m in Sources */,
 				4E75A8861D5502A70032B6B4 /* CarroTableViewCell.swift in Sources */,
 				4E6912D31D5A284100972575 /* XMLCarroParser.swift in Sources */,
