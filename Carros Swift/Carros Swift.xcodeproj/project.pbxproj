@@ -37,6 +37,9 @@
 		4EA512D81D539E4700B220EB /* SobreViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4EA512D61D539E4700B220EB /* SobreViewController.swift */; };
 		4EA5134F1D53CAAC00B220EB /* Alerta.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4EA5134E1D53CAAC00B220EB /* Alerta.swift */; };
 		4EA513531D53CC3200B220EB /* Carro.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4EA513521D53CC3200B220EB /* Carro.swift */; };
+		4EA639321D5CF48500B4DD39 /* libsqlite3.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 4EA639311D5CF48500B4DD39 /* libsqlite3.tbd */; };
+		4EA639361D5CF7C500B4DD39 /* SQLiteHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4EA639331D5CF7C500B4DD39 /* SQLiteHelper.swift */; };
+		4EA639371D5CF7C500B4DD39 /* SQLiteObjc.m in Sources */ = {isa = PBXBuildFile; fileRef = 4EA639351D5CF7C500B4DD39 /* SQLiteObjc.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -73,6 +76,10 @@
 		4EA512D61D539E4700B220EB /* SobreViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SobreViewController.swift; path = Controller/SobreViewController.swift; sourceTree = "<group>"; };
 		4EA5134E1D53CAAC00B220EB /* Alerta.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Alerta.swift; path = Model/Utils/Alerta.swift; sourceTree = "<group>"; };
 		4EA513521D53CC3200B220EB /* Carro.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Carro.swift; path = Model/Domain/Carro.swift; sourceTree = "<group>"; };
+		4EA639311D5CF48500B4DD39 /* libsqlite3.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libsqlite3.tbd; path = usr/lib/libsqlite3.tbd; sourceTree = SDKROOT; };
+		4EA639331D5CF7C500B4DD39 /* SQLiteHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SQLiteHelper.swift; path = Model/Utils/SQLiteHelper.swift; sourceTree = "<group>"; };
+		4EA639341D5CF7C500B4DD39 /* SQLiteObjc.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SQLiteObjc.h; path = Model/Utils/SQLiteObjc.h; sourceTree = "<group>"; };
+		4EA639351D5CF7C500B4DD39 /* SQLiteObjc.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SQLiteObjc.m; path = Model/Utils/SQLiteObjc.m; sourceTree = "<group>"; };
 		4EA8C42B1D59027600B3C485 /* Carros Swift-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Carros Swift-Bridging-Header.h"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -81,6 +88,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4EA639321D5CF48500B4DD39 /* libsqlite3.tbd in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -90,6 +98,7 @@
 		4EA5128D1D539BA600B220EB = {
 			isa = PBXGroup;
 			children = (
+				4EA639311D5CF48500B4DD39 /* libsqlite3.tbd */,
 				4EA512981D539BA600B220EB /* Carros Swift */,
 				4EA512971D539BA600B220EB /* Products */,
 			);
@@ -197,6 +206,9 @@
 		4EA5134D1D53CA8300B220EB /* Utils */ = {
 			isa = PBXGroup;
 			children = (
+				4EA639331D5CF7C500B4DD39 /* SQLiteHelper.swift */,
+				4EA639341D5CF7C500B4DD39 /* SQLiteObjc.h */,
+				4EA639351D5CF7C500B4DD39 /* SQLiteObjc.m */,
 				4E6912CF1D5A284100972575 /* SMXMLDocument.h */,
 				4E6912D01D5A284100972575 /* SMXMLDocument.m */,
 				4E6912D11D5A284100972575 /* XMLCarroParser.swift */,
@@ -305,11 +317,13 @@
 				4EA5134F1D53CAAC00B220EB /* Alerta.swift in Sources */,
 				4E75A8791D54D5910032B6B4 /* DetalhesCarroViewController.swift in Sources */,
 				4E6912D71D5A287E00972575 /* DownloadImageView.swift in Sources */,
+				4EA639371D5CF7C500B4DD39 /* SQLiteObjc.m in Sources */,
 				4EA512D81D539E4700B220EB /* SobreViewController.swift in Sources */,
 				4E6912D51D5A285500972575 /* CarroService.swift in Sources */,
 				4EA512D71D539E4700B220EB /* ListaCarrosViewController.swift in Sources */,
 				4E33050E1D5B7E7D00297F5A /* Prefs.swift in Sources */,
 				4E6912D21D5A284100972575 /* SMXMLDocument.m in Sources */,
+				4EA639361D5CF7C500B4DD39 /* SQLiteHelper.swift in Sources */,
 				4E75A8861D5502A70032B6B4 /* CarroTableViewCell.swift in Sources */,
 				4E6912D31D5A284100972575 /* XMLCarroParser.swift in Sources */,
 				4EA5129A1D539BA700B220EB /* AppDelegate.swift in Sources */,

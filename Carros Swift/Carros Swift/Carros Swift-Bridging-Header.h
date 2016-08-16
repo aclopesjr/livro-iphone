@@ -3,3 +3,5 @@
 //
 
 #import "SMXMLDocument.h"
+#import "sqlite3.h"
+#import "SQLiteObjc.h"
