@@ -8,6 +8,7 @@
 
 #import "CarroService.h"
 #import "Carro.h"
+#import "CarroDB.h"
 #import "XMLCarroParser.h"
 #import "SMXMLDocument.h"
 
@@ -38,6 +39,17 @@
 }
 
 + (void) getCarrosByType:(NSString *)tipo withCallback:(void(^)(NSArray*, NSError*))callback {
+    
+    
+    CarroDB * db = [[CarroDB alloc] init];
+    NSArray<Carro *> * carros = [db getCarrosByType:tipo];
+    [db close];
+    
+    if (carros.count > 0) {
+        callback(carros, nil);
+        return;
+    }
+    
     NSURLSession * http = [NSURLSession sharedSession];
     NSURL * url = [NSURL URLWithString:[NSString stringWithFormat:@"http://www.livroiphone.com.br/carros/carros_%@.json", tipo]];
     
@@ -46,6 +58,17 @@
             callback([[NSArray alloc] init], error);
         } else {
             NSArray * carros = [CarroService parserJSON:data];
+            
+            if (carros.count > 0) {
+                CarroDB *db = [[CarroDB alloc] init];
+                [db deleteCarroByType:tipo];
+                
+                for (Carro *carro in carros) {
+                    [carro setTipo:tipo];
+                    [db save:carro];
+                }
+            }
+            
             dispatch_sync(dispatch_get_main_queue(), ^{
                 callback(carros, nil);
             });

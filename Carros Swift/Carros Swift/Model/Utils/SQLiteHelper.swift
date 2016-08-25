@@ -8,10 +8,10 @@
 
 import Foundation
 
-class SQLiteHelper :NSObject {
+class SQLiteHelper : NSObject {
     
     // sqlite3 *db;
-    var db: COpaquePointer = nil;
+    var db : COpaquePointer = nil;
     
     // Construtor
     init(database: String) {
@@ -21,9 +21,9 @@ class SQLiteHelper :NSObject {
     }
     
     // Caminho do banco de dados
-    func getFilePath(nome: String) -> String {
+    func getFilePath(database: String) -> String {
         // Caminho com o arquivo
-        let path = NSHomeDirectory() + "/Documents/" + nome
+        let path = NSHomeDirectory() + "/Documents/" + database
         print("Database: \(path)")
         return path
     }
@@ -86,7 +86,7 @@ class SQLiteHelper :NSObject {
     }
     
     // Faz o bind dos parametros (?,?,?) de um SQL
-    func bindParams(stmt:COpaquePointer, params: Array<AnyObject>!) {
+    func bindParams(stmt: COpaquePointer, params: Array<AnyObject>!) {
         if(params != nil) {
             let size = params.count
             //            println("Bind \(size) values")
@@ -111,12 +111,12 @@ class SQLiteHelper :NSObject {
     }
     
     // Executa o SQL e retorna o statement
-    func query(sql:String) -> COpaquePointer {
+    func query(sql: String) -> COpaquePointer {
         return query(sql, params: nil)
     }
     
     // Executa o SQL e retorna o statement
-    func query(sql:String, params: Array<AnyObject>!) -> COpaquePointer {
+    func query(sql: String, params: Array<AnyObject>!) -> COpaquePointer {
         var stmt:COpaquePointer = nil
         
         let cSql = StringUtils.toCString(sql)
@@ -141,7 +141,7 @@ class SQLiteHelper :NSObject {
     }
     
     // Retorna true se existe a próxima linha da consulta
-    func nextRow(stmt:COpaquePointer) -> Bool {
+    func nextRow(stmt: COpaquePointer) -> Bool {
         let result = sqlite3_step(stmt)
         let next: Bool = result == SQLITE_ROW
         return next
@@ -152,7 +152,7 @@ class SQLiteHelper :NSObject {
         sqlite3_close(self.db)
     }
     
-    func closeStatement(stmt:COpaquePointer) {
+    func closeStatement(stmt: COpaquePointer) {
         // Fecha o statement
         sqlite3_finalize(stmt)
     }
@@ -171,25 +171,25 @@ class SQLiteHelper :NSObject {
     }
     
     // Lê uma coluna do tipo Int
-    func getInt(stmt:COpaquePointer, index:CInt) -> Int {
+    func getInt(stmt: COpaquePointer, index:CInt) -> Int {
         let val = sqlite3_column_int(stmt, index)
         return Int(val)
     }
     
     // Lê uma coluna do tipo Double
-    func getDouble(stmt:COpaquePointer, index:CInt) -> Double {
+    func getDouble(stmt: COpaquePointer, index:CInt) -> Double {
         let val = sqlite3_column_double(stmt, index)
         return Double(val)
     }
     
     // Lê uma coluna do tipo Float
-    func getFloat(stmt:COpaquePointer, index:CInt) -> Float {
+    func getFloat(stmt: COpaquePointer, index:CInt) -> Float {
         let val = sqlite3_column_double(stmt, index)
         return Float(val)
     }
     
     // Lê uma coluna do tipo String
-    func getString(stmt:COpaquePointer, index:CInt) -> String {
+    func getString(stmt: COpaquePointer, index:CInt) -> String {
         
         let cString  = SQLiteObjc.getText(stmt, idx: index)
         
@@ -199,7 +199,7 @@ class SQLiteHelper :NSObject {
     }
     
     // Converte Int (swift) para CInt(C)
-    func toCInt(swiftInt : Int) -> CInt {
+    func toCInt(swiftInt: Int) -> CInt {
         let number : NSNumber = swiftInt as NSNumber
         let pos: CInt = number.intValue
         return pos

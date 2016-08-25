@@ -13,6 +13,7 @@
     
 }
 
+@property (assign) int identification;
 @property (nonatomic, strong) NSString * nome;
 @property (nonatomic, strong) NSString * desc;
 @property (nonatomic, strong) NSString * url_foto;
@@ -20,5 +21,6 @@
 @property (nonatomic, strong) NSString * url_video;
 @property (nonatomic, strong) NSString * latitude;
 @property (nonatomic, strong) NSString * longitude;
+@property (nonatomic, strong) NSString * tipo;
 
 @end

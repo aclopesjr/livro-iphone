@@ -16,6 +16,8 @@
 		4E75A8791D54D5910032B6B4 /* DetalhesCarroViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E75A8781D54D5910032B6B4 /* DetalhesCarroViewController.swift */; };
 		4E75A8841D55028A0032B6B4 /* CarroTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4E75A8821D55028A0032B6B4 /* CarroTableViewCell.xib */; };
 		4E75A8861D5502A70032B6B4 /* CarroTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E75A8851D5502A70032B6B4 /* CarroTableViewCell.swift */; };
+		4E8AA85D1D6333F300F2C842 /* StringUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E8AA85C1D6333F300F2C842 /* StringUtils.swift */; };
+		4E8AA85F1D63929E00F2C842 /* CarroDB.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E8AA85E1D63929E00F2C842 /* CarroDB.swift */; };
 		4EA5129A1D539BA700B220EB /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4EA512991D539BA700B220EB /* AppDelegate.swift */; };
 		4EA512A41D539BA700B220EB /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4EA512A21D539BA700B220EB /* LaunchScreen.storyboard */; };
 		4EA512C01D539C2300B220EB /* ferrari_ff.png in Resources */ = {isa = PBXBuildFile; fileRef = 4EA512B11D539C2300B220EB /* ferrari_ff.png */; };
@@ -53,6 +55,8 @@
 		4E75A8781D54D5910032B6B4 /* DetalhesCarroViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = DetalhesCarroViewController.swift; path = Controller/DetalhesCarroViewController.swift; sourceTree = "<group>"; };
 		4E75A8821D55028A0032B6B4 /* CarroTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = CarroTableViewCell.xib; path = View/CarroTableViewCell.xib; sourceTree = "<group>"; };
 		4E75A8851D5502A70032B6B4 /* CarroTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = CarroTableViewCell.swift; path = Controller/CarroTableViewCell.swift; sourceTree = "<group>"; };
+		4E8AA85C1D6333F300F2C842 /* StringUtils.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = StringUtils.swift; path = Model/Utils/StringUtils.swift; sourceTree = "<group>"; };
+		4E8AA85E1D63929E00F2C842 /* CarroDB.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = CarroDB.swift; path = Model/Domain/CarroDB.swift; sourceTree = "<group>"; };
 		4EA512961D539BA600B220EB /* Carros Swift.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Carros Swift.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		4EA512991D539BA700B220EB /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		4EA512A31D539BA700B220EB /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -206,6 +210,7 @@
 		4EA5134D1D53CA8300B220EB /* Utils */ = {
 			isa = PBXGroup;
 			children = (
+				4E8AA85C1D6333F300F2C842 /* StringUtils.swift */,
 				4EA639331D5CF7C500B4DD39 /* SQLiteHelper.swift */,
 				4EA639341D5CF7C500B4DD39 /* SQLiteObjc.h */,
 				4EA639351D5CF7C500B4DD39 /* SQLiteObjc.m */,
@@ -222,6 +227,7 @@
 		4EA513501D53CC0000B220EB /* Domain */ = {
 			isa = PBXGroup;
 			children = (
+				4E8AA85E1D63929E00F2C842 /* CarroDB.swift */,
 				4E6912D41D5A285500972575 /* CarroService.swift */,
 				4EA513521D53CC3200B220EB /* Carro.swift */,
 			);
@@ -318,9 +324,11 @@
 				4E75A8791D54D5910032B6B4 /* DetalhesCarroViewController.swift in Sources */,
 				4E6912D71D5A287E00972575 /* DownloadImageView.swift in Sources */,
 				4EA639371D5CF7C500B4DD39 /* SQLiteObjc.m in Sources */,
+				4E8AA85D1D6333F300F2C842 /* StringUtils.swift in Sources */,
 				4EA512D81D539E4700B220EB /* SobreViewController.swift in Sources */,
 				4E6912D51D5A285500972575 /* CarroService.swift in Sources */,
 				4EA512D71D539E4700B220EB /* ListaCarrosViewController.swift in Sources */,
+				4E8AA85F1D63929E00F2C842 /* CarroDB.swift in Sources */,
 				4E33050E1D5B7E7D00297F5A /* Prefs.swift in Sources */,
 				4E6912D21D5A284100972575 /* SMXMLDocument.m in Sources */,
 				4EA639361D5CF7C500B4DD39 /* SQLiteHelper.swift in Sources */,

@@ -10,6 +10,6 @@
 
 @implementation Carro
 
-@synthesize nome, desc, url_foto, url_info, url_video, latitude, longitude;
+@synthesize identification, nome, desc, url_foto, url_info, url_video, latitude, longitude, tipo;
 
 @end

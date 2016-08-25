@@ -49,6 +49,16 @@ class CarroService {
     }
     
     class func getCarrosByTipo(tipo: String, callback: (carros:Array<Carro>, error:NSError!) -> Void) {
+        
+        var db = CarroDB()
+        let carros = db.getCarrosByType(tipo)
+        db.close()
+        
+        if (carros.count > 0) {
+            callback(carros: carros, error: nil)
+            return
+        }
+        
         let http = NSURLSession.sharedSession()
         let url = NSURL(string: "http://www.livroiphone.com.br/carros/carros_" + tipo + ".json")!
         let task = http.dataTaskWithURL(url, completionHandler: {
@@ -57,6 +67,17 @@ class CarroService {
                 callback(carros:[], error: error!)
             } else {
                 let carros = CarroService.parserJSON(data!)
+                
+                if carros.count > 0 {
+                    db = CarroDB()
+                    db.deleteCarrosByTipo(tipo)
+                    for carro in carros {
+                        carro.tipo = tipo
+                        db.save(carro)
+                    }
+                    db.close()
+                }
+                
                 dispatch_sync(dispatch_get_main_queue(), {
                     callback(carros: carros, error: nil)
                 })
