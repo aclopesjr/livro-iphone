@@ -23,13 +23,14 @@ class ListaCarrosViewController: UIViewController, UITableViewDataSource, UITabl
 
         self.automaticallyAdjustsScrollViewInsets = false
         self.title = "Carros"
-        self.navigationItem.rightBarButtonItem = UIBarButtonItem(title: "Atualizar", style: UIBarButtonItemStyle.Plain, target: self, action: #selector(self.buscaCarros))
+        
+        self.navigationItem.rightBarButtonItem = UIBarButtonItem(title: "Atualizar", style: UIBarButtonItemStyle.Plain, target: self, action: #selector(self.buscaCarros(_:)))
         
         if let tipo = Prefs.getObjectForKey("selectedSegmentIndex") as! NSInteger! {
             self.segmentControl.selectedSegmentIndex = tipo
         }
         
-        self.buscaCarros()
+        self.buscaCarros(true)
         
         //self.tabView.registerClass(UITableViewCell.self, forCellReuseIdentifier: "cell")
         self.tabView.registerNib(UINib(nibName: "CarroTableViewCell", bundle: nil), forCellReuseIdentifier: "cell")
@@ -52,10 +53,10 @@ class ListaCarrosViewController: UIViewController, UITableViewDataSource, UITabl
         
         Prefs.setObjectForKey(sender.selectedSegmentIndex, chave: "selectedSegmentIndex")
         
-        self.buscaCarros()
+        self.buscaCarros(true)
     }
 
-    func buscaCarros() {
+    func buscaCarros(withCache:Bool) {
         self.progress.startAnimating()
         
         var tipo = "classicos"
@@ -63,7 +64,7 @@ class ListaCarrosViewController: UIViewController, UITableViewDataSource, UITabl
             tipo = tipoStoreged
         }
         
-        CarroService.getCarrosByTipo(tipo, callback: { (carros: Array<Carro>, error: NSError!) -> Void in
+        CarroService.getCarrosByTipo(tipo, withCache: withCache, andCallback: { (carros: Array<Carro>, error: NSError!) -> Void in
             if error != nil {
                 Alerta.alerta("Erro: " + error.localizedDescription, viewController: self)
             } else {

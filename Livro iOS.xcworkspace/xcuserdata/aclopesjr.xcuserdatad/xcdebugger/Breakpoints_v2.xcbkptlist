@@ -49,70 +49,6 @@
             endingLineNumber = "74"
             landmarkName = "-buscaCarros"
             landmarkType = "5">
-            <Locations>
-               <Location
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "-[ListaCarrosViewController buscaCarros]"
-                  moduleName = "Carros Objective-C"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/aclopesjr/Documents/Projetos/livro-iphone/Carros%20Objective-C/Carros%20Objective-C/Controller/ListaCarrosViewController.m"
-                  timestampString = "493823736.589228"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "74"
-                  endingLineNumber = "74"
-                  offsetFromSymbolStart = "161">
-               </Location>
-               <Location
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "__40-[ListaCarrosViewController buscaCarros]_block_invoke"
-                  moduleName = "Carros Objective-C"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/aclopesjr/Documents/Projetos/livro-iphone/Carros%20Objective-C/Carros%20Objective-C/Controller/ListaCarrosViewController.m"
-                  timestampString = "493823736.589607"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "75"
-                  endingLineNumber = "75"
-                  offsetFromSymbolStart = "75">
-               </Location>
-            </Locations>
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "Carros Swift/Carros Swift/Model/Domain/CarroService.swift"
-            timestampString = "493040743.723342"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "53"
-            endingLineNumber = "53"
-            landmarkName = "getCarrosByTipo(_:callback:)"
-            landmarkType = "5">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "Carros Swift/Carros Swift/Model/Domain/CarroService.swift"
-            timestampString = "493040774.867322"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "73"
-            endingLineNumber = "73"
-            landmarkName = "getCarrosByTipo(_:callback:)"
-            landmarkType = "5">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -160,6 +96,22 @@
             startingLineNumber = "33"
             endingLineNumber = "33"
             landmarkName = "-open:"
+            landmarkType = "5">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Carros Swift/Carros Swift/Controller/ListaCarrosViewController.swift"
+            timestampString = "493840275.3553"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "62"
+            endingLineNumber = "62"
+            landmarkName = "buscaCarros(_:)"
             landmarkType = "5">
          </BreakpointContent>
       </BreakpointProxy>

@@ -48,14 +48,14 @@ class CarroService {
         return []
     }
     
-    class func getCarrosByTipo(tipo: String, callback: (carros:Array<Carro>, error:NSError!) -> Void) {
+    class func getCarrosByTipo(tipo: String, withCache: Bool, andCallback: (carros:Array<Carro>, error:NSError!) -> Void) {
         
         var db = CarroDB()
-        let carros = db.getCarrosByType(tipo)
+        let carros = withCache ? db.getCarrosByType(tipo) : []
         db.close()
         
         if (carros.count > 0) {
-            callback(carros: carros, error: nil)
+            andCallback(carros: carros, error: nil)
             return
         }
         
@@ -64,7 +64,7 @@ class CarroService {
         let task = http.dataTaskWithURL(url, completionHandler: {
             (data: NSData?, response: NSURLResponse?, error: NSError?) -> Void in
             if error != nil {
-                callback(carros:[], error: error!)
+                andCallback(carros:[], error: error!)
             } else {
                 let carros = CarroService.parserJSON(data!)
                 
@@ -79,7 +79,7 @@ class CarroService {
                 }
                 
                 dispatch_sync(dispatch_get_main_queue(), {
-                    callback(carros: carros, error: nil)
+                    andCallback(carros: carros, error: nil)
                 })
             }
         })
