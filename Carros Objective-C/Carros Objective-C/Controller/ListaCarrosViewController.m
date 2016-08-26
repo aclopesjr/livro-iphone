@@ -26,13 +26,15 @@
     
     [self setTitle:@"Carros"];
     [self setAutomaticallyAdjustsScrollViewInsets:false];
-    UIBarButtonItem * buttonItem = [[UIBarButtonItem alloc] initWithTitle:@"Atualizar" style:(UIBarButtonItemStylePlain) target:self action:@selector(buscaCarros)];
+    
+//    UIBarButtonItem * buttonItem = [[UIBarButtonItem alloc] initWithTitle:@"Atualizar" style:(UIBarButtonItemStylePlain) target:self action:@selector(buscaCarros:)];
+    UIBarButtonItem * buttonItem = [[UIBarButtonItem alloc] initWithTitle:@"Atualizar" style:(UIBarButtonItemStylePlain) target:self action:@selector(buscaCarros:)];
     [[self navigationItem] setRightBarButtonItem:buttonItem];
     
     NSNumber * selectedSegmentIndex = (NSNumber *)[Prefs getObjectForKey:@"selectedSegmentIndex"];
     [segmentControl setSelectedSegmentIndex:[selectedSegmentIndex integerValue]];
     
-    [self buscaCarros];
+    [self buscaCarros:true];
     
     //[tabView setDelegate:self];
     
@@ -60,18 +62,18 @@
     
     [Prefs setObjectForKey:[NSNumber numberWithInteger:[sender selectedSegmentIndex]] withChave:@"selectedSegmentIndex"];
     
-    [self buscaCarros];
+    [self buscaCarros:true];
 }
 
-- (void)buscaCarros {
+- (void)buscaCarros:(Boolean)cache {
     [progress startAnimating];
     
     NSString * tipo = (NSString *)[Prefs getObjectForKey:@"tipo"];
     if (tipo == nil) {
         tipo = @"classicos";
     }
-    
-    [CarroService getCarrosByType:tipo withCallback:^(NSArray * novoscarros, NSError * error) {
+     
+    [CarroService getCarrosByType:tipo withCache:cache andCallback:^(NSArray * novoscarros, NSError * error) {
         if (error != nil) {
             [Alerta alerta:[NSString stringWithFormat:@"Erro:"] withViewController:self];
         } else {

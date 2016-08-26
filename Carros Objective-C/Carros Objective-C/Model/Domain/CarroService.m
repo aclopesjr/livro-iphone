@@ -38,11 +38,11 @@
     return [CarroService parserJSON:data];
 }
 
-+ (void) getCarrosByType:(NSString *)tipo withCallback:(void(^)(NSArray*, NSError*))callback {
++ (void) getCarrosByType:(NSString *)tipo withCache:(Boolean)cache andCallback:(void(^)(NSArray*, NSError*))callback {
     
     
     CarroDB * db = [[CarroDB alloc] init];
-    NSArray<Carro *> * carros = [db getCarrosByType:tipo];
+    NSArray<Carro *> * carros = cache ? [db getCarrosByType:tipo] : [NSArray<Carro *> alloc];
     [db close];
     
     if (carros.count > 0) {
