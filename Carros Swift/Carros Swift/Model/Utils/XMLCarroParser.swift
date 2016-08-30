@@ -17,7 +17,7 @@ class XMLCarroParser: NSObject, NSXMLParserDelegate {
     func parser(parser: NSXMLParser, didStartElement elementName: String, namespaceURI: String?, qualifiedName qName: String?, attributes attributeDict: [String : String]) {
         if "carro" == elementName {
             // tag <carro> encontrada
-            self.carro = Carro()
+            self.carro = CarroDBCoreData.newInstance()
         }
     }
     

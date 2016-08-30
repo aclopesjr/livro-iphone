@@ -22,7 +22,7 @@ class DetalhesCarroViewController: UIViewController {
 
         if let selectedCarro = carro {
             self.title = selectedCarro.nome
-            self.image.setUrl(selectedCarro.url_foto)
+            self.image.setUrl(selectedCarro.url_foto!)
             self.descricao.text = selectedCarro.desc
         }
     }

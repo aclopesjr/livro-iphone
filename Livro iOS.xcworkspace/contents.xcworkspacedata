@@ -3,7 +3,7 @@
    version = "1.0">
    <Group
       location = "container:"
-      name = "&#9;">
+      name = "Objective C">
       <FileRef
          location = "group:HelloAcelerometro/HelloAcelerometro.xcodeproj">
       </FileRef>

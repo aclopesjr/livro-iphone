@@ -16,8 +16,11 @@
 		4E75A8791D54D5910032B6B4 /* DetalhesCarroViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E75A8781D54D5910032B6B4 /* DetalhesCarroViewController.swift */; };
 		4E75A8841D55028A0032B6B4 /* CarroTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4E75A8821D55028A0032B6B4 /* CarroTableViewCell.xib */; };
 		4E75A8861D5502A70032B6B4 /* CarroTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E75A8851D5502A70032B6B4 /* CarroTableViewCell.swift */; };
+		4E7B0D611D75AC3000181646 /* CarrosModel.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 4E7B0D5F1D75AC3000181646 /* CarrosModel.xcdatamodeld */; };
+		4E7B0D641D75AE7A00181646 /* Carro+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E7B0D621D75AE7A00181646 /* Carro+CoreDataProperties.swift */; };
+		4E7B0D651D75AE7A00181646 /* Carro.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E7B0D631D75AE7A00181646 /* Carro.swift */; };
+		4E7B0D881D75B21A00181646 /* CarroDBCoreData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E7B0D871D75B21A00181646 /* CarroDBCoreData.swift */; };
 		4E8AA85D1D6333F300F2C842 /* StringUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E8AA85C1D6333F300F2C842 /* StringUtils.swift */; };
-		4E8AA85F1D63929E00F2C842 /* CarroDB.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E8AA85E1D63929E00F2C842 /* CarroDB.swift */; };
 		4EA5129A1D539BA700B220EB /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4EA512991D539BA700B220EB /* AppDelegate.swift */; };
 		4EA512A41D539BA700B220EB /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4EA512A21D539BA700B220EB /* LaunchScreen.storyboard */; };
 		4EA512C01D539C2300B220EB /* ferrari_ff.png in Resources */ = {isa = PBXBuildFile; fileRef = 4EA512B11D539C2300B220EB /* ferrari_ff.png */; };
@@ -38,10 +41,10 @@
 		4EA512D71D539E4700B220EB /* ListaCarrosViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4EA512D51D539E4700B220EB /* ListaCarrosViewController.swift */; };
 		4EA512D81D539E4700B220EB /* SobreViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4EA512D61D539E4700B220EB /* SobreViewController.swift */; };
 		4EA5134F1D53CAAC00B220EB /* Alerta.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4EA5134E1D53CAAC00B220EB /* Alerta.swift */; };
-		4EA513531D53CC3200B220EB /* Carro.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4EA513521D53CC3200B220EB /* Carro.swift */; };
 		4EA639321D5CF48500B4DD39 /* libsqlite3.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 4EA639311D5CF48500B4DD39 /* libsqlite3.tbd */; };
 		4EA639361D5CF7C500B4DD39 /* SQLiteHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4EA639331D5CF7C500B4DD39 /* SQLiteHelper.swift */; };
 		4EA639371D5CF7C500B4DD39 /* SQLiteObjc.m in Sources */ = {isa = PBXBuildFile; fileRef = 4EA639351D5CF7C500B4DD39 /* SQLiteObjc.m */; };
+		4EC5DFB31D70EAA100624CF2 /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4EC5DFB21D70EAA100624CF2 /* CoreData.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -55,8 +58,11 @@
 		4E75A8781D54D5910032B6B4 /* DetalhesCarroViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = DetalhesCarroViewController.swift; path = Controller/DetalhesCarroViewController.swift; sourceTree = "<group>"; };
 		4E75A8821D55028A0032B6B4 /* CarroTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = CarroTableViewCell.xib; path = View/CarroTableViewCell.xib; sourceTree = "<group>"; };
 		4E75A8851D5502A70032B6B4 /* CarroTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = CarroTableViewCell.swift; path = Controller/CarroTableViewCell.swift; sourceTree = "<group>"; };
+		4E7B0D601D75AC3000181646 /* CarrosModel.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = CarrosModel.xcdatamodel; sourceTree = "<group>"; };
+		4E7B0D621D75AE7A00181646 /* Carro+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Carro+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		4E7B0D631D75AE7A00181646 /* Carro.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Carro.swift; sourceTree = "<group>"; };
+		4E7B0D871D75B21A00181646 /* CarroDBCoreData.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CarroDBCoreData.swift; sourceTree = "<group>"; };
 		4E8AA85C1D6333F300F2C842 /* StringUtils.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = StringUtils.swift; path = Model/Utils/StringUtils.swift; sourceTree = "<group>"; };
-		4E8AA85E1D63929E00F2C842 /* CarroDB.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = CarroDB.swift; path = Model/Domain/CarroDB.swift; sourceTree = "<group>"; };
 		4EA512961D539BA600B220EB /* Carros Swift.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Carros Swift.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		4EA512991D539BA700B220EB /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		4EA512A31D539BA700B220EB /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -79,12 +85,12 @@
 		4EA512D51D539E4700B220EB /* ListaCarrosViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ListaCarrosViewController.swift; path = Controller/ListaCarrosViewController.swift; sourceTree = "<group>"; };
 		4EA512D61D539E4700B220EB /* SobreViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SobreViewController.swift; path = Controller/SobreViewController.swift; sourceTree = "<group>"; };
 		4EA5134E1D53CAAC00B220EB /* Alerta.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Alerta.swift; path = Model/Utils/Alerta.swift; sourceTree = "<group>"; };
-		4EA513521D53CC3200B220EB /* Carro.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Carro.swift; path = Model/Domain/Carro.swift; sourceTree = "<group>"; };
 		4EA639311D5CF48500B4DD39 /* libsqlite3.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libsqlite3.tbd; path = usr/lib/libsqlite3.tbd; sourceTree = SDKROOT; };
 		4EA639331D5CF7C500B4DD39 /* SQLiteHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SQLiteHelper.swift; path = Model/Utils/SQLiteHelper.swift; sourceTree = "<group>"; };
 		4EA639341D5CF7C500B4DD39 /* SQLiteObjc.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SQLiteObjc.h; path = Model/Utils/SQLiteObjc.h; sourceTree = "<group>"; };
 		4EA639351D5CF7C500B4DD39 /* SQLiteObjc.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SQLiteObjc.m; path = Model/Utils/SQLiteObjc.m; sourceTree = "<group>"; };
 		4EA8C42B1D59027600B3C485 /* Carros Swift-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Carros Swift-Bridging-Header.h"; sourceTree = "<group>"; };
+		4EC5DFB21D70EAA100624CF2 /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -92,6 +98,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4EC5DFB31D70EAA100624CF2 /* CoreData.framework in Frameworks */,
 				4EA639321D5CF48500B4DD39 /* libsqlite3.tbd in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -102,6 +109,7 @@
 		4EA5128D1D539BA600B220EB = {
 			isa = PBXGroup;
 			children = (
+				4EC5DFB21D70EAA100624CF2 /* CoreData.framework */,
 				4EA639311D5CF48500B4DD39 /* libsqlite3.tbd */,
 				4EA512981D539BA600B220EB /* Carros Swift */,
 				4EA512971D539BA600B220EB /* Products */,
@@ -227,11 +235,21 @@
 		4EA513501D53CC0000B220EB /* Domain */ = {
 			isa = PBXGroup;
 			children = (
-				4E8AA85E1D63929E00F2C842 /* CarroDB.swift */,
 				4E6912D41D5A285500972575 /* CarroService.swift */,
-				4EA513521D53CC3200B220EB /* Carro.swift */,
+				4EC5DFB41D70EB1500624CF2 /* CoreData */,
 			);
 			name = Domain;
+			sourceTree = "<group>";
+		};
+		4EC5DFB41D70EB1500624CF2 /* CoreData */ = {
+			isa = PBXGroup;
+			children = (
+				4E7B0D5F1D75AC3000181646 /* CarrosModel.xcdatamodeld */,
+				4E7B0D621D75AE7A00181646 /* Carro+CoreDataProperties.swift */,
+				4E7B0D631D75AE7A00181646 /* Carro.swift */,
+				4E7B0D871D75B21A00181646 /* CarroDBCoreData.swift */,
+			);
+			name = CoreData;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -321,21 +339,23 @@
 			buildActionMask = 2147483647;
 			files = (
 				4EA5134F1D53CAAC00B220EB /* Alerta.swift in Sources */,
+				4E7B0D651D75AE7A00181646 /* Carro.swift in Sources */,
 				4E75A8791D54D5910032B6B4 /* DetalhesCarroViewController.swift in Sources */,
+				4E7B0D641D75AE7A00181646 /* Carro+CoreDataProperties.swift in Sources */,
 				4E6912D71D5A287E00972575 /* DownloadImageView.swift in Sources */,
 				4EA639371D5CF7C500B4DD39 /* SQLiteObjc.m in Sources */,
 				4E8AA85D1D6333F300F2C842 /* StringUtils.swift in Sources */,
 				4EA512D81D539E4700B220EB /* SobreViewController.swift in Sources */,
 				4E6912D51D5A285500972575 /* CarroService.swift in Sources */,
 				4EA512D71D539E4700B220EB /* ListaCarrosViewController.swift in Sources */,
-				4E8AA85F1D63929E00F2C842 /* CarroDB.swift in Sources */,
 				4E33050E1D5B7E7D00297F5A /* Prefs.swift in Sources */,
 				4E6912D21D5A284100972575 /* SMXMLDocument.m in Sources */,
+				4E7B0D611D75AC3000181646 /* CarrosModel.xcdatamodeld in Sources */,
 				4EA639361D5CF7C500B4DD39 /* SQLiteHelper.swift in Sources */,
 				4E75A8861D5502A70032B6B4 /* CarroTableViewCell.swift in Sources */,
 				4E6912D31D5A284100972575 /* XMLCarroParser.swift in Sources */,
 				4EA5129A1D539BA700B220EB /* AppDelegate.swift in Sources */,
-				4EA513531D53CC3200B220EB /* Carro.swift in Sources */,
+				4E7B0D881D75B21A00181646 /* CarroDBCoreData.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -489,6 +509,19 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		4E7B0D5F1D75AC3000181646 /* CarrosModel.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				4E7B0D601D75AC3000181646 /* CarrosModel.xcdatamodel */,
+			);
+			currentVersion = 4E7B0D601D75AC3000181646 /* CarrosModel.xcdatamodel */;
+			path = CarrosModel.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
 	};
 	rootObject = 4EA5128E1D539BA600B220EB /* Project object */;
 }

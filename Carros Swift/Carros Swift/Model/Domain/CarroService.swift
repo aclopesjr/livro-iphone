@@ -9,10 +9,11 @@
 import UIKit
 
 class CarroService {
+    
     class func getCarros() -> Array<Carro> {
         var carros : Array<Carro> = []
         for index in 1...10 {
-            let newCarro = Carro()
+            let newCarro = CarroDBCoreData.newInstance()
             newCarro.nome = "Ferrari " + String(index)
             newCarro.desc = "Desc Ferrari " + String(index)
             newCarro.url_foto = "ferrari_ff.png"
@@ -50,7 +51,7 @@ class CarroService {
     
     class func getCarrosByTipo(tipo: String, withCache: Bool, andCallback: (carros:Array<Carro>, error:NSError!) -> Void) {
         
-        var db = CarroDB()
+        var db = CarroDBCoreData()
         let carros = withCache ? db.getCarrosByType(tipo) : []
         db.close()
         
@@ -69,7 +70,7 @@ class CarroService {
                 let carros = CarroService.parserJSON(data!)
                 
                 if carros.count > 0 {
-                    db = CarroDB()
+                    db = CarroDBCoreData()
                     db.deleteCarrosByTipo(tipo)
                     for carro in carros {
                         carro.tipo = tipo
@@ -103,7 +104,7 @@ class CarroService {
         
         for x:AnyObject in tagCarros {
             let xml = x as! SMXMLElement
-            let carro = Carro()
+            let carro = CarroDBCoreData.newInstance()
             carro.nome = xml.valueWithPath("nome")
             carro.desc = xml.valueWithPath("desc")
             carro.url_info = xml.valueWithPath("url_info")
@@ -134,14 +135,14 @@ class CarroService {
             
             for obj:AnyObject in arrayCarros {
                 let dict = obj as! NSDictionary
-                let carro = Carro()
-                carro.nome = dict["nome"] as! String
-                carro.desc = dict["desc"] as! String
-                carro.url_info = dict["url_info"] as! String
-                carro.url_foto = dict["url_foto"] as! String
-                carro.url_video = dict["url_video"] as! String
-                carro.longitude = dict["longitude"] as! String
-                carro.latitude = dict["latitude"] as! String
+                let carro = CarroDBCoreData.newInstance()
+                carro.nome = dict["nome"] as? String
+                carro.desc = dict["desc"] as? String
+                carro.url_info = dict["url_info"] as? String
+                carro.url_foto = dict["url_foto"] as? String
+                carro.url_video = dict["url_video"] as? String
+                carro.longitude = dict["longitude"] as? String
+                carro.latitude = dict["latitude"] as? String
                 carros.append(carro)
             }
         }
