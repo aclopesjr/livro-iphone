@@ -2,7 +2,7 @@
 //  Carro.m
 //  Carros Objective-C
 //
-//  Created by Antonio Lopes on 8/5/16.
+//  Created by Antonio Lopes on 8/30/16.
 //  Copyright © 2016 Antonio Lopes. All rights reserved.
 //
 
@@ -10,6 +10,6 @@
 
 @implementation Carro
 
-@synthesize identification, nome, desc, url_foto, url_info, url_video, latitude, longitude, tipo;
+// Insert code here to add functionality to your managed object subclass
 
 @end

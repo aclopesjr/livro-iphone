@@ -8,7 +8,7 @@
 
 #import "CarroService.h"
 #import "Carro.h"
-#import "CarroDB.h"
+#import "CarroDBCoreData.h"
 #import "XMLCarroParser.h"
 #import "SMXMLDocument.h"
 
@@ -18,7 +18,7 @@
     NSMutableArray * carros = [[NSMutableArray alloc] init];
     
     for (NSInteger index = 0; index < 10; index++) {
-        Carro * newCarro = [Carro alloc];
+        Carro * newCarro = [CarroDBCoreData newInstance];
         newCarro.nome = [NSString stringWithFormat:@"Ferrari %li", (long)index];
         newCarro.desc = [NSString stringWithFormat:@"Desc Ferrari %li", (long)index];
         newCarro.url_foto = @"ferrari_ff.png";
@@ -41,7 +41,7 @@
 + (void) getCarrosByType:(NSString *)tipo withCache:(Boolean)cache andCallback:(void(^)(NSArray*, NSError*))callback {
     
     
-    CarroDB * db = [[CarroDB alloc] init];
+    CarroDBCoreData * db = [CarroDBCoreData alloc];
     NSArray<Carro *> * carros = cache ? [db getCarrosByType:tipo] : [NSArray<Carro *> alloc];
     [db close];
     
@@ -60,8 +60,8 @@
             NSArray * carros = [CarroService parserJSON:data];
             
             if (carros.count > 0) {
-                CarroDB *db = [[CarroDB alloc] init];
-                [db deleteCarroByType:tipo];
+                CarroDBCoreData *db = [[CarroDBCoreData alloc] init];
+                [db deleteCarrosByType:tipo];
                 
                 for (Carro *carro in carros) {
                     [carro setTipo:tipo];
@@ -108,7 +108,7 @@
     NSArray * tagCarros = [root childrenNamed:@"carro"];
     
     for (SMXMLElement *xml in tagCarros) {
-        Carro *carro = [Carro alloc];
+        Carro *carro = [CarroDBCoreData newInstance];
         carro.nome = [xml valueWithPath:@"nome"];
         carro.desc = [xml valueWithPath:@"desc"];
         carro.url_info = [xml valueWithPath:@"url_info"];
@@ -137,7 +137,7 @@
         NSArray * arrayCarros = jsonCarros[@"carro"];
         
         for (NSDictionary * carro in arrayCarros) {
-            Carro * newCarro = [Carro alloc];
+            Carro * newCarro = [CarroDBCoreData newInstance];
             
             [newCarro setNome:carro[@"nome"]];
             [newCarro setDesc:carro[@"desc"]];
