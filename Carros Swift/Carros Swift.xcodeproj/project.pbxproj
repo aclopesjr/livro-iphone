@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		4E33050E1D5B7E7D00297F5A /* Prefs.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E33050D1D5B7E7D00297F5A /* Prefs.swift */; };
+		4E5CEBED1D77546E00084342 /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4E5CEBEC1D77546E00084342 /* CoreLocation.framework */; };
+		4E5CEBEF1D77547700084342 /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4E5CEBEE1D77547700084342 /* MapKit.framework */; };
 		4E6912D21D5A284100972575 /* SMXMLDocument.m in Sources */ = {isa = PBXBuildFile; fileRef = 4E6912D01D5A284100972575 /* SMXMLDocument.m */; };
 		4E6912D31D5A284100972575 /* XMLCarroParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E6912D11D5A284100972575 /* XMLCarroParser.swift */; };
 		4E6912D51D5A285500972575 /* CarroService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E6912D41D5A285500972575 /* CarroService.swift */; };
@@ -49,6 +51,8 @@
 
 /* Begin PBXFileReference section */
 		4E33050D1D5B7E7D00297F5A /* Prefs.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Prefs.swift; path = Model/Utils/Prefs.swift; sourceTree = "<group>"; };
+		4E5CEBEC1D77546E00084342 /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
+		4E5CEBEE1D77547700084342 /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
 		4E6912CF1D5A284100972575 /* SMXMLDocument.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SMXMLDocument.h; path = Model/Utils/SMXMLDocument.h; sourceTree = "<group>"; };
 		4E6912D01D5A284100972575 /* SMXMLDocument.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SMXMLDocument.m; path = Model/Utils/SMXMLDocument.m; sourceTree = "<group>"; };
 		4E6912D11D5A284100972575 /* XMLCarroParser.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = XMLCarroParser.swift; path = Model/Utils/XMLCarroParser.swift; sourceTree = "<group>"; };
@@ -98,6 +102,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4E5CEBEF1D77547700084342 /* MapKit.framework in Frameworks */,
+				4E5CEBED1D77546E00084342 /* CoreLocation.framework in Frameworks */,
 				4EC5DFB31D70EAA100624CF2 /* CoreData.framework in Frameworks */,
 				4EA639321D5CF48500B4DD39 /* libsqlite3.tbd in Frameworks */,
 			);
@@ -109,6 +115,8 @@
 		4EA5128D1D539BA600B220EB = {
 			isa = PBXGroup;
 			children = (
+				4E5CEBEE1D77547700084342 /* MapKit.framework */,
+				4E5CEBEC1D77546E00084342 /* CoreLocation.framework */,
 				4EC5DFB21D70EAA100624CF2 /* CoreData.framework */,
 				4EA639311D5CF48500B4DD39 /* libsqlite3.tbd */,
 				4EA512981D539BA600B220EB /* Carros Swift */,
