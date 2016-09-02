@@ -17,4 +17,6 @@
 
 @property (nonatomic, strong) Carro * carro;
 
+-(IBAction)visualizarMapa:(id)sender;
+
 @end

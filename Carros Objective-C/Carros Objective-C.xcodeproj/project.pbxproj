@@ -8,6 +8,9 @@
 
 /* Begin PBXBuildFile section */
 		4E3305111D5BA74E00297F5A /* Prefs.m in Sources */ = {isa = PBXBuildFile; fileRef = 4E3305101D5BA74E00297F5A /* Prefs.m */; };
+		4E5A41271D79B6D30097BC2F /* MapViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4E5A41261D79B6D30097BC2F /* MapViewController.m */; };
+		4E5A41291D79B6ED0097BC2F /* MapViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4E5A41281D79B6ED0097BC2F /* MapViewController.xib */; };
+		4E5A412B1D79B7530097BC2F /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4E5A412A1D79B7530097BC2F /* MapKit.framework */; };
 		4E6912DC1D5A2FED00972575 /* SMXMLDocument.m in Sources */ = {isa = PBXBuildFile; fileRef = 4E6912D91D5A2FED00972575 /* SMXMLDocument.m */; };
 		4E6912DD1D5A2FED00972575 /* XMLCarroParser.m in Sources */ = {isa = PBXBuildFile; fileRef = 4E6912DB1D5A2FED00972575 /* XMLCarroParser.m */; };
 		4E6912E01D5A2FFF00972575 /* CarroService.m in Sources */ = {isa = PBXBuildFile; fileRef = 4E6912DF1D5A2FFF00972575 /* CarroService.m */; };
@@ -50,6 +53,10 @@
 /* Begin PBXFileReference section */
 		4E33050F1D5BA74E00297F5A /* Prefs.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Prefs.h; path = Model/Utils/Prefs.h; sourceTree = "<group>"; };
 		4E3305101D5BA74E00297F5A /* Prefs.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Prefs.m; path = Model/Utils/Prefs.m; sourceTree = "<group>"; };
+		4E5A41251D79B6D30097BC2F /* MapViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MapViewController.h; path = Controller/MapViewController.h; sourceTree = "<group>"; };
+		4E5A41261D79B6D30097BC2F /* MapViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MapViewController.m; path = Controller/MapViewController.m; sourceTree = "<group>"; };
+		4E5A41281D79B6ED0097BC2F /* MapViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = MapViewController.xib; path = View/MapViewController.xib; sourceTree = "<group>"; };
+		4E5A412A1D79B7530097BC2F /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
 		4E6912D81D5A2FED00972575 /* SMXMLDocument.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SMXMLDocument.h; path = Model/Utils/SMXMLDocument.h; sourceTree = "<group>"; };
 		4E6912D91D5A2FED00972575 /* SMXMLDocument.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SMXMLDocument.m; path = Model/Utils/SMXMLDocument.m; sourceTree = "<group>"; };
 		4E6912DA1D5A2FED00972575 /* XMLCarroParser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = XMLCarroParser.h; path = Model/Utils/XMLCarroParser.h; sourceTree = "<group>"; };
@@ -112,6 +119,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4E5A412B1D79B7530097BC2F /* MapKit.framework in Frameworks */,
 				4E7B0D8A1D75C98A00181646 /* CoreData.framework in Frameworks */,
 				4E8AA8671D6393AA00F2C842 /* libsqlite3.tbd in Frameworks */,
 			);
@@ -170,6 +178,7 @@
 		4EA512D91D53A16100B220EB = {
 			isa = PBXGroup;
 			children = (
+				4E5A412A1D79B7530097BC2F /* MapKit.framework */,
 				4E7B0D891D75C98A00181646 /* CoreData.framework */,
 				4E8AA8661D6393AA00F2C842 /* libsqlite3.tbd */,
 				4EA512E41D53A16100B220EB /* Carros Objective-C */,
@@ -219,6 +228,8 @@
 				4EA513241D53A24700B220EB /* ListaCarrosViewController.m */,
 				4E75A87A1D54D9A20032B6B4 /* DetalhesCarroViewController.h */,
 				4E75A87B1D54D9A20032B6B4 /* DetalhesCarroViewController.m */,
+				4E5A41251D79B6D30097BC2F /* MapViewController.h */,
+				4E5A41261D79B6D30097BC2F /* MapViewController.m */,
 			);
 			name = Controller;
 			sourceTree = "<group>";
@@ -230,6 +241,7 @@
 				4EA513201D53A21400B220EB /* ListaCarrosViewController.xib */,
 				4EA513461D53A2D300B220EB /* SobreViewController.xib */,
 				4E75A8891D5507440032B6B4 /* CarroTableViewCell.xib */,
+				4E5A41281D79B6ED0097BC2F /* MapViewController.xib */,
 			);
 			name = View;
 			sourceTree = "<group>";
@@ -357,6 +369,7 @@
 				4EA513431D53A2AE00B220EB /* carros_luxo.xml in Resources */,
 				4EA513221D53A21400B220EB /* ListaCarrosViewController.xib in Resources */,
 				4EA513411D53A2AE00B220EB /* carros_classicos.xml in Resources */,
+				4E5A41291D79B6ED0097BC2F /* MapViewController.xib in Resources */,
 				4EA5133A1D53A2AE00B220EB /* tab_carros.png in Resources */,
 				4EA513421D53A2AE00B220EB /* carros_esportivos.xml in Resources */,
 				4EA5133D1D53A2AE00B220EB /* tab_sobre@2x.png in Resources */,
@@ -378,6 +391,7 @@
 				4E75A88E1D55075E0032B6B4 /* CarroTableViewCell.m in Sources */,
 				4E7D97D91D6DCCF8007EC3B2 /* StringUtils.m in Sources */,
 				4E8AA8621D6392B400F2C842 /* SQLiteObjc.m in Sources */,
+				4E5A41271D79B6D30097BC2F /* MapViewController.m in Sources */,
 				4E75A87D1D54D9A20032B6B4 /* DetalhesCarroViewController.m in Sources */,
 				4EA512EA1D53A16100B220EB /* AppDelegate.m in Sources */,
 				4E7B0DBA1D75CB0E00181646 /* Carro.m in Sources */,

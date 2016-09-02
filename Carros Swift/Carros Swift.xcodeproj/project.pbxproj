@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		4E33050E1D5B7E7D00297F5A /* Prefs.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E33050D1D5B7E7D00297F5A /* Prefs.swift */; };
+		4E5A41221D79B6880097BC2F /* MapViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4E5A41211D79B6880097BC2F /* MapViewController.xib */; };
+		4E5A41241D79B6920097BC2F /* MapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E5A41231D79B6920097BC2F /* MapViewController.swift */; };
 		4E5CEBED1D77546E00084342 /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4E5CEBEC1D77546E00084342 /* CoreLocation.framework */; };
 		4E5CEBEF1D77547700084342 /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4E5CEBEE1D77547700084342 /* MapKit.framework */; };
 		4E6912D21D5A284100972575 /* SMXMLDocument.m in Sources */ = {isa = PBXBuildFile; fileRef = 4E6912D01D5A284100972575 /* SMXMLDocument.m */; };
@@ -51,6 +53,8 @@
 
 /* Begin PBXFileReference section */
 		4E33050D1D5B7E7D00297F5A /* Prefs.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Prefs.swift; path = Model/Utils/Prefs.swift; sourceTree = "<group>"; };
+		4E5A41211D79B6880097BC2F /* MapViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = MapViewController.xib; path = View/MapViewController.xib; sourceTree = "<group>"; };
+		4E5A41231D79B6920097BC2F /* MapViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = MapViewController.swift; path = Controller/MapViewController.swift; sourceTree = "<group>"; };
 		4E5CEBEC1D77546E00084342 /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
 		4E5CEBEE1D77547700084342 /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
 		4E6912CF1D5A284100972575 /* SMXMLDocument.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SMXMLDocument.h; path = Model/Utils/SMXMLDocument.h; sourceTree = "<group>"; };
@@ -159,6 +163,7 @@
 		4EA512AC1D539BE300B220EB /* View */ = {
 			isa = PBXGroup;
 			children = (
+				4E5A41211D79B6880097BC2F /* MapViewController.xib */,
 				4EA512CE1D539DA800B220EB /* ListaCarrosViewController.xib */,
 				4EA512D21D539DFD00B220EB /* SobreViewController.xib */,
 				4E75A8751D54D5710032B6B4 /* DetalhesCarroViewController.xib */,
@@ -170,6 +175,7 @@
 		4EA512AD1D539BE900B220EB /* Controller */ = {
 			isa = PBXGroup;
 			children = (
+				4E5A41231D79B6920097BC2F /* MapViewController.swift */,
 				4E75A8851D5502A70032B6B4 /* CarroTableViewCell.swift */,
 				4E75A8781D54D5910032B6B4 /* DetalhesCarroViewController.swift */,
 				4EA512D51D539E4700B220EB /* ListaCarrosViewController.swift */,
@@ -324,6 +330,7 @@
 				4EA512C51D539C2300B220EB /* tab_sobre.png in Resources */,
 				4EA512C71D539C2300B220EB /* carros_classicos.json in Resources */,
 				4EA512C81D539C2300B220EB /* carros_esportivos.json in Resources */,
+				4E5A41221D79B6880097BC2F /* MapViewController.xib in Resources */,
 				4EA512C11D539C2300B220EB /* Images.xcassets in Resources */,
 				4EA512D01D539DA800B220EB /* ListaCarrosViewController.xib in Resources */,
 				4EA512C41D539C2300B220EB /* tab_carros@2x.png in Resources */,
@@ -353,6 +360,7 @@
 				4E6912D71D5A287E00972575 /* DownloadImageView.swift in Sources */,
 				4EA639371D5CF7C500B4DD39 /* SQLiteObjc.m in Sources */,
 				4E8AA85D1D6333F300F2C842 /* StringUtils.swift in Sources */,
+				4E5A41241D79B6920097BC2F /* MapViewController.swift in Sources */,
 				4EA512D81D539E4700B220EB /* SobreViewController.swift in Sources */,
 				4E6912D51D5A285500972575 /* CarroService.swift in Sources */,
 				4EA512D71D539E4700B220EB /* ListaCarrosViewController.swift in Sources */,

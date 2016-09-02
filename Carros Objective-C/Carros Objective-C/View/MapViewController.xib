@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="10117" systemVersion="15G31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="MapViewController">
+            <connections>
+                <outlet property="mapView" destination="cJY-Ns-6KU" id="0gL-L9-Z8f"/>
+                <outlet property="view" destination="iN0-l3-epB" id="WuD-QG-iq9"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="iN0-l3-epB">
+            <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" showsUserLocation="YES" translatesAutoresizingMaskIntoConstraints="NO" id="cJY-Ns-6KU">
+                    <rect key="frame" x="0.0" y="65" width="600" height="485"/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="600" id="S66-is-toA"/>
+                        <constraint firstAttribute="height" constant="485" id="m1k-Pu-rwj"/>
+                    </constraints>
+                </mapView>
+            </subviews>
+            <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+            <constraints>
+                <constraint firstItem="cJY-Ns-6KU" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" constant="65" id="9SP-JI-RKD"/>
+                <constraint firstItem="cJY-Ns-6KU" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="GHb-rG-S2Y"/>
+                <constraint firstAttribute="trailing" secondItem="cJY-Ns-6KU" secondAttribute="trailing" id="JIE-jT-n3M"/>
+                <constraint firstAttribute="bottom" secondItem="cJY-Ns-6KU" secondAttribute="bottom" constant="50" id="SBo-LT-IOx"/>
+                <constraint firstItem="cJY-Ns-6KU" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="i8v-ZI-Cgg"/>
+                <constraint firstItem="cJY-Ns-6KU" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" constant="65" id="l6e-Fo-MRx"/>
+                <constraint firstAttribute="trailing" secondItem="cJY-Ns-6KU" secondAttribute="trailing" id="plr-LI-bcG"/>
+                <constraint firstItem="cJY-Ns-6KU" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" constant="65" id="sMK-FL-AWa"/>
+                <constraint firstItem="cJY-Ns-6KU" firstAttribute="centerX" secondItem="iN0-l3-epB" secondAttribute="centerX" id="uVT-MM-aTB"/>
+                <constraint firstItem="cJY-Ns-6KU" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="w8M-WR-GIj"/>
+                <constraint firstItem="cJY-Ns-6KU" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="zGg-Th-IoI"/>
+            </constraints>
+            <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" prompted="NO"/>
+            <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
+        </view>
+    </objects>
+</document>

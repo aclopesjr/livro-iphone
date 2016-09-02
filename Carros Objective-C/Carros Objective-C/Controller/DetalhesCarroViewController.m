@@ -7,6 +7,7 @@
 //
 
 #import "DetalhesCarroViewController.h"
+#import "MapViewController.h"
 
 @interface DetalhesCarroViewController ()
 
@@ -31,6 +32,11 @@
     [super didReceiveMemoryWarning];
 }
 
+-(IBAction)visualizarMapa:(id)sender {
+    MapViewController *vc = [[MapViewController alloc] initWithNibName:@"MapViewController" bundle:nil];
+    [vc setCarro:[self carro]];
+    [self.navigationController pushViewController:vc animated:true];
+}
 /*
 #pragma mark - Navigation
 
