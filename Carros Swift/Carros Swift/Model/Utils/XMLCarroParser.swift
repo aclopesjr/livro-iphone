@@ -8,20 +8,20 @@
 
 import UIKit
 
-class XMLCarroParser: NSObject, NSXMLParserDelegate {
+class XMLCarroParser: NSObject, XMLParserDelegate {
     // MARK: Variable
     var carros : Array<Carro> = []
     var tempString : String = ""
     var carro : Carro?
     
-    func parser(parser: NSXMLParser, didStartElement elementName: String, namespaceURI: String?, qualifiedName qName: String?, attributes attributeDict: [String : String]) {
+    func parser(_ parser: XMLParser, didStartElement elementName: String, namespaceURI: String?, qualifiedName qName: String?, attributes attributeDict: [String : String]) {
         if "carro" == elementName {
             // tag <carro> encontrada
             self.carro = CarroDBCoreData.newInstance()
         }
     }
     
-    func parser(parser: NSXMLParser, didEndElement elementName: String, namespaceURI: String?, qualifiedName qName: String?) {
+    func parser(_ parser: XMLParser, didEndElement elementName: String, namespaceURI: String?, qualifiedName qName: String?) {
         if "carros" == elementName {
             // tag de fim </carros>
             return
@@ -53,7 +53,7 @@ class XMLCarroParser: NSObject, NSXMLParserDelegate {
         }
     }
     
-    func parser(parser: NSXMLParser, foundCharacters string: String) {
-        tempString += string.stringByTrimmingCharactersInSet(NSCharacterSet.whitespaceAndNewlineCharacterSet())
+    func parser(_ parser: XMLParser, foundCharacters string: String) {
+        tempString += string.trimmingCharacters(in: CharacterSet.whitespacesAndNewlines)
     }
 }

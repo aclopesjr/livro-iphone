@@ -24,7 +24,7 @@ class ListaCarrosViewController: UIViewController, UITableViewDataSource, UITabl
         self.automaticallyAdjustsScrollViewInsets = false
         self.title = "Carros"
         
-        self.navigationItem.rightBarButtonItem = UIBarButtonItem(title: "Atualizar", style: UIBarButtonItemStyle.Plain, target: self, action: #selector(self.buscaCarros(_:)))
+        self.navigationItem.rightBarButtonItem = UIBarButtonItem(title: "Atualizar", style: UIBarButtonItemStyle.plain, target: self, action: #selector(self.buscaCarros(_:)))
         
         if let tipo = Prefs.getObjectForKey("selectedSegmentIndex") as! NSInteger! {
             self.segmentControl.selectedSegmentIndex = tipo
@@ -33,7 +33,7 @@ class ListaCarrosViewController: UIViewController, UITableViewDataSource, UITabl
         self.buscaCarros(true)
         
         //self.tabView.registerClass(UITableViewCell.self, forCellReuseIdentifier: "cell")
-        self.tabView.registerNib(UINib(nibName: "CarroTableViewCell", bundle: nil), forCellReuseIdentifier: "cell")
+        self.tabView.register(UINib(nibName: "CarroTableViewCell", bundle: nil), forCellReuseIdentifier: "cell")
     }
 
     override func didReceiveMemoryWarning() {
@@ -41,22 +41,22 @@ class ListaCarrosViewController: UIViewController, UITableViewDataSource, UITabl
         // Dispose of any resources that can be recreated.
     }
     
-    @IBAction func alterarTipo(sender: UISegmentedControl) {
+    @IBAction func alterarTipo(_ sender: UISegmentedControl) {
         switch sender.selectedSegmentIndex {
         case 1:
-            Prefs.setObjectForKey("esportivos", chave: "tipo")
+            Prefs.setObjectForKey("esportivos" as NSObject, chave: "tipo")
         case 2:
-            Prefs.setObjectForKey("luxo", chave: "tipo")
+            Prefs.setObjectForKey("luxo" as NSObject, chave: "tipo")
         default:
-            Prefs.setObjectForKey("classicos", chave: "tipo")
+            Prefs.setObjectForKey("classicos" as NSObject, chave: "tipo")
         }
         
-        Prefs.setObjectForKey(sender.selectedSegmentIndex, chave: "selectedSegmentIndex")
+        Prefs.setObjectForKey(sender.selectedSegmentIndex as NSObject, chave: "selectedSegmentIndex")
         
         self.buscaCarros(true)
     }
 
-    func buscaCarros(withCache:Bool) {
+    func buscaCarros(_ withCache:Bool) {
         self.progress.startAnimating()
         
         var tipo = "classicos"
@@ -64,15 +64,25 @@ class ListaCarrosViewController: UIViewController, UITableViewDataSource, UITabl
             tipo = tipoStoreged
         }
         
-        CarroService.getCarrosByTipo(tipo, withCache: withCache, andCallback: { (carros: Array<Carro>, error: NSError!) -> Void in
+        CarroService.getCarrosByTipo(tipo, withCache: withCache, andCallback:  { (carros: Array<Carro>, error: NSError?) -> Void in
             if error != nil {
-                Alerta.alerta("Erro: " + error.localizedDescription, viewController: self)
+                Alerta.alerta("Erro: " + (error?.localizedDescription)!, viewController: self)
             } else {
                 self.carros = carros
                 self.tabView.reloadData()
                 self.progress.stopAnimating()
             }
-        })
+        } )
+        
+//        CarroService.getCarrosByTipo(tipo, withCache: withCache, andCallback: { (carros: Array<Carro>, error: NSError!) -> Void in
+//            if error != nil {
+//                Alerta.alerta("Erro: " + error.localizedDescription, viewController: self)
+//            } else {
+//                self.carros = carros
+//                self.tabView.reloadData()
+//                self.progress.stopAnimating()
+//            }
+//        } as! (Array<Carro>, NSError?) -> Void)
     }
     
     /*
@@ -86,15 +96,15 @@ class ListaCarrosViewController: UIViewController, UITableViewDataSource, UITabl
     */
 
     // MARK: DataSource
-    func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return self.carros.count
     }
     
-    func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
 
-        let carro = self.carros[indexPath.row]
+        let carro = self.carros[(indexPath as NSIndexPath).row]
         
-        let cell = self.tabView.dequeueReusableCellWithIdentifier("cell")! as! CarroTableViewCell
+        let cell = self.tabView.dequeueReusableCell(withIdentifier: "cell")! as! CarroTableViewCell
         cell.lNome.text = carro.nome
         cell.lDescricao.text = carro.desc
         cell.ivImage!.setUrl(carro.url_foto!)
@@ -102,8 +112,8 @@ class ListaCarrosViewController: UIViewController, UITableViewDataSource, UITabl
         return cell
     }
     
-    func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
-        let carro = self.carros[indexPath.row]
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let carro = self.carros[(indexPath as NSIndexPath).row]
         //Alerta.alerta("Selecionou o carro: " + carro.nome, viewController: self)
                                                                                 
         let detalhesCarroViewController = DetalhesCarroViewController(nibName: "DetalhesCarroViewController", bundle: nil)

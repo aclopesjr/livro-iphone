@@ -10,14 +10,14 @@ import UIKit
 
 class Prefs: NSObject {
     
-    class func setObjectForKey(valor: NSObject, chave: String) {
-        let prefs = NSUserDefaults.standardUserDefaults()
-        prefs.setObject(valor, forKey: chave)
+    class func setObjectForKey(_ valor: NSObject, chave: String) {
+        let prefs = UserDefaults.standard
+        prefs.set(valor, forKey: chave)
         prefs.synchronize()
     }
     
-    class func getObjectForKey(chave: String) -> AnyObject! {
-        let prefs = NSUserDefaults.standardUserDefaults()
-        return prefs.objectForKey(chave)
+    class func getObjectForKey(_ chave: String) -> AnyObject! {
+        let prefs = UserDefaults.standard
+        return prefs.object(forKey: chave) as AnyObject!
     }
 }

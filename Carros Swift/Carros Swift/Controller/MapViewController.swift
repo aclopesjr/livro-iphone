@@ -57,19 +57,19 @@ class MapViewController: UIViewController, MKMapViewDelegate {
     }
     */
 
-    func mapView(mapView: MKMapView, viewForAnnotation annotation: MKAnnotation) -> MKAnnotationView? {
+    func mapView(_ mapView: MKMapView, viewFor annotation: MKAnnotation) -> MKAnnotationView? {
         //
         let pinView = MKPinAnnotationView(annotation: annotation, reuseIdentifier: "pinView")
-        pinView.pinTintColor = UIColor.redColor()
+        pinView.pinTintColor = UIColor.red
         pinView.canShowCallout = true
         //
-        let btPin = UIButton(type: UIButtonType.DetailDisclosure) as UIView
+        let btPin = UIButton(type: UIButtonType.detailDisclosure) as UIView
         pinView.rightCalloutAccessoryView = btPin
         
         return pinView
     }
     
-    func mapView(mapView: MKMapView, annotationView view: MKAnnotationView, calloutAccessoryControlTapped control: UIControl) {
+    func mapView(_ mapView: MKMapView, annotationView view: MKAnnotationView, calloutAccessoryControlTapped control: UIControl) {
         Alerta.alerta("Opa!", viewController: self)
     }
 }

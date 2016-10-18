@@ -24,21 +24,21 @@ class CarroService {
         return carros
     }
     
-    class func getCarroByTypeFromFile(tipo: String) -> Array<Carro> {
+    class func getCarroByTypeFromFile(_ tipo: String) -> Array<Carro> {
         //let path = NSBundle.mainBundle().pathForResource("carros_" + tipo, ofType: "xml")!
-        let path = NSBundle.mainBundle().pathForResource("carros_" + tipo, ofType: "json")!
-        let data = NSData(contentsOfFile: path)!
+        let path = Bundle.main.path(forResource: "carros_" + tipo, ofType: "json")!
+        let data = try! Data(contentsOf: URL(fileURLWithPath: path))
         //return parserXML_SAX(data)
         //return parserXML_DOM(data)
         return parserJSON(data)
     }
     
-    class func parserXML_SAX(data: NSData) -> Array<Carro> {
-        if data.length == 0 {
+    class func parserXML_SAX(_ data: Data) -> Array<Carro> {
+        if data.count == 0 {
             return []
         }
         
-        let xmlParser = NSXMLParser(data: data)
+        let xmlParser = XMLParser(data: data)
         let carrosParser = XMLCarroParser()
         xmlParser.delegate = carrosParser
         
@@ -49,23 +49,23 @@ class CarroService {
         return []
     }
     
-    class func getCarrosByTipo(tipo: String, withCache: Bool, andCallback: (carros:Array<Carro>, error:NSError!) -> Void) {
+    class func getCarrosByTipo(_ tipo: String, withCache: Bool, andCallback: @escaping (_ carros:Array<Carro>, _ error:NSError?) -> Void) {
         
         var db = CarroDBCoreData()
         let carros = withCache ? db.getCarrosByType(tipo) : []
         db.close()
         
         if (carros.count > 0) {
-            andCallback(carros: carros, error: nil)
+            andCallback(carros, nil)
             return
         }
         
-        let http = NSURLSession.sharedSession()
-        let url = NSURL(string: "http://www.livroiphone.com.br/carros/carros_" + tipo + ".json")!
-        let task = http.dataTaskWithURL(url, completionHandler: {
-            (data: NSData?, response: NSURLResponse?, error: NSError?) -> Void in
+        let http = URLSession.shared
+        let url = URL(string: "http://www.livroiphone.com.br/carros/carros_" + tipo + ".json")!
+        
+        let task = http.dataTask(with: url, completionHandler: { (data: Data?, response: URLResponse?, error: Error?) in
             if error != nil {
-                andCallback(carros:[], error: error!)
+                andCallback([], error! as NSError?)
             } else {
                 let carros = CarroService.parserJSON(data!)
                 
@@ -79,16 +79,39 @@ class CarroService {
                     db.close()
                 }
                 
-                dispatch_sync(dispatch_get_main_queue(), {
-                    andCallback(carros: carros, error: nil)
+                DispatchQueue.main.sync(execute: {
+                    andCallback(carros, nil)
                 })
             }
         })
+        
+//        let task = http.dataTask(with: url, completionHandler: {
+//            (data: Data?, response: URLResponse?, error: NSError?) -> Void in
+//            if error != nil {
+//                andCallback([], error!)
+//            } else {
+//                let carros = CarroService.parserJSON(data!)
+//                
+//                if carros.count > 0 {
+//                    db = CarroDBCoreData()
+//                    db.deleteCarrosByTipo(tipo)
+//                    for carro in carros {
+//                        carro.tipo = tipo
+//                        db.save(carro)
+//                    }
+//                    db.close()
+//                }
+//                
+//                DispatchQueue.main.sync(execute: {
+//                    andCallback(carros, nil)
+//                })
+//            }
+//        } as! (Data?, URLResponse?, Error?) -> Void)
         task.resume()
     }
     
-    class func parserXML_DOM(data: NSData) -> Array<Carro> {
-        if data.length == 0 {
+    class func parserXML_DOM(_ data: Data) -> Array<Carro> {
+        if data.count == 0 {
             return [];
         }
         
@@ -102,19 +125,20 @@ class CarroService {
         let root = document!.root as SMXMLElement
         let tagCarros = root.childrenNamed("carro") as NSArray
         
-        for x:AnyObject in tagCarros {
+        
+        for x in tagCarros {
             let xml = x as! SMXMLElement
             let carro = CarroDBCoreData.newInstance()
-            carro.nome = xml.valueWithPath("nome")
-            carro.desc = xml.valueWithPath("desc")
-            carro.url_info = xml.valueWithPath("url_info")
-            carro.url_foto = xml.valueWithPath("url_foto")
-            carro.url_video = xml.valueWithPath("url_video")
-            if (xml.valueWithPath("longitude") != nil) {
-                carro.longitude = xml.valueWithPath("longitude")
+            carro.nome = xml.value(withPath: "nome")
+            carro.desc = xml.value(withPath: "desc")
+            carro.url_info = xml.value(withPath: "url_info")
+            carro.url_foto = xml.value(withPath: "url_foto")
+            carro.url_video = xml.value(withPath: "url_video")
+            if (xml.value(withPath: "longitude") != nil) {
+                carro.longitude = xml.value(withPath: "longitude")
             }
-            if (xml.valueWithPath("latitude") != nil) {
-                carro.latitude = xml.valueWithPath("latitude")
+            if (xml.value(withPath: "latitude") != nil) {
+                carro.latitude = xml.value(withPath: "latitude")
             }
             carros.append(carro)
         }
@@ -122,18 +146,18 @@ class CarroService {
         return carros
     }
     
-    class func parserJSON(data: NSData) -> Array<Carro> {
-        if data.length == 0 {
+    class func parserJSON(_ data: Data) -> Array<Carro> {
+        if data.count == 0 {
             return []
         }
         
         var carros : Array<Carro> = []
-        let dicOp = try? NSJSONSerialization.JSONObjectWithData(data, options: NSJSONReadingOptions.MutableContainers) as! NSDictionary
+        let dicOp = try? JSONSerialization.jsonObject(with: data, options: JSONSerialization.ReadingOptions.mutableContainers) as! NSDictionary
         if let dict = dicOp {
             let jsoCarros : NSDictionary = dict["carros"] as! NSDictionary
             let arrayCarros: NSArray = jsoCarros["carro"] as! NSArray
             
-            for obj:AnyObject in arrayCarros {
+            for obj in arrayCarros {
                 let dict = obj as! NSDictionary
                 let carro = CarroDBCoreData.newInstance()
                 carro.nome = dict["nome"] as? String

@@ -10,36 +10,36 @@ import Foundation
 
 class StringUtils {
     
-    class func toString(data: NSData!) -> String! {
+    class func toString(_ data: Data!) -> String! {
         if(data == nil) {
             return nil
         }
-        let s = NSString(data: data, encoding: NSUTF8StringEncoding)
+        let s = NSString(data: data, encoding: String.Encoding.utf8.rawValue)
         return s as! String
     }
     
-    class func toNSData(s: String) -> NSData {
-        let data = s.dataUsingEncoding(NSUTF8StringEncoding)
+    class func toNSData(_ s: String) -> Data {
+        let data = s.data(using: String.Encoding.utf8)
         return data!
     }
     
-    class func toCString(s: String) -> UnsafePointer<Int8> {
+    class func toCString(_ s: String) -> UnsafePointer<Int8> {
         // cast to NSString
         // const char *
-        let cstring = (s as NSString).UTF8String
-        return cstring
+        let cstring = (s as NSString).utf8String
+        return cstring!
     }
     
-    class func trim(s: String) -> String {
-        return s.stringByTrimmingCharactersInSet(.whitespaceAndNewlineCharacterSet())
+    class func trim(_ s: String) -> String {
+        return s.trimmingCharacters(in: CharacterSet.whitespacesAndNewlines)
     }
     
-    class func isEmpty(s: String!) -> Bool {
+    class func isEmpty(_ s: String!) -> Bool {
         let count = StringUtils.count(s)
         return count == 0
     }
     
-    class func count(s: String!) -> Int {
+    class func count(_ s: String!) -> Int {
         if(s == nil) {
             return 0
         }
@@ -47,7 +47,7 @@ class StringUtils {
         return length
     }
     
-    class func replace(s: String, string: String, withString: String) -> String {
-        return s.stringByReplacingOccurrencesOfString(string, withString: withString, options: NSStringCompareOptions.LiteralSearch, range: nil)
+    class func replace(_ s: String, string: String, withString: String) -> String {
+        return s.replacingOccurrences(of: string, with: withString, options: NSString.CompareOptions.literal, range: nil)
     }
 }

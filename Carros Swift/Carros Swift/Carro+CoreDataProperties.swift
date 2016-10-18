@@ -18,7 +18,7 @@ extension Carro {
     @NSManaged var latitude: String?
     @NSManaged var longitude: String?
     @NSManaged var nome: String?
-    @NSManaged var timestamp: NSDate?
+    @NSManaged var timestamp: Date?
     @NSManaged var tipo: String?
     @NSManaged var url_foto: String?
     @NSManaged var url_info: String?

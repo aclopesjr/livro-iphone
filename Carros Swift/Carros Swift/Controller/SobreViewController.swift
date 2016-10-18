@@ -23,8 +23,8 @@ class SobreViewController: UIViewController, UIWebViewDelegate {
         
         progress.startAnimating()
         
-        let url = NSURL(string: URL_SOBRE)!
-        webView.loadRequest(NSURLRequest(URL:url))
+        let url = URL(string: URL_SOBRE)!
+        webView.loadRequest(URLRequest(url:url))
         
         //webView.delegate = self;
     }
@@ -46,7 +46,7 @@ class SobreViewController: UIViewController, UIWebViewDelegate {
     */
 
     // MARK: WebView
-    func webViewDidFinishLoad(webView: UIWebView) {
+    func webViewDidFinishLoad(_ webView: UIWebView) {
         progress.stopAnimating()
     }
 }

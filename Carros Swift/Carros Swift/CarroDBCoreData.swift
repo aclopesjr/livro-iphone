@@ -13,21 +13,21 @@ class CarroDBCoreData {
     
     class func newInstance () -> Carro {
         let context = getContext()
-        let c = NSEntityDescription.insertNewObjectForEntityForName("Carro", inManagedObjectContext: context) as! Carro
+        let c = NSEntityDescription.insertNewObject(forEntityName: "Carro", into: context) as! Carro
         return c
     }
     
     class func getContext() -> NSManagedObjectContext {
-        let appDelegate = UIApplication.sharedApplication().delegate as! AppDelegate
+        let appDelegate = UIApplication.shared.delegate as! AppDelegate
         let context = appDelegate.managedObjectContext
         return context
     }
     
-    func getCarrosByType(tipo: String) -> Array<Carro> {
+    func getCarrosByType(_ tipo: String) -> Array<Carro> {
         let context = CarroDBCoreData.getContext()
-        let entity = NSEntityDescription.entityForName("Carro", inManagedObjectContext: context)
+        let entity = NSEntityDescription.entity(forEntityName: "Carro", in: context)
         
-        let request = NSFetchRequest()
+        let request = NSFetchRequest<Carro>()
         request.entity = entity
         
         let query = NSPredicate(format: "tipo = \"tipo\"" , argumentArray: nil)
@@ -38,19 +38,19 @@ class CarroDBCoreData {
         request.sortDescriptors = sortDescriptors
         
         do {
-            let array = try context.executeFetchRequest(request)
-            return array as! Array<Carro>
+            let array = try context.fetch(request)
+            return array
         } catch {
             print("Erro ao consultar Carros!")
             return [] as Array<Carro>
         }
     }
     
-    func save(carro: Carro) {
+    func save(_ carro: Carro) {
         let context = CarroDBCoreData.getContext()
         
         if (carro.timestamp == nil) {
-            carro.timestamp = NSDate()
+            carro.timestamp = Date()
         }
         
         do {
@@ -61,10 +61,10 @@ class CarroDBCoreData {
         }
     }
     
-    func delete(carro: Carro) {
+    func delete(_ carro: Carro) {
         let context = CarroDBCoreData.getContext()
         
-        context.deleteObject(carro)
+        context.delete(carro)
         
         do {
             try context.save()
@@ -74,7 +74,7 @@ class CarroDBCoreData {
         }
     }
     
-    func deleteCarrosByTipo(tipo: String) {
+    func deleteCarrosByTipo(_ tipo: String) {
         let carros = getCarrosByType(tipo)
         
         for carro in carros {
