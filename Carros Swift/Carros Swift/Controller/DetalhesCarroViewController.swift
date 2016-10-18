@@ -34,7 +34,8 @@ class DetalhesCarroViewController: UIViewController {
     
 
     @IBAction func visualizarMapa() {
-        let vc = MapViewController(nibName: "MapViewController", bundle: nil)
+        //let vc = MapViewController(nibName: "MapViewController", bundle: nil)
+        let vc = GpsMapViewController(nibName: "MapViewController", bundle: nil)
         vc.carro = self.carro
         self.navigationController!.pushViewController(vc, animated: true)
     }
