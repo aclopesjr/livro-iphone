@@ -9,6 +9,9 @@
 /* Begin PBXBuildFile section */
 		4E03B4731DB69AC000255B2B /* GpsMapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E03B4721DB69AC000255B2B /* GpsMapViewController.swift */; };
 		4E33050E1D5B7E7D00297F5A /* Prefs.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E33050D1D5B7E7D00297F5A /* Prefs.swift */; };
+		4E55CF811DB924A10025B9B8 /* VideoViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4E55CF801DB924A10025B9B8 /* VideoViewController.xib */; };
+		4E55CF831DB924C40025B9B8 /* VideoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E55CF821DB924C40025B9B8 /* VideoViewController.swift */; };
+		4E55CF851DB927AE0025B9B8 /* String+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E55CF841DB927AE0025B9B8 /* String+Extensions.swift */; };
 		4E5A41221D79B6880097BC2F /* MapViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4E5A41211D79B6880097BC2F /* MapViewController.xib */; };
 		4E5A41241D79B6920097BC2F /* MapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E5A41231D79B6920097BC2F /* MapViewController.swift */; };
 		4E5CEBED1D77546E00084342 /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4E5CEBEC1D77546E00084342 /* CoreLocation.framework */; };
@@ -55,6 +58,9 @@
 /* Begin PBXFileReference section */
 		4E03B4721DB69AC000255B2B /* GpsMapViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = GpsMapViewController.swift; path = Controller/GpsMapViewController.swift; sourceTree = "<group>"; };
 		4E33050D1D5B7E7D00297F5A /* Prefs.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Prefs.swift; path = Model/Utils/Prefs.swift; sourceTree = "<group>"; };
+		4E55CF801DB924A10025B9B8 /* VideoViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = VideoViewController.xib; path = View/VideoViewController.xib; sourceTree = "<group>"; };
+		4E55CF821DB924C40025B9B8 /* VideoViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = VideoViewController.swift; path = Controller/VideoViewController.swift; sourceTree = "<group>"; };
+		4E55CF841DB927AE0025B9B8 /* String+Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "String+Extensions.swift"; path = "Model/Utils/String+Extensions.swift"; sourceTree = "<group>"; };
 		4E5A41211D79B6880097BC2F /* MapViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = MapViewController.xib; path = View/MapViewController.xib; sourceTree = "<group>"; };
 		4E5A41231D79B6920097BC2F /* MapViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = MapViewController.swift; path = Controller/MapViewController.swift; sourceTree = "<group>"; };
 		4E5CEBEC1D77546E00084342 /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
@@ -170,6 +176,7 @@
 				4EA512D21D539DFD00B220EB /* SobreViewController.xib */,
 				4E75A8751D54D5710032B6B4 /* DetalhesCarroViewController.xib */,
 				4E75A8821D55028A0032B6B4 /* CarroTableViewCell.xib */,
+				4E55CF801DB924A10025B9B8 /* VideoViewController.xib */,
 			);
 			name = View;
 			sourceTree = "<group>";
@@ -183,6 +190,7 @@
 				4EA512D51D539E4700B220EB /* ListaCarrosViewController.swift */,
 				4EA512D61D539E4700B220EB /* SobreViewController.swift */,
 				4E03B4721DB69AC000255B2B /* GpsMapViewController.swift */,
+				4E55CF821DB924C40025B9B8 /* VideoViewController.swift */,
 			);
 			name = Controller;
 			sourceTree = "<group>";
@@ -245,6 +253,7 @@
 				4EA5134E1D53CAAC00B220EB /* Alerta.swift */,
 				4E6912D61D5A287E00972575 /* DownloadImageView.swift */,
 				4E33050D1D5B7E7D00297F5A /* Prefs.swift */,
+				4E55CF841DB927AE0025B9B8 /* String+Extensions.swift */,
 			);
 			name = Utils;
 			sourceTree = "<group>";
@@ -346,6 +355,7 @@
 				4EA512CB1D539C2300B220EB /* carros_esportivos.xml in Resources */,
 				4EA512C61D539C2300B220EB /* tab_sobre@2x.png in Resources */,
 				4E75A8771D54D5710032B6B4 /* DetalhesCarroViewController.xib in Resources */,
+				4E55CF811DB924A10025B9B8 /* VideoViewController.xib in Resources */,
 				4EA512C01D539C2300B220EB /* ferrari_ff.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -365,9 +375,11 @@
 				4EA639371D5CF7C500B4DD39 /* SQLiteObjc.m in Sources */,
 				4E8AA85D1D6333F300F2C842 /* StringUtils.swift in Sources */,
 				4E5A41241D79B6920097BC2F /* MapViewController.swift in Sources */,
+				4E55CF831DB924C40025B9B8 /* VideoViewController.swift in Sources */,
 				4EA512D81D539E4700B220EB /* SobreViewController.swift in Sources */,
 				4E6912D51D5A285500972575 /* CarroService.swift in Sources */,
 				4EA512D71D539E4700B220EB /* ListaCarrosViewController.swift in Sources */,
+				4E55CF851DB927AE0025B9B8 /* String+Extensions.swift in Sources */,
 				4E33050E1D5B7E7D00297F5A /* Prefs.swift in Sources */,
 				4E03B4731DB69AC000255B2B /* GpsMapViewController.swift in Sources */,
 				4E6912D21D5A284100972575 /* SMXMLDocument.m in Sources */,
