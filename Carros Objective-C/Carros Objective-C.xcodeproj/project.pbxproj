@@ -7,10 +7,12 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		4E03B4761DB6A0DD00255B2B /* GpsMapViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4E03B4751DB6A0DD00255B2B /* GpsMapViewController.m */; };
 		4E3305111D5BA74E00297F5A /* Prefs.m in Sources */ = {isa = PBXBuildFile; fileRef = 4E3305101D5BA74E00297F5A /* Prefs.m */; };
 		4E5A41271D79B6D30097BC2F /* MapViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4E5A41261D79B6D30097BC2F /* MapViewController.m */; };
 		4E5A41291D79B6ED0097BC2F /* MapViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4E5A41281D79B6ED0097BC2F /* MapViewController.xib */; };
 		4E5A412B1D79B7530097BC2F /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4E5A412A1D79B7530097BC2F /* MapKit.framework */; };
+		4E60A43F1DB7ECF9002FF083 /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4E60A43D1DB7ECF1002FF083 /* CoreLocation.framework */; };
 		4E6912DC1D5A2FED00972575 /* SMXMLDocument.m in Sources */ = {isa = PBXBuildFile; fileRef = 4E6912D91D5A2FED00972575 /* SMXMLDocument.m */; };
 		4E6912DD1D5A2FED00972575 /* XMLCarroParser.m in Sources */ = {isa = PBXBuildFile; fileRef = 4E6912DB1D5A2FED00972575 /* XMLCarroParser.m */; };
 		4E6912E01D5A2FFF00972575 /* CarroService.m in Sources */ = {isa = PBXBuildFile; fileRef = 4E6912DF1D5A2FFF00972575 /* CarroService.m */; };
@@ -51,12 +53,16 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		4E03B4741DB6A0DD00255B2B /* GpsMapViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = GpsMapViewController.h; path = Controller/GpsMapViewController.h; sourceTree = "<group>"; };
+		4E03B4751DB6A0DD00255B2B /* GpsMapViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = GpsMapViewController.m; path = Controller/GpsMapViewController.m; sourceTree = "<group>"; };
 		4E33050F1D5BA74E00297F5A /* Prefs.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Prefs.h; path = Model/Utils/Prefs.h; sourceTree = "<group>"; };
 		4E3305101D5BA74E00297F5A /* Prefs.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Prefs.m; path = Model/Utils/Prefs.m; sourceTree = "<group>"; };
 		4E5A41251D79B6D30097BC2F /* MapViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MapViewController.h; path = Controller/MapViewController.h; sourceTree = "<group>"; };
 		4E5A41261D79B6D30097BC2F /* MapViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MapViewController.m; path = Controller/MapViewController.m; sourceTree = "<group>"; };
 		4E5A41281D79B6ED0097BC2F /* MapViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = MapViewController.xib; path = View/MapViewController.xib; sourceTree = "<group>"; };
 		4E5A412A1D79B7530097BC2F /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
+		4E60A4351DB7E9A6002FF083 /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
+		4E60A43D1DB7ECF1002FF083 /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
 		4E6912D81D5A2FED00972575 /* SMXMLDocument.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SMXMLDocument.h; path = Model/Utils/SMXMLDocument.h; sourceTree = "<group>"; };
 		4E6912D91D5A2FED00972575 /* SMXMLDocument.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SMXMLDocument.m; path = Model/Utils/SMXMLDocument.m; sourceTree = "<group>"; };
 		4E6912DA1D5A2FED00972575 /* XMLCarroParser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = XMLCarroParser.h; path = Model/Utils/XMLCarroParser.h; sourceTree = "<group>"; };
@@ -121,6 +127,7 @@
 			files = (
 				4E5A412B1D79B7530097BC2F /* MapKit.framework in Frameworks */,
 				4E7B0D8A1D75C98A00181646 /* CoreData.framework in Frameworks */,
+				4E60A43F1DB7ECF9002FF083 /* CoreLocation.framework in Frameworks */,
 				4E8AA8671D6393AA00F2C842 /* libsqlite3.tbd in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -128,6 +135,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		4E60A4341DB7E9A6002FF083 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				4E60A4351DB7E9A6002FF083 /* CoreLocation.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		4E75A85F1D54B3FA0032B6B4 /* Utils */ = {
 			isa = PBXGroup;
 			children = (
@@ -178,11 +193,13 @@
 		4EA512D91D53A16100B220EB = {
 			isa = PBXGroup;
 			children = (
+				4E60A43D1DB7ECF1002FF083 /* CoreLocation.framework */,
 				4E5A412A1D79B7530097BC2F /* MapKit.framework */,
 				4E7B0D891D75C98A00181646 /* CoreData.framework */,
 				4E8AA8661D6393AA00F2C842 /* libsqlite3.tbd */,
 				4EA512E41D53A16100B220EB /* Carros Objective-C */,
 				4EA512E31D53A16100B220EB /* Products */,
+				4E60A4341DB7E9A6002FF083 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -230,6 +247,8 @@
 				4E75A87B1D54D9A20032B6B4 /* DetalhesCarroViewController.m */,
 				4E5A41251D79B6D30097BC2F /* MapViewController.h */,
 				4E5A41261D79B6D30097BC2F /* MapViewController.m */,
+				4E03B4741DB6A0DD00255B2B /* GpsMapViewController.h */,
+				4E03B4751DB6A0DD00255B2B /* GpsMapViewController.m */,
 			);
 			name = Controller;
 			sourceTree = "<group>";
@@ -330,6 +349,7 @@
 				TargetAttributes = {
 					4EA512E11D53A16100B220EB = {
 						CreatedOnToolsVersion = 7.3.1;
+						DevelopmentTeam = 64BZ9T7LV6;
 					};
 				};
 			};
@@ -402,6 +422,7 @@
 				4E3305111D5BA74E00297F5A /* Prefs.m in Sources */,
 				4E75A8621D54B4370032B6B4 /* Alerta.m in Sources */,
 				4E6912DC1D5A2FED00972575 /* SMXMLDocument.m in Sources */,
+				4E03B4761DB6A0DD00255B2B /* GpsMapViewController.m in Sources */,
 				4E7B0DBD1D75CB5500181646 /* CarroDBCoreData.m in Sources */,
 				4EA512E71D53A16100B220EB /* main.m in Sources */,
 			);
@@ -502,6 +523,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = 64BZ9T7LV6;
 				INFOPLIST_FILE = "Carros Objective-C/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "br.livro.Carros-Objective-C";
@@ -513,6 +535,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = 64BZ9T7LV6;
 				INFOPLIST_FILE = "Carros Objective-C/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "br.livro.Carros-Objective-C";

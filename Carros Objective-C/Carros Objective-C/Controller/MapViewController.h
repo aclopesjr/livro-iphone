@@ -11,12 +11,12 @@
 #import "Carro.h"
 
 @interface MapViewController : UIViewController <MKMapViewDelegate> {
-    CLLocationManager * locManager;
-    MKPointAnnotation * pin;
+    
 }
 
 @property (nonatomic, strong) IBOutlet MKMapView *mapView;
-
+@property (nonatomic, strong) CLLocationManager * locManager;
+@property (nonatomic, strong) MKPointAnnotation * pin;
 @property (nonatomic, assign) Carro *carro;
 
 

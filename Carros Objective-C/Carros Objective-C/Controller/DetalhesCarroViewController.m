@@ -8,6 +8,7 @@
 
 #import "DetalhesCarroViewController.h"
 #import "MapViewController.h"
+#import "GpsMapViewController.h"
 
 @interface DetalhesCarroViewController ()
 
@@ -33,7 +34,8 @@
 }
 
 -(IBAction)visualizarMapa:(id)sender {
-    MapViewController *vc = [[MapViewController alloc] initWithNibName:@"MapViewController" bundle:nil];
+//    MapViewController *vc = [[MapViewController alloc] initWithNibName:@"MapViewController" bundle:nil];
+    GpsMapViewController *vc = [[GpsMapViewController alloc] initWithNibName:@"MapViewController" bundle:nil];
     [vc setCarro:[self carro]];
     [self.navigationController pushViewController:vc animated:true];
 }

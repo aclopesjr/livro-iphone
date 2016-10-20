@@ -62,7 +62,7 @@
         result = 1;
     }
     
-    int iFinalize = sqlite3_finalize(stmt);
+    sqlite3_finalize(stmt);
     
     return result;
 }
@@ -79,7 +79,7 @@
     int result = sqlite3_prepare_v2(db, cSql, -1, &stmt, nil);
     
     if (result != SQLITE_OK) {
-        int iFinalize = sqlite3_finalize(stmt);
+        sqlite3_finalize(stmt);
         NSLog(@"Erro ao preparar o SQL %@", sql);
     } else {
         NSLog(@"SQL %@", sql);
@@ -113,11 +113,11 @@
 }
 
 - (void) close {
-    int result = sqlite3_close(db);
+    sqlite3_close(db);
 }
 
 - (void) closeStatement:(sqlite3_stmt *)stmt {
-    int iFinalize = sqlite3_finalize(stmt);
+    sqlite3_finalize(stmt);
 }
 
 - (NSString *) lastSQLErro {
