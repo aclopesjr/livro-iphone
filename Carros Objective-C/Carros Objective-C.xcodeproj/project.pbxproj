@@ -9,6 +9,8 @@
 /* Begin PBXBuildFile section */
 		4E03B4761DB6A0DD00255B2B /* GpsMapViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4E03B4751DB6A0DD00255B2B /* GpsMapViewController.m */; };
 		4E3305111D5BA74E00297F5A /* Prefs.m in Sources */ = {isa = PBXBuildFile; fileRef = 4E3305101D5BA74E00297F5A /* Prefs.m */; };
+		4E55CF881DB931970025B9B8 /* VideoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4E55CF871DB931970025B9B8 /* VideoViewController.m */; };
+		4E55CF8A1DB931A30025B9B8 /* VideoViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4E55CF891DB931A30025B9B8 /* VideoViewController.xib */; };
 		4E5A41271D79B6D30097BC2F /* MapViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4E5A41261D79B6D30097BC2F /* MapViewController.m */; };
 		4E5A41291D79B6ED0097BC2F /* MapViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4E5A41281D79B6ED0097BC2F /* MapViewController.xib */; };
 		4E5A412B1D79B7530097BC2F /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4E5A412A1D79B7530097BC2F /* MapKit.framework */; };
@@ -57,6 +59,9 @@
 		4E03B4751DB6A0DD00255B2B /* GpsMapViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = GpsMapViewController.m; path = Controller/GpsMapViewController.m; sourceTree = "<group>"; };
 		4E33050F1D5BA74E00297F5A /* Prefs.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Prefs.h; path = Model/Utils/Prefs.h; sourceTree = "<group>"; };
 		4E3305101D5BA74E00297F5A /* Prefs.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Prefs.m; path = Model/Utils/Prefs.m; sourceTree = "<group>"; };
+		4E55CF861DB931970025B9B8 /* VideoViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = VideoViewController.h; path = Controller/VideoViewController.h; sourceTree = "<group>"; };
+		4E55CF871DB931970025B9B8 /* VideoViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = VideoViewController.m; path = Controller/VideoViewController.m; sourceTree = "<group>"; };
+		4E55CF891DB931A30025B9B8 /* VideoViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = VideoViewController.xib; path = View/VideoViewController.xib; sourceTree = "<group>"; };
 		4E5A41251D79B6D30097BC2F /* MapViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MapViewController.h; path = Controller/MapViewController.h; sourceTree = "<group>"; };
 		4E5A41261D79B6D30097BC2F /* MapViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MapViewController.m; path = Controller/MapViewController.m; sourceTree = "<group>"; };
 		4E5A41281D79B6ED0097BC2F /* MapViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = MapViewController.xib; path = View/MapViewController.xib; sourceTree = "<group>"; };
@@ -249,6 +254,8 @@
 				4E5A41261D79B6D30097BC2F /* MapViewController.m */,
 				4E03B4741DB6A0DD00255B2B /* GpsMapViewController.h */,
 				4E03B4751DB6A0DD00255B2B /* GpsMapViewController.m */,
+				4E55CF861DB931970025B9B8 /* VideoViewController.h */,
+				4E55CF871DB931970025B9B8 /* VideoViewController.m */,
 			);
 			name = Controller;
 			sourceTree = "<group>";
@@ -261,6 +268,7 @@
 				4EA513461D53A2D300B220EB /* SobreViewController.xib */,
 				4E75A8891D5507440032B6B4 /* CarroTableViewCell.xib */,
 				4E5A41281D79B6ED0097BC2F /* MapViewController.xib */,
+				4E55CF891DB931A30025B9B8 /* VideoViewController.xib */,
 			);
 			name = View;
 			sourceTree = "<group>";
@@ -394,6 +402,7 @@
 				4EA513421D53A2AE00B220EB /* carros_esportivos.xml in Resources */,
 				4EA5133D1D53A2AE00B220EB /* tab_sobre@2x.png in Resources */,
 				4EA513371D53A2AE00B220EB /* ferrari_ff.png in Resources */,
+				4E55CF8A1DB931A30025B9B8 /* VideoViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -406,6 +415,7 @@
 			files = (
 				4E6912E01D5A2FFF00972575 /* CarroService.m in Sources */,
 				4E7B0DB91D75CB0E00181646 /* Carro+CoreDataProperties.m in Sources */,
+				4E55CF881DB931970025B9B8 /* VideoViewController.m in Sources */,
 				4E6912DD1D5A2FED00972575 /* XMLCarroParser.m in Sources */,
 				4E8AA8651D6392EB00F2C842 /* SQLiteHelper.m in Sources */,
 				4E75A88E1D55075E0032B6B4 /* CarroTableViewCell.m in Sources */,
