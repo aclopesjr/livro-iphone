@@ -29,6 +29,8 @@
 		4E7B0D651D75AE7A00181646 /* Carro.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E7B0D631D75AE7A00181646 /* Carro.swift */; };
 		4E7B0D881D75B21A00181646 /* CarroDBCoreData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E7B0D871D75B21A00181646 /* CarroDBCoreData.swift */; };
 		4E8AA85D1D6333F300F2C842 /* StringUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E8AA85C1D6333F300F2C842 /* StringUtils.swift */; };
+		4E95946A1E03503F003EC6DB /* MediaPlayer.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4E9594691E03503F003EC6DB /* MediaPlayer.framework */; };
+		4E95946C1E0350A7003EC6DB /* VideoUtil.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E95946B1E0350A7003EC6DB /* VideoUtil.swift */; };
 		4EA5129A1D539BA700B220EB /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4EA512991D539BA700B220EB /* AppDelegate.swift */; };
 		4EA512A41D539BA700B220EB /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4EA512A21D539BA700B220EB /* LaunchScreen.storyboard */; };
 		4EA512C01D539C2300B220EB /* ferrari_ff.png in Resources */ = {isa = PBXBuildFile; fileRef = 4EA512B11D539C2300B220EB /* ferrari_ff.png */; };
@@ -79,6 +81,8 @@
 		4E7B0D631D75AE7A00181646 /* Carro.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Carro.swift; sourceTree = "<group>"; };
 		4E7B0D871D75B21A00181646 /* CarroDBCoreData.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CarroDBCoreData.swift; sourceTree = "<group>"; };
 		4E8AA85C1D6333F300F2C842 /* StringUtils.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = StringUtils.swift; path = Model/Utils/StringUtils.swift; sourceTree = "<group>"; };
+		4E9594691E03503F003EC6DB /* MediaPlayer.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MediaPlayer.framework; path = System/Library/Frameworks/MediaPlayer.framework; sourceTree = SDKROOT; };
+		4E95946B1E0350A7003EC6DB /* VideoUtil.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = VideoUtil.swift; path = Model/Utils/VideoUtil.swift; sourceTree = "<group>"; };
 		4EA512961D539BA600B220EB /* Carros Swift.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Carros Swift.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		4EA512991D539BA700B220EB /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		4EA512A31D539BA700B220EB /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -114,6 +118,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4E95946A1E03503F003EC6DB /* MediaPlayer.framework in Frameworks */,
 				4E5CEBEF1D77547700084342 /* MapKit.framework in Frameworks */,
 				4E5CEBED1D77546E00084342 /* CoreLocation.framework in Frameworks */,
 				4EC5DFB31D70EAA100624CF2 /* CoreData.framework in Frameworks */,
@@ -124,6 +129,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		4E9594681E03503F003EC6DB /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				4E9594691E03503F003EC6DB /* MediaPlayer.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		4EA5128D1D539BA600B220EB = {
 			isa = PBXGroup;
 			children = (
@@ -133,6 +146,7 @@
 				4EA639311D5CF48500B4DD39 /* libsqlite3.tbd */,
 				4EA512981D539BA600B220EB /* Carros Swift */,
 				4EA512971D539BA600B220EB /* Products */,
+				4E9594681E03503F003EC6DB /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -254,6 +268,7 @@
 				4E6912D61D5A287E00972575 /* DownloadImageView.swift */,
 				4E33050D1D5B7E7D00297F5A /* Prefs.swift */,
 				4E55CF841DB927AE0025B9B8 /* String+Extensions.swift */,
+				4E95946B1E0350A7003EC6DB /* VideoUtil.swift */,
 			);
 			name = Utils;
 			sourceTree = "<group>";
@@ -310,6 +325,7 @@
 				TargetAttributes = {
 					4EA512951D539BA600B220EB = {
 						CreatedOnToolsVersion = 7.3.1;
+						DevelopmentTeam = 64BZ9T7LV6;
 						LastSwiftMigration = 0800;
 					};
 				};
@@ -375,6 +391,7 @@
 				4EA639371D5CF7C500B4DD39 /* SQLiteObjc.m in Sources */,
 				4E8AA85D1D6333F300F2C842 /* StringUtils.swift in Sources */,
 				4E5A41241D79B6920097BC2F /* MapViewController.swift in Sources */,
+				4E95946C1E0350A7003EC6DB /* VideoUtil.swift in Sources */,
 				4E55CF831DB924C40025B9B8 /* VideoViewController.swift in Sources */,
 				4EA512D81D539E4700B220EB /* SobreViewController.swift in Sources */,
 				4E6912D51D5A285500972575 /* CarroService.swift in Sources */,
@@ -501,6 +518,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
+				DEVELOPMENT_TEAM = 64BZ9T7LV6;
 				INFOPLIST_FILE = "Carros Swift/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
@@ -517,6 +535,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
+				DEVELOPMENT_TEAM = 64BZ9T7LV6;
 				INFOPLIST_FILE = "Carros Swift/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";

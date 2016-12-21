@@ -17,9 +17,14 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
+    videoUtil = [[VideoUtil alloc] init];
+
+    
     NSURL *url = [[NSURL alloc] initWithString:self.carro.url_video];
-    NSURLRequest *request = [[NSURLRequest alloc] initWithURL:url];
-    [webView loadRequest:request];
+    [videoUtil playUrl:url withView:webView];
+    
+//    NSURLRequest *request = [[NSURLRequest alloc] initWithURL:url];
+//    [webView loadRequest:request];
 }
 
 - (void)didReceiveMemoryWarning {

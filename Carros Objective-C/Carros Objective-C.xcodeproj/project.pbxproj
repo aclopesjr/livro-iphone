@@ -33,6 +33,8 @@
 		4E8AA8621D6392B400F2C842 /* SQLiteObjc.m in Sources */ = {isa = PBXBuildFile; fileRef = 4E8AA8611D6392B400F2C842 /* SQLiteObjc.m */; };
 		4E8AA8651D6392EB00F2C842 /* SQLiteHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = 4E8AA8641D6392EB00F2C842 /* SQLiteHelper.m */; };
 		4E8AA8671D6393AA00F2C842 /* libsqlite3.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 4E8AA8661D6393AA00F2C842 /* libsqlite3.tbd */; };
+		4E95946E1E0362AF003EC6DB /* MediaPlayer.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4E95946D1E0362AF003EC6DB /* MediaPlayer.framework */; };
+		4E9594711E0362E5003EC6DB /* VideoUtil.m in Sources */ = {isa = PBXBuildFile; fileRef = 4E9594701E0362E5003EC6DB /* VideoUtil.m */; };
 		4EA512E71D53A16100B220EB /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 4EA512E61D53A16100B220EB /* main.m */; };
 		4EA512EA1D53A16100B220EB /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 4EA512E91D53A16100B220EB /* AppDelegate.m */; };
 		4EA513221D53A21400B220EB /* ListaCarrosViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4EA513201D53A21400B220EB /* ListaCarrosViewController.xib */; };
@@ -99,6 +101,9 @@
 		4E8AA8631D6392EB00F2C842 /* SQLiteHelper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SQLiteHelper.h; path = Model/Utils/SQLiteHelper.h; sourceTree = "<group>"; };
 		4E8AA8641D6392EB00F2C842 /* SQLiteHelper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SQLiteHelper.m; path = Model/Utils/SQLiteHelper.m; sourceTree = "<group>"; };
 		4E8AA8661D6393AA00F2C842 /* libsqlite3.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libsqlite3.tbd; path = usr/lib/libsqlite3.tbd; sourceTree = SDKROOT; };
+		4E95946D1E0362AF003EC6DB /* MediaPlayer.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MediaPlayer.framework; path = System/Library/Frameworks/MediaPlayer.framework; sourceTree = SDKROOT; };
+		4E95946F1E0362E5003EC6DB /* VideoUtil.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = VideoUtil.h; path = Model/Utils/VideoUtil.h; sourceTree = "<group>"; };
+		4E9594701E0362E5003EC6DB /* VideoUtil.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = VideoUtil.m; path = Model/Utils/VideoUtil.m; sourceTree = "<group>"; };
 		4EA512E21D53A16100B220EB /* Carros Objective-C.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Carros Objective-C.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		4EA512E61D53A16100B220EB /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		4EA512E81D53A16100B220EB /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -130,6 +135,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4E95946E1E0362AF003EC6DB /* MediaPlayer.framework in Frameworks */,
 				4E5A412B1D79B7530097BC2F /* MapKit.framework in Frameworks */,
 				4E7B0D8A1D75C98A00181646 /* CoreData.framework in Frameworks */,
 				4E60A43F1DB7ECF9002FF083 /* CoreLocation.framework in Frameworks */,
@@ -143,6 +149,7 @@
 		4E60A4341DB7E9A6002FF083 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				4E95946D1E0362AF003EC6DB /* MediaPlayer.framework */,
 				4E60A4351DB7E9A6002FF083 /* CoreLocation.framework */,
 			);
 			name = Frameworks;
@@ -167,6 +174,8 @@
 				4E3305101D5BA74E00297F5A /* Prefs.m */,
 				4E7D97D71D6DCCF8007EC3B2 /* StringUtils.h */,
 				4E7D97D81D6DCCF8007EC3B2 /* StringUtils.m */,
+				4E95946F1E0362E5003EC6DB /* VideoUtil.h */,
+				4E9594701E0362E5003EC6DB /* VideoUtil.m */,
 			);
 			name = Utils;
 			sourceTree = "<group>";
@@ -428,6 +437,7 @@
 				4EA513251D53A24700B220EB /* ListaCarrosViewController.m in Sources */,
 				4EA5134B1D53A2EF00B220EB /* SobreViewController.m in Sources */,
 				4E6912E31D5A305200972575 /* DownloadImageView.m in Sources */,
+				4E9594711E0362E5003EC6DB /* VideoUtil.m in Sources */,
 				4E7B0DB41D75CA6100181646 /* CarrosModel.xcdatamodeld in Sources */,
 				4E3305111D5BA74E00297F5A /* Prefs.m in Sources */,
 				4E75A8621D54B4370032B6B4 /* Alerta.m in Sources */,

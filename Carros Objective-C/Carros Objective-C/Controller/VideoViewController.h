@@ -8,9 +8,11 @@
 
 #import <UIKit/UIKit.h>
 #import "Carro.h"
+#import "VideoUtil.h"
 
 @interface VideoViewController : UIViewController {
     IBOutlet UIWebView * webView;
+    VideoUtil * videoUtil;
 }
 
 @property (nonatomic, assign) Carro *carro;

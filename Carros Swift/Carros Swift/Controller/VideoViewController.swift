@@ -11,16 +11,17 @@ import UIKit
 class VideoViewController: UIViewController {
 
     var carro : Carro?
-    
     @IBOutlet var webView : UIWebView!
+    let videoUtil = VideoUtil()
     
     override func viewDidLoad() {
         super.viewDidLoad()
 
         let url = self.carro!.url_video?.url()
+        self.videoUtil.playUrl(url: url!, view: self.webView)
         
-        let request = URLRequest(url: url!)
-        self.webView.loadRequest(request)
+//        let request = URLRequest(url: url!)
+//        self.webView.loadRequest(request)
     }
 
     override func didReceiveMemoryWarning() {
