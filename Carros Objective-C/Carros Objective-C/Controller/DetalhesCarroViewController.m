@@ -10,6 +10,7 @@
 #import "MapViewController.h"
 #import "GpsMapViewController.h"
 #import "VideoViewController.h"
+#import "VideoUtil.h"
 
 @interface DetalhesCarroViewController ()
 
@@ -42,8 +43,11 @@
 }
 
 -(IBAction)visualizarVideo:(id)sender {
-    VideoViewController *vc = [[VideoViewController alloc] initWithNibName:@"VideoViewController" bundle:nil];
-    [vc setCarro:[self carro]];
-    [self.navigationController pushViewController:vc animated:true];
+    VideoUtil *videoUtil = [[VideoUtil alloc] init];
+    NSURL *url = [[NSURL alloc] initWithString:[self.carro url_video]];
+    [videoUtil playUrlFullScreen:url withViewController:self];
+//    VideoViewController *vc = [[VideoViewController alloc] initWithNibName:@"VideoViewController" bundle:nil];
+//    [vc setCarro:[self carro]];
+//    [self.navigationController pushViewController:vc animated:true];
 }
 @end

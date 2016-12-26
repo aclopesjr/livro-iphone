@@ -18,7 +18,6 @@
     [super viewDidLoad];
     
     videoUtil = [[VideoUtil alloc] init];
-
     
     NSURL *url = [[NSURL alloc] initWithString:self.carro.url_video];
     [videoUtil playUrl:url withView:webView];
