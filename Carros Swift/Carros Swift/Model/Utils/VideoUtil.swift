@@ -81,6 +81,7 @@ class VideoUtil {
             viewController.present(playerVC, animated: true, completion: { () -> Void in
                 self.playerVC.player?.play()
             })
+            
         }
     }
 }

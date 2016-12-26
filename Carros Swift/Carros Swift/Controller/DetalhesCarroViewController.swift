@@ -41,8 +41,12 @@ class DetalhesCarroViewController: UIViewController {
     }
     
     @IBAction func visualizarVideo() {
-        let vc = VideoViewController(nibName: "VideoViewController", bundle: nil)
-        vc.carro = self.carro
-        self.navigationController!.pushViewController(vc, animated: true)
+        let videoUtil = VideoUtil()
+        let url = self.carro!.url_video?.url()
+        videoUtil.playUrlFullScreen(url: url!, viewController: self)
+        
+//        let vc = VideoViewController(nibName: "VideoViewController", bundle: nil)
+//        vc.carro = self.carro
+//        self.navigationController!.pushViewController(vc, animated: true)
     }
 }
