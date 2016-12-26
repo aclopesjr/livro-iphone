@@ -22,6 +22,9 @@ class VideoViewController: UIViewController {
         
 //        let request = URLRequest(url: url!)
 //        self.webView.loadRequest(request)
+        
+        // Notificações para monitorar o fim
+        NotificationCenter.default.addObserver(self, selector: #selector(VideoViewController.videoFim), name: NSNotification.Name(rawValue: "AVPlayerItemDidPlayToEndTimeNotification"), object: nil)
     }
 
     override func didReceiveMemoryWarning() {
@@ -29,6 +32,11 @@ class VideoViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
     
+    // MARK: Eventos
+    func videoFim() {
+        print("Fim do vídeo")
+        self.navigationController!.popViewController(animated: true)
+    }
 
     /*
     // MARK: - Navigation
