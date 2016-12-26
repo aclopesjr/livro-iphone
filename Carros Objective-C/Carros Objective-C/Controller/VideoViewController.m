@@ -25,11 +25,19 @@
     
 //    NSURLRequest *request = [[NSURLRequest alloc] initWithURL:url];
 //    [webView loadRequest:request];
+    
+    // Notificações para monitorar o fim
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(videoFim) name:AVPlayerItemDidPlayToEndTimeNotification object:nil];
 }
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
+}
+
+#pragma mark - Evento
+- (void)videoFim {
+    [self.navigationController popViewControllerAnimated:TRUE];
 }
 
 /*

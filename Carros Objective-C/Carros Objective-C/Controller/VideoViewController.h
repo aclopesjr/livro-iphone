@@ -16,5 +16,6 @@
 }
 
 @property (nonatomic, assign) Carro *carro;
+-(void)videoFim;
 
 @end
