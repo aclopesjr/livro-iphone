@@ -41,6 +41,13 @@ class ListaCarrosViewController: UIViewController, UITableViewDataSource, UITabl
         // Dispose of any resources that can be recreated.
     }
     
+    override var supportedInterfaceOrientations: UIInterfaceOrientationMask {
+        if (Utils.isIphone()) {
+            return UIInterfaceOrientationMask.portrait
+        }
+        return UIInterfaceOrientationMask.all
+    }
+    
     @IBAction func alterarTipo(_ sender: UISegmentedControl) {
         switch sender.selectedSegmentIndex {
         case 1:

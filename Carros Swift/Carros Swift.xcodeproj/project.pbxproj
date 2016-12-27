@@ -55,6 +55,7 @@
 		4EA639361D5CF7C500B4DD39 /* SQLiteHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4EA639331D5CF7C500B4DD39 /* SQLiteHelper.swift */; };
 		4EA639371D5CF7C500B4DD39 /* SQLiteObjc.m in Sources */ = {isa = PBXBuildFile; fileRef = 4EA639351D5CF7C500B4DD39 /* SQLiteObjc.m */; };
 		4EC5DFB31D70EAA100624CF2 /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4EC5DFB21D70EAA100624CF2 /* CoreData.framework */; };
+		4EFA50D81E12CE670071971F /* Utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4EFA50D71E12CE670071971F /* Utils.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -111,6 +112,7 @@
 		4EA639351D5CF7C500B4DD39 /* SQLiteObjc.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SQLiteObjc.m; path = Model/Utils/SQLiteObjc.m; sourceTree = "<group>"; };
 		4EA8C42B1D59027600B3C485 /* Carros Swift-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Carros Swift-Bridging-Header.h"; sourceTree = "<group>"; };
 		4EC5DFB21D70EAA100624CF2 /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
+		4EFA50D71E12CE670071971F /* Utils.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Utils.swift; path = Model/Utils/Utils.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -269,6 +271,7 @@
 				4E33050D1D5B7E7D00297F5A /* Prefs.swift */,
 				4E55CF841DB927AE0025B9B8 /* String+Extensions.swift */,
 				4E95946B1E0350A7003EC6DB /* VideoUtil.swift */,
+				4EFA50D71E12CE670071971F /* Utils.swift */,
 			);
 			name = Utils;
 			sourceTree = "<group>";
@@ -326,7 +329,7 @@
 					4EA512951D539BA600B220EB = {
 						CreatedOnToolsVersion = 7.3.1;
 						DevelopmentTeam = 64BZ9T7LV6;
-						LastSwiftMigration = 0800;
+						LastSwiftMigration = 0820;
 					};
 				};
 			};
@@ -406,6 +409,7 @@
 				4E6912D31D5A284100972575 /* XMLCarroParser.swift in Sources */,
 				4EA5129A1D539BA700B220EB /* AppDelegate.swift in Sources */,
 				4E7B0D881D75B21A00181646 /* CarroDBCoreData.swift in Sources */,
+				4EFA50D81E12CE670071971F /* Utils.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

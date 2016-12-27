@@ -14,12 +14,24 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     var window: UIWindow?
 
-
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
         
         self.window = UIWindow(frame: UIScreen.main.bounds)
         self.window!.backgroundColor = UIColor.white
+    
+        let iPad = Utils.isIpad()
+        if iPad {
+            initIPad()
+        } else {
+            initIphone()
+        }
+    
+        self.window!.makeKeyAndVisible()
         
+        return true
+    }
+    
+    func initIphone() {
         //cria os controllers
         let listaCarrosViewController = ListaCarrosViewController(nibName: "ListaCarrosViewController", bundle: nil)
         let nav1 = UINavigationController()
@@ -37,12 +49,30 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         let tabBarController = UITabBarController()
         tabBarController.viewControllers = [nav1, nav2]
         
-        self.window!.rootViewController = tabBarController;
-        self.window!.makeKeyAndVisible()
-        
-        return true
+        self.window!.rootViewController = tabBarController
     }
 
+    func initIPad() {
+        //cria os controller da esquerda e direita
+        let listaCarrosViewController = ListaCarrosViewController(nibName: "ListaCarrosViewController", bundle: nil)
+        let nav1 = UINavigationController()
+        nav1.pushViewController(listaCarrosViewController, animated: false)
+        
+        let detalhesCarroViewController = DetalhesCarroViewController(nibName: "DetalhesCarroViewController", bundle: nil)
+        let nav2 = UINavigationController()
+        nav2.pushViewController(detalhesCarroViewController, animated: false)
+        
+        //cria o UISplitViewController
+        let split = UISplitViewController()
+        
+        //indica qual ViewController
+        split.delegate = detalhesCarroViewController
+        split.viewControllers = [nav1, nav2]
+        
+        //deixa o UISplitViewController como o controller principal
+        self.window!.rootViewController = split
+    }
+    
     func applicationWillResignActive(_ application: UIApplication) {
         // Sent when the application is about to move from active to inactive state. This can occur for certain types of temporary interruptions (such as an incoming phone call or SMS message) or when the user quits the application and it begins the transition to the background state.
         // Use this method to pause ongoing tasks, disable timers, and throttle down OpenGL ES frame rates. Games should use this method to pause the game.

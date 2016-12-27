@@ -8,7 +8,7 @@
 
 import UIKit
 
-class DetalhesCarroViewController: UIViewController {
+class DetalhesCarroViewController: UIViewController, UISplitViewControllerDelegate {
 
     // MARK: Outlets
     @IBOutlet var image : DownloadImageView!
@@ -32,6 +32,11 @@ class DetalhesCarroViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
     
+    override func viewWillTransition(to size: CGSize, with coordinator: UIViewControllerTransitionCoordinator) {
+        if (Utils.isIphone()) {
+
+        }
+    }
 
     @IBAction func visualizarMapa() {
         //let vc = MapViewController(nibName: "MapViewController", bundle: nil)
