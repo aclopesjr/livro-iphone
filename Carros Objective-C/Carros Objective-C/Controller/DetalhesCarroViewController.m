@@ -25,10 +25,7 @@
     [super viewDidLoad];
     
     if (carro != nil) {
-        [self setTitle:carro.nome];
-        
-        [image setUrl:carro.url_foto];
-        descricao.text = carro.desc;
+        [self updateCarro:carro];
     }
 }
 
@@ -56,5 +53,12 @@
 //    VideoViewController *vc = [[VideoViewController alloc] initWithNibName:@"VideoViewController" bundle:nil];
 //    [vc setCarro:[self carro]];
 //    [self.navigationController pushViewController:vc animated:true];
+}
+
+-(void)updateCarro:(Carro*)selectedCarro {
+    [self setCarro:selectedCarro];
+    [self setTitle:selectedCarro.nome];
+    [descricao setText:selectedCarro.desc];
+    [image setUrl:selectedCarro.url_foto];
 }
 @end

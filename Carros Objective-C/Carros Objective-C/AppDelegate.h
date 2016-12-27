@@ -8,6 +8,9 @@
 
 #import <UIKit/UIKit.h>
 #import <CoreData/CoreData.h>
+#import "ListaCarrosViewController.h"
+#import "DetalhesCarroViewController.h"
+#import "SobreViewController.h"
 
 @interface AppDelegate : UIResponder <UIApplicationDelegate>
 
@@ -16,6 +19,10 @@
 @property (readonly, strong, nonatomic) NSManagedObjectContext *managedObjectContext;
 @property (readonly, strong, nonatomic) NSManagedObjectModel *managedObjectModel;
 @property (readonly, strong, nonatomic) NSPersistentStoreCoordinator *persistentStoreCoordinator;
+
+@property (strong, nonatomic) ListaCarrosViewController *listaCarrosViewController;
+@property (strong, nonatomic) DetalhesCarroViewController *detalhesCarroViewController;
+@property (strong, nonatomic) SobreViewController *sobreViewController;
 
 - (void)saveContext;
 - (NSURL *)applicationDocumentsDirectory;

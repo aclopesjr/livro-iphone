@@ -18,6 +18,7 @@
 
 @implementation AppDelegate
 
+@synthesize listaCarrosViewController, detalhesCarroViewController, sobreViewController;
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     
@@ -37,13 +38,13 @@
 
 - (void)initIPhone {
     //cria controllers
-    ListaCarrosViewController *listaCarrosViewController = [[ListaCarrosViewController alloc] initWithNibName:@"ListaCarrosViewController" bundle:nil];
+    [self setListaCarrosViewController:[[ListaCarrosViewController alloc] initWithNibName:@"ListaCarrosViewController" bundle:nil]];
     UINavigationController *nav1 = [[UINavigationController alloc] init];
     [nav1 pushViewController:listaCarrosViewController animated:false];
     nav1.tabBarItem.title = @"Carros";
     nav1.tabBarItem.image = [UIImage imageNamed:@"tab_carros"];
     
-    SobreViewController *sobreViewController = [[SobreViewController alloc] initWithNibName:@"SobreViewController" bundle:nil];
+    [self setSobreViewController:[[SobreViewController alloc] initWithNibName:@"SobreViewController" bundle:nil]];
     UINavigationController *nav2 = [[UINavigationController alloc] init];
     [nav2 pushViewController:sobreViewController animated:false];
     nav2.tabBarItem.title = @"Sobre";
@@ -58,13 +59,13 @@
 
 - (void)initIPad {
     //cria os controllers
-    ListaCarrosViewController *listaCarrosViewController = [[ListaCarrosViewController alloc] initWithNibName:@"ListaCarrosViewController" bundle:nil];
+    [self setListaCarrosViewController:[[ListaCarrosViewController alloc] initWithNibName:@"ListaCarrosViewController" bundle:nil]];
     UINavigationController *nav1 = [[UINavigationController alloc] init];
-    [nav1 pushViewController:listaCarrosViewController animated:false];
+    [nav1 pushViewController:self.listaCarrosViewController animated:false];
     
-    DetalhesCarroViewController *detalhesCarroViewController = [[DetalhesCarroViewController alloc] initWithNibName:@"DetalhesCarroViewController" bundle:nil];
+    [self setDetalhesCarroViewController:[[DetalhesCarroViewController alloc] initWithNibName:@"DetalhesCarroViewController" bundle:nil]];
     UINavigationController *nav2 = [[UINavigationController alloc] init];
-    [nav2 pushViewController:detalhesCarroViewController animated:false];
+    [nav2 pushViewController:self.detalhesCarroViewController animated:false];
     
     //cria o UISplitViewController
     UISplitViewController *split = [[UISplitViewController alloc] init];

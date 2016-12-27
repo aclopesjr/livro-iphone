@@ -11,7 +11,7 @@
 @implementation StringUtils
 
 + (char *)toCString:(NSString *)s {
-    char * result = [s UTF8String];
+    char * result = (char*)[s UTF8String];
     return result;
 }
 

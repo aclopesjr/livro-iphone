@@ -9,6 +9,7 @@
 #import <UIKit/UIKit.h>
 #import "Carro.h"
 #import "DownloadImageView.h"
+#import "Carro.h"
 
 @interface DetalhesCarroViewController : UIViewController<UISplitViewControllerDelegate> {
     IBOutlet DownloadImageView * image;
@@ -18,5 +19,6 @@
 @property (nonatomic, strong) Carro * carro;
 
 -(IBAction)visualizarMapa:(id)sender;
+-(void)updateCarro:(Carro*)carro;
 
 @end

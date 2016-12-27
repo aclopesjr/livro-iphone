@@ -15,6 +15,7 @@
 #import "DownloadImageView.h"
 #import "Prefs.h"
 #import "Utils.h"
+#import "AppDelegate.h"
 
 @interface ListaCarrosViewController ()
 
@@ -76,21 +77,39 @@
 
 - (void)buscaCarros:(Boolean)cache {
     [progress startAnimating];
+
+    void(^callback)(NSArray *novosCarros, NSError *error);
+    callback = ^(NSArray * novosCarros, NSError * error) {
+        if (error != nil) {
+            [Alerta alerta:[NSString stringWithFormat:@"Erro:"] withViewController:self];
+        } else {
+            carros = novosCarros;
+            [tabView reloadData];
+            
+            if ([Utils isIpad] && [carros count] > 0) {
+                AppDelegate* appDelegate = (AppDelegate*)[[UIApplication sharedApplication] delegate];
+                [[appDelegate detalhesCarroViewController] updateCarro:[carros objectAtIndex:0]];
+            }
+        }
+        
+        [progress stopAnimating];
+    };
     
     NSString * tipo = (NSString *)[Prefs getObjectForKey:@"tipo"];
     if (tipo == nil) {
         tipo = @"classicos";
     }
-     
-    [CarroService getCarrosByType:tipo withCache:cache andCallback:^(NSArray * novoscarros, NSError * error) {
-        if (error != nil) {
-            [Alerta alerta:[NSString stringWithFormat:@"Erro:"] withViewController:self];
-        } else {
-            carros = novoscarros;
-            [tabView reloadData];
-            [progress stopAnimating];
-        }
-    }];
+    
+    [CarroService getCarrosByType:tipo withCache:cache andCallback:callback];
+//    [CarroService getCarrosByType:tipo withCache:cache andCallback:^(NSArray * novoscarros, NSError * error) {
+//        if (error != nil) {
+//            [Alerta alerta:[NSString stringWithFormat:@"Erro:"] withViewController:self];
+//        } else {
+//            carros = novoscarros;
+//            [tabView reloadData];
+//            [progress stopAnimating];
+//        }
+//    }];
     
 //    carros = [CarroService getCarroByTypeFromFile:tipo];
 //    [tabView reloadData];
@@ -127,10 +146,16 @@
     Carro * carro = carros[indexPath.row];
     //[Alerta alerta:[NSString stringWithFormat:@"Selecionou o carro %@", carro.nome] withViewController:self];
     
-    DetalhesCarroViewController * detalhesCarroViewController = [[DetalhesCarroViewController alloc] initWithNibName:@"DetalhesCarroViewController" bundle:nil];
-    detalhesCarroViewController.carro = carro;
-    
-    [[self navigationController] pushViewController:detalhesCarroViewController animated:true];
+    if ([Utils isIphone]) {
+        //
+        DetalhesCarroViewController * detalhesCarroViewController = [[DetalhesCarroViewController alloc] initWithNibName:@"DetalhesCarroViewController" bundle:nil];
+        detalhesCarroViewController.carro = carro;
+
+        [[self navigationController] pushViewController:detalhesCarroViewController animated:true];
+    } else {
+        AppDelegate* appDelegate = (AppDelegate*)[[UIApplication sharedApplication] delegate];
+        [[appDelegate detalhesCarroViewController] updateCarro:carro];
+    }
 }
 
 @end
