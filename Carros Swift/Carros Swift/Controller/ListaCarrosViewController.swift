@@ -66,20 +66,40 @@ class ListaCarrosViewController: UIViewController, UITableViewDataSource, UITabl
     func buscaCarros(_ withCache:Bool) {
         self.progress.startAnimating()
         
+        let funcaoRetorno = { (carros: Array<Carro>, error: NSError?) -> Void in
+            if error != nil {
+                Alerta.alerta("Erro" + (error?.localizedDescription)!, viewController: self)
+            } else {
+                self.carros = carros
+                //atualiza a tableview
+                self.tabView.reloadData()
+                //Seta o primeiro carro na direita
+                if (Utils.isIpad() && carros.count > 0) {
+                    let c = carros[0]
+                    let appDelegate = UIApplication.shared.delegate as! AppDelegate
+                    let detalhes = appDelegate.detalhesCarroViewController
+                    detalhes?.updateCarro(carro: c)
+                }
+            }
+            self.progress.stopAnimating()
+        }
+        
         var tipo = "classicos"
         if let tipoStoreged = Prefs.getObjectForKey("tipo") as! String! {
             tipo = tipoStoreged
         }
         
-        CarroService.getCarrosByTipo(tipo, withCache: withCache, andCallback:  { (carros: Array<Carro>, error: NSError?) -> Void in
-            if error != nil {
-                Alerta.alerta("Erro: " + (error?.localizedDescription)!, viewController: self)
-            } else {
-                self.carros = carros
-                self.tabView.reloadData()
-                self.progress.stopAnimating()
-            }
-        } )
+        CarroService.getCarrosByTipo(tipo, withCache: withCache, andCallback: funcaoRetorno)
+        
+//        CarroService.getCarrosByTipo(tipo, withCache: withCache, andCallback:  { (carros: Array<Carro>, error: NSError?) -> Void in
+//            if error != nil {
+//                Alerta.alerta("Erro: " + (error?.localizedDescription)!, viewController: self)
+//            } else {
+//                self.carros = carros
+//                self.tabView.reloadData()
+//                self.progress.stopAnimating()
+//            }
+//        } )
         
 //        CarroService.getCarrosByTipo(tipo, withCache: withCache, andCallback: { (carros: Array<Carro>, error: NSError!) -> Void in
 //            if error != nil {
@@ -122,9 +142,15 @@ class ListaCarrosViewController: UIViewController, UITableViewDataSource, UITabl
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         let carro = self.carros[(indexPath as NSIndexPath).row]
         //Alerta.alerta("Selecionou o carro: " + carro.nome, viewController: self)
-                                                                                
-        let detalhesCarroViewController = DetalhesCarroViewController(nibName: "DetalhesCarroViewController", bundle: nil)
-        detalhesCarroViewController.carro = carro
-        self.navigationController!.pushViewController(detalhesCarroViewController, animated: true)
+        
+        if (Utils.isIphone()) {
+            let detalhesCarroViewController = DetalhesCarroViewController(nibName: "DetalhesCarroViewController", bundle: nil)
+            detalhesCarroViewController.carro = carro
+            self.navigationController!.pushViewController(detalhesCarroViewController, animated: true)
+        } else {
+            let appDelegate = UIApplication.shared.delegate as! AppDelegate
+            let detalhes = appDelegate.detalhesCarroViewController
+            detalhes?.updateCarro(carro: carro)
+        }
     }
 }

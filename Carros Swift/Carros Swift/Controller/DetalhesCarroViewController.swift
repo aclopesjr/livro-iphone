@@ -21,9 +21,7 @@ class DetalhesCarroViewController: UIViewController, UISplitViewControllerDelega
         super.viewDidLoad()
 
         if let selectedCarro = carro {
-            self.title = selectedCarro.nome
-            self.image.setUrl(selectedCarro.url_foto!)
-            self.descricao.text = selectedCarro.desc
+            updateCarro(carro: selectedCarro)
         }
     }
 
@@ -53,5 +51,12 @@ class DetalhesCarroViewController: UIViewController, UISplitViewControllerDelega
 //        let vc = VideoViewController(nibName: "VideoViewController", bundle: nil)
 //        vc.carro = self.carro
 //        self.navigationController!.pushViewController(vc, animated: true)
+    }
+    
+    func updateCarro(carro: Carro) {
+        self.carro = carro
+        self.title = carro.nome
+        self.descricao.text = carro.desc
+        self.image.setUrl(carro.url_foto!)
     }
 }

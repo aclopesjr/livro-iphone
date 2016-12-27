@@ -13,6 +13,10 @@ import CoreData
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
     var window: UIWindow?
+    
+    var listaCarrosViewController : ListaCarrosViewController!
+    var detalhesCarroViewController : DetalhesCarroViewController!
+    var sobreViewController : SobreViewController!
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
         
@@ -33,13 +37,13 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     
     func initIphone() {
         //cria os controllers
-        let listaCarrosViewController = ListaCarrosViewController(nibName: "ListaCarrosViewController", bundle: nil)
+        self.listaCarrosViewController = ListaCarrosViewController(nibName: "ListaCarrosViewController", bundle: nil)
         let nav1 = UINavigationController()
         nav1.pushViewController(listaCarrosViewController, animated: false)
         nav1.tabBarItem.title = "Carros"
         nav1.tabBarItem.image = UIImage(named: "tab_carros")
         
-        let sobreViewController = SobreViewController(nibName: "SobreViewController", bundle: nil)
+        self.sobreViewController = SobreViewController(nibName: "SobreViewController", bundle: nil)
         let nav2 = UINavigationController()
         nav2.pushViewController(sobreViewController, animated: false)
         nav2.tabBarItem.title = "Sobre"
@@ -54,11 +58,11 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func initIPad() {
         //cria os controller da esquerda e direita
-        let listaCarrosViewController = ListaCarrosViewController(nibName: "ListaCarrosViewController", bundle: nil)
+        self.listaCarrosViewController = ListaCarrosViewController(nibName: "ListaCarrosViewController", bundle: nil)
         let nav1 = UINavigationController()
         nav1.pushViewController(listaCarrosViewController, animated: false)
         
-        let detalhesCarroViewController = DetalhesCarroViewController(nibName: "DetalhesCarroViewController", bundle: nil)
+        self.detalhesCarroViewController = DetalhesCarroViewController(nibName: "DetalhesCarroViewController", bundle: nil)
         let nav2 = UINavigationController()
         nav2.pushViewController(detalhesCarroViewController, animated: false)
         
