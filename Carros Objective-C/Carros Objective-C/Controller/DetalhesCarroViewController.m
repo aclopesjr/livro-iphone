@@ -7,6 +7,7 @@
 //
 
 #import "DetalhesCarroViewController.h"
+#import "ListaCarrosViewController.h"
 #import "MapViewController.h"
 #import "GpsMapViewController.h"
 #import "VideoViewController.h"
@@ -66,5 +67,19 @@
     [self setTitle:selectedCarro.nome];
     [descricao setText:selectedCarro.desc];
     [image setUrl:selectedCarro.url_foto];
+}
+
+-(void)splitViewController:(UISplitViewController *)svc willChangeToDisplayMode:(UISplitViewControllerDisplayMode)displayMode {
+    if (displayMode == UISplitViewControllerDisplayModePrimaryHidden) {
+        UIBarButtonItem *btPopOver = [[UIBarButtonItem alloc] initWithTitle:@"Lista" style:UIBarButtonItemStylePlain target:self action:@selector(onClickPopover)];
+        [self.navigationItem setLeftBarButtonItem:btPopOver];
+    } else {
+        [self.navigationItem setLeftBarButtonItem:nil];
+    }
+}
+
+-(void)onClickPopover {
+    ListaCarrosViewController *listaViewController = [[ListaCarrosViewController alloc] init];
+    [PopoverUtil show:self andViewController:listaViewController andSource:self.navigationItem.leftBarButtonItem andWidth:400 andHeight:800];
 }
 @end
