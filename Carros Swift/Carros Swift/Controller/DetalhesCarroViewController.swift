@@ -36,11 +36,15 @@ class DetalhesCarroViewController: UIViewController, UISplitViewControllerDelega
         }
     }
 
-    @IBAction func visualizarMapa() {
+    @IBAction func visualizarMapa(button: UIButton) {
         //let vc = MapViewController(nibName: "MapViewController", bundle: nil)
         let vc = GpsMapViewController(nibName: "MapViewController", bundle: nil)
         vc.carro = self.carro
-        self.navigationController!.pushViewController(vc, animated: true)
+        if (Utils.isIphone()) {
+            self.navigationController!.pushViewController(vc, animated: true)
+        } else {
+            PopoverUtil.show(selfViewController: self, viewController: vc, sourceView: button, width: 600, height: 500)
+        }
     }
     
     @IBAction func visualizarVideo() {

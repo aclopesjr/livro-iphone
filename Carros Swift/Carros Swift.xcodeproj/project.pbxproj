@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		4E03B4731DB69AC000255B2B /* GpsMapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E03B4721DB69AC000255B2B /* GpsMapViewController.swift */; };
+		4E08227D1E1323E2005A1EF3 /* PopoverUtil.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E08227C1E1323E2005A1EF3 /* PopoverUtil.swift */; };
 		4E33050E1D5B7E7D00297F5A /* Prefs.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E33050D1D5B7E7D00297F5A /* Prefs.swift */; };
 		4E55CF811DB924A10025B9B8 /* VideoViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4E55CF801DB924A10025B9B8 /* VideoViewController.xib */; };
 		4E55CF831DB924C40025B9B8 /* VideoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E55CF821DB924C40025B9B8 /* VideoViewController.swift */; };
@@ -60,6 +61,7 @@
 
 /* Begin PBXFileReference section */
 		4E03B4721DB69AC000255B2B /* GpsMapViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = GpsMapViewController.swift; path = Controller/GpsMapViewController.swift; sourceTree = "<group>"; };
+		4E08227C1E1323E2005A1EF3 /* PopoverUtil.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = PopoverUtil.swift; path = Model/Utils/PopoverUtil.swift; sourceTree = "<group>"; };
 		4E33050D1D5B7E7D00297F5A /* Prefs.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Prefs.swift; path = Model/Utils/Prefs.swift; sourceTree = "<group>"; };
 		4E55CF801DB924A10025B9B8 /* VideoViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = VideoViewController.xib; path = View/VideoViewController.xib; sourceTree = "<group>"; };
 		4E55CF821DB924C40025B9B8 /* VideoViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = VideoViewController.swift; path = Controller/VideoViewController.swift; sourceTree = "<group>"; };
@@ -272,6 +274,7 @@
 				4E55CF841DB927AE0025B9B8 /* String+Extensions.swift */,
 				4E95946B1E0350A7003EC6DB /* VideoUtil.swift */,
 				4EFA50D71E12CE670071971F /* Utils.swift */,
+				4E08227C1E1323E2005A1EF3 /* PopoverUtil.swift */,
 			);
 			name = Utils;
 			sourceTree = "<group>";
@@ -387,6 +390,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				4EA5134F1D53CAAC00B220EB /* Alerta.swift in Sources */,
+				4E08227D1E1323E2005A1EF3 /* PopoverUtil.swift in Sources */,
 				4E7B0D651D75AE7A00181646 /* Carro.swift in Sources */,
 				4E75A8791D54D5910032B6B4 /* DetalhesCarroViewController.swift in Sources */,
 				4E7B0D641D75AE7A00181646 /* Carro+CoreDataProperties.swift in Sources */,
