@@ -63,4 +63,21 @@ class DetalhesCarroViewController: UIViewController, UISplitViewControllerDelega
         self.descricao.text = carro.desc
         self.image.setUrl(carro.url_foto!)
     }
+    
+    func splitViewController(_ svc: UISplitViewController, willChangeTo displayMode: UISplitViewControllerDisplayMode) {
+        let vertical = displayMode == UISplitViewControllerDisplayMode.primaryHidden
+        if (vertical) {
+            let btPopover = UIBarButtonItem(title: "Lista", style: UIBarButtonItemStyle.plain, target: self, action: #selector(DetalhesCarroViewController.onClickPopover))
+            self.navigationItem.leftBarButtonItem = btPopover
+        } else {
+            self.navigationItem.leftBarButtonItem = nil
+        }
+    }
+    
+    func onClickPopover() {
+        let bt = self.navigationItem.leftBarButtonItem!
+        let vc = ListaCarrosViewController()
+        
+        PopoverUtil.show(selfViewController: self, viewController: vc, source: bt, width: 400, height: 800)
+    }
 }
