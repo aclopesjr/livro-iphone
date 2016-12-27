@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		4E03B4761DB6A0DD00255B2B /* GpsMapViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4E03B4751DB6A0DD00255B2B /* GpsMapViewController.m */; };
+		4E08227B1E12E005005A1EF3 /* Utils.m in Sources */ = {isa = PBXBuildFile; fileRef = 4E08227A1E12E005005A1EF3 /* Utils.m */; };
 		4E3305111D5BA74E00297F5A /* Prefs.m in Sources */ = {isa = PBXBuildFile; fileRef = 4E3305101D5BA74E00297F5A /* Prefs.m */; };
 		4E55CF881DB931970025B9B8 /* VideoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4E55CF871DB931970025B9B8 /* VideoViewController.m */; };
 		4E55CF8A1DB931A30025B9B8 /* VideoViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4E55CF891DB931A30025B9B8 /* VideoViewController.xib */; };
@@ -59,6 +60,8 @@
 /* Begin PBXFileReference section */
 		4E03B4741DB6A0DD00255B2B /* GpsMapViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = GpsMapViewController.h; path = Controller/GpsMapViewController.h; sourceTree = "<group>"; };
 		4E03B4751DB6A0DD00255B2B /* GpsMapViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = GpsMapViewController.m; path = Controller/GpsMapViewController.m; sourceTree = "<group>"; };
+		4E0822791E12E005005A1EF3 /* Utils.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Utils.h; path = Model/Utils/Utils.h; sourceTree = "<group>"; };
+		4E08227A1E12E005005A1EF3 /* Utils.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Utils.m; path = Model/Utils/Utils.m; sourceTree = "<group>"; };
 		4E33050F1D5BA74E00297F5A /* Prefs.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Prefs.h; path = Model/Utils/Prefs.h; sourceTree = "<group>"; };
 		4E3305101D5BA74E00297F5A /* Prefs.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Prefs.m; path = Model/Utils/Prefs.m; sourceTree = "<group>"; };
 		4E55CF861DB931970025B9B8 /* VideoViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = VideoViewController.h; path = Controller/VideoViewController.h; sourceTree = "<group>"; };
@@ -176,6 +179,8 @@
 				4E7D97D81D6DCCF8007EC3B2 /* StringUtils.m */,
 				4E95946F1E0362E5003EC6DB /* VideoUtil.h */,
 				4E9594701E0362E5003EC6DB /* VideoUtil.m */,
+				4E0822791E12E005005A1EF3 /* Utils.h */,
+				4E08227A1E12E005005A1EF3 /* Utils.m */,
 			);
 			name = Utils;
 			sourceTree = "<group>";
@@ -425,6 +430,7 @@
 				4E6912E01D5A2FFF00972575 /* CarroService.m in Sources */,
 				4E7B0DB91D75CB0E00181646 /* Carro+CoreDataProperties.m in Sources */,
 				4E55CF881DB931970025B9B8 /* VideoViewController.m in Sources */,
+				4E08227B1E12E005005A1EF3 /* Utils.m in Sources */,
 				4E6912DD1D5A2FED00972575 /* XMLCarroParser.m in Sources */,
 				4E8AA8651D6392EB00F2C842 /* SQLiteHelper.m in Sources */,
 				4E75A88E1D55075E0032B6B4 /* CarroTableViewCell.m in Sources */,

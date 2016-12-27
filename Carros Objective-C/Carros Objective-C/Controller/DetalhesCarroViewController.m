@@ -11,6 +11,7 @@
 #import "GpsMapViewController.h"
 #import "VideoViewController.h"
 #import "VideoUtil.h"
+#import "Utils.h"
 
 @interface DetalhesCarroViewController ()
 
@@ -33,6 +34,12 @@
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
+}
+
+- (void)viewWillTransitionToSize:(CGSize)size withTransitionCoordinator:(id<UIViewControllerTransitionCoordinator>)coordinator {
+    if ([Utils isIphone]) {
+        
+    }
 }
 
 -(IBAction)visualizarMapa:(id)sender {

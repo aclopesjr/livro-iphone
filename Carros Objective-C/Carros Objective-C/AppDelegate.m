@@ -8,7 +8,9 @@
 
 #import "AppDelegate.h"
 #import "ListaCarrosViewController.h"
+#import "DetalhesCarroViewController.h"
 #import "SobreViewController.h"
+#import "Utils.h"
 
 @interface AppDelegate ()
 
@@ -21,7 +23,19 @@
     
     self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
     self.window.backgroundColor = [UIColor whiteColor];
+
+    if ([Utils isIpad]) {
+        [self initIPad];
+    } else {
+        [self initIPhone];
+    }
     
+    [self.window makeKeyAndVisible];
+    
+    return YES;
+}
+
+- (void)initIPhone {
     //cria controllers
     ListaCarrosViewController *listaCarrosViewController = [[ListaCarrosViewController alloc] initWithNibName:@"ListaCarrosViewController" bundle:nil];
     UINavigationController *nav1 = [[UINavigationController alloc] init];
@@ -40,10 +54,25 @@
     tabBarController.viewControllers =  [NSArray arrayWithObjects:nav1, nav2, nil];
     
     self.window.rootViewController = tabBarController;
+}
+
+- (void)initIPad {
+    //cria os controllers
+    ListaCarrosViewController *listaCarrosViewController = [[ListaCarrosViewController alloc] initWithNibName:@"ListaCarrosViewController" bundle:nil];
+    UINavigationController *nav1 = [[UINavigationController alloc] init];
+    [nav1 pushViewController:listaCarrosViewController animated:false];
     
-    [self.window makeKeyAndVisible];
+    DetalhesCarroViewController *detalhesCarroViewController = [[DetalhesCarroViewController alloc] initWithNibName:@"DetalhesCarroViewController" bundle:nil];
+    UINavigationController *nav2 = [[UINavigationController alloc] init];
+    [nav2 pushViewController:detalhesCarroViewController animated:false];
     
-    return YES;
+    //cria o UISplitViewController
+    UISplitViewController *split = [[UISplitViewController alloc] init];
+    [split setDelegate:detalhesCarroViewController];
+    [split setViewControllers:[NSArray arrayWithObjects:nav1, nav2, nil]];
+    
+    [self.window setRootViewController:split];
+    
 }
 
 - (void)applicationWillResignActive:(UIApplication *)application {

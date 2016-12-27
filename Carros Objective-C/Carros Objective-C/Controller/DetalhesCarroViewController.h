@@ -10,7 +10,7 @@
 #import "Carro.h"
 #import "DownloadImageView.h"
 
-@interface DetalhesCarroViewController : UIViewController {
+@interface DetalhesCarroViewController : UIViewController<UISplitViewControllerDelegate> {
     IBOutlet DownloadImageView * image;
     IBOutlet UITextView * descricao;
 }

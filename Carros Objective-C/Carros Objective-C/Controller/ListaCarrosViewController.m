@@ -14,6 +14,7 @@
 #import "CarroTableViewCell.h"
 #import "DownloadImageView.h"
 #import "Prefs.h"
+#import "Utils.h"
 
 @interface ListaCarrosViewController ()
 
@@ -45,6 +46,14 @@
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
+}
+
+-(NSUInteger)supportedInterfaceOrientations {
+    if ([Utils isIphone]) {
+        return UIInterfaceOrientationMaskPortrait;
+    } else {
+        return UIInterfaceOrientationMaskAll;
+    }
 }
 
 - (IBAction)alterarTipo:(UISegmentedControl*)sender {
