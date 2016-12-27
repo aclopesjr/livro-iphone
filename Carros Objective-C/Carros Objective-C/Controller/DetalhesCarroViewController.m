@@ -12,6 +12,7 @@
 #import "VideoViewController.h"
 #import "VideoUtil.h"
 #import "Utils.h"
+#import "PopoverUtil.h"
 
 @interface DetalhesCarroViewController ()
 
@@ -43,7 +44,12 @@
 //    MapViewController *vc = [[MapViewController alloc] initWithNibName:@"MapViewController" bundle:nil];
     GpsMapViewController *vc = [[GpsMapViewController alloc] initWithNibName:@"MapViewController" bundle:nil];
     [vc setCarro:[self carro]];
-    [self.navigationController pushViewController:vc animated:true];
+    
+    if ([Utils isIphone]) {
+        [self.navigationController pushViewController:vc animated:true];
+    } else {
+        [PopoverUtil show:self andViewController:vc andSourceView:(UIView*)sender andWidth:600 andHeight:500];
+    }
 }
 
 -(IBAction)visualizarVideo:(id)sender {

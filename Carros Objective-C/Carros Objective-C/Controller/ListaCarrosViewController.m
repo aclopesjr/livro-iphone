@@ -49,14 +49,6 @@
     // Dispose of any resources that can be recreated.
 }
 
--(NSUInteger)supportedInterfaceOrientations {
-    if ([Utils isIphone]) {
-        return UIInterfaceOrientationMaskPortrait;
-    } else {
-        return UIInterfaceOrientationMaskAll;
-    }
-}
-
 - (IBAction)alterarTipo:(UISegmentedControl*)sender {
     switch (sender.selectedSegmentIndex) {
         case 1:
